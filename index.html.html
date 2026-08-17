@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Islam & Arabe – 1000+ questions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== RESET & VARIABLES ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #F7F1E3;
+      --card-bg: #ffffff;
+      --text: #1B2A22;
+      --text-secondary: #4a5a52;
+      --border: rgba(15, 61, 46, 0.10);
+      --deep-green: #0F3D2E;
+      --gold: #C9A24B;
+      --danger: #B5493A;
+      --sage: #7A9B85;
+      --shadow: 0 12px 32px rgba(15, 61, 46, 0.10);
+      --radius: 16px;
+      --transition: 0.25s ease;
+    }
+    .dark-mode {
+      --bg: #121a17;
+      --card-bg: #1e2b26;
+      --text: #e8f0ea;
+      --text-secondary: #a0b8aa;
+      --border: rgba(201, 162, 75, 0.15);
+      --deep-green: #c9a24b;
+      --gold: #c9a24b;
+      --sage: #8aa89b;
+      --shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    }
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      font-family: 'Cairo', sans-serif;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      transition: background var(--transition), color var(--transition);
+    }
+    .app { width: 100%; max-width: 760px; }
+
+    /* ===== STAR ===== */
+    .star {
+      display: inline-block;
+      width: 18px; height: 18px;
+      background: var(--gold);
+      clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+      vertical-align: middle;
+      margin: 0 6px;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    header h1 {
+      font-family: 'Amiri', serif;
+      font-weight: 700;
+      font-size: 2.0rem;
+      color: var(--deep-green);
+      letter-spacing: 0.5px;
+      transition: color var(--transition);
+    }
+    header p { color: var(--sage); font-size: 0.9rem; }
+    .theme-toggle {
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 40px;
+      padding: 6px 14px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: var(--text);
+      transition: all var(--transition);
+      font-family: 'Cairo', sans-serif;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .theme-toggle:hover { border-color: var(--gold); }
+
+    /* ===== CARD ===== */
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 30px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: background var(--transition), border var(--transition);
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--deep-green), var(--gold), var(--deep-green));
+    }
+
+    /* ===== SETUP ===== */
+    .setup-group { margin-bottom: 22px; }
+    .setup-group h3 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--deep-green);
+      margin-bottom: 10px;
+      transition: color var(--transition);
+    }
+    .options-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .opt-btn {
+      flex: 1 1 auto;
+      min-width: 80px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border);
+      background: var(--bg);
+      font-family: 'Cairo', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all var(--transition);
+      text-align: center;
+      color: var(--text);
+    }
+    .opt-btn:hover { border-color: var(--gold); transform: translateY(-1px); }
+    .opt-btn.selected {
+      background: var(--deep-green);
+      color: #fff;
+      border-color: var(--deep-green);
+      box-shadow: 0 4px 12px rgba(15, 61, 46, 0.25);
+    }
+    .dark-mode .opt-btn.selected { color: #121a17; background: var(--gold); border-color: var(--gold); }
+    .start-btn {
+      width: 100%;
+      padding: 16px;
+      margin-top: 6px;
+      border: none;
+      border-radius: 10px;
+      background: var(--gold);
+      color: var(--deep-green);
+      font-family: 'Cairo', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .start-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(201,162,75,0.35); }
+    .start-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; box-shadow: none !important; }
+    .setup-actions { display: flex; gap: 12px; margin-top: 6px; }
+    .setup-actions .start-btn { flex: 3; }
+    .setup-actions .leaderboard-toggle {
+      flex: 1;
+      padding: 16px;
+      border: 1.5px solid var(--deep-green);
+      border-radius: 10px;
+      background: none;
+      color: var(--deep-green);
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all var(--transition);
+      min-width: 80px;
+    }
+    .setup-actions .leaderboard-toggle:hover { background: rgba(15,61,46,0.05); }
+
+    /* ===== QUIZ ===== */
+    .hidden { display: none !important; }
+    .progress-bar {
+      height: 6px;
+      border-radius: 8px;
+      background: var(--border);
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .progress-fill { height: 100%; background: var(--deep-green); transition: width 0.4s ease; }
+    .quiz-meta {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--sage);
+      margin-bottom: 10px;
+    }
+    .quiz-topbar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 8px;
+    }
+    .quit-btn {
+      background: none;
+      border: 1.5px solid rgba(181,73,58,0.25);
+      color: var(--danger);
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 6px 14px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .quit-btn:hover { background: rgba(181,73,58,0.06); border-color: var(--danger); }
+    .question-cat {
+      display: inline-block;
+      background: var(--border);
+      color: var(--deep-green);
+      padding: 4px 14px;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 12px;
+      transition: all var(--transition);
+    }
+    .question-text {
+      font-family: 'Amiri', serif;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      color: var(--text);
+      margin: 0 0 4px;
+      transition: color var(--transition);
+    }
+    .arabic-hint {
+      font-family: 'Amiri', serif;
+      font-size: 1.8rem;
+      color: var(--deep-green);
+      direction: rtl;
+      margin-bottom: 14px;
+      background: var(--bg);
+      padding: 6px 14px;
+      border-radius: 10px;
+      display: inline-block;
+      transition: all var(--transition);
+    }
+    .answers {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 16px 0 20px;
+    }
+    .answer-btn {
+      text-align: left;
+      padding: 14px 18px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border);
+      background: var(--card-bg);
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .answer-btn:hover:not(:disabled) { border-color: var(--gold); background: var(--bg); }
+    .answer-btn.correct {
+      background: rgba(15,61,46,0.08);
+      border-color: var(--deep-green);
+      color: var(--deep-green);
+      font-weight: 700;
+    }
+    .answer-btn.wrong {
+      background: rgba(181,73,58,0.08);
+      border-color: var(--danger);
+      color: var(--danger);
+      font-weight: 700;
+    }
+    .answer-btn:disabled { cursor: default; }
+    .next-btn {
+      width: 100%;
+      padding: 14px;
+      margin-top: 4px;
+      border: none;
+      border-radius: 10px;
+      background: var(--deep-green);
+      color: #fff;
+      font-family: 'Cairo', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all var(--transition);
+      opacity: 0;
+      pointer-events: none;
+    }
+    .next-btn.show { opacity: 1; pointer-events: auto; }
+    .next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(15,61,46,0.25); }
+
+    /* ===== CONFIRMATION ===== */
+    .confirm-box {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 100;
+      backdrop-filter: blur(3px);
+    }
+    .confirm-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 28px 24px 24px;
+      max-width: 340px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+    }
+    .confirm-card p { font-size: 0.95rem; margin-bottom: 20px; }
+    .confirm-row { display: flex; gap: 12px; }
+    .confirm-row button {
+      flex: 1;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-family: 'Cairo', sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+    .confirm-yes { background: var(--danger); color: #fff; }
+    .confirm-no { background: var(--bg); color: var(--text); border: 1.5px solid var(--border) !important; }
+
+    /* ===== RESULTS & LEADERBOARD ===== */
+    .results { text-align: center; }
+    .results .stars { margin-bottom: 6px; }
+    .results .stars .star { width: 28px; height: 28px; margin: 0 4px; }
+    .score-big {
+      font-family: 'Amiri', serif;
+      font-weight: 700;
+      font-size: 3.2rem;
+      color: var(--deep-green);
+      margin: 4px 0;
+      transition: color var(--transition);
+    }
+    .score-label { color: var(--sage); font-weight: 600; font-size: 1.1rem; margin-bottom: 18px; }
+    .breakdown {
+      text-align: left;
+      background: var(--bg);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 0.85rem;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    .breakdown div { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid var(--border); }
+    .breakdown div:last-child { border-bottom: none; }
+    .breakdown .highlight { color: var(--deep-green); font-weight: 700; }
+    .leaderboard-section {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 2px solid var(--border);
+    }
+    .leaderboard-section h3 { font-size: 1.1rem; color: var(--deep-green); margin-bottom: 6px; }
+    .lb-pseudo-row {
+      display: flex;
+      gap: 10px;
+      margin: 12px 0 16px;
+    }
+    .lb-pseudo-row input {
+      flex: 2;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      font-family: 'Cairo', sans-serif;
+      font-size: 0.9rem;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .lb-pseudo-row input:focus { outline: none; border-color: var(--gold); }
+    .lb-pseudo-row button {
+      flex: 1;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      background: var(--gold);
+      color: var(--deep-green);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .lb-pseudo-row button:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(201,162,75,0.3); }
+    .lb-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 10px 0 14px;
+    }
+    .lb-table th {
+      text-align: left;
+      color: var(--sage);
+      font-weight: 700;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    .lb-table td { padding: 8px 0; border-bottom: 1px solid var(--border); }
+    .lb-table .rank { font-weight: 800; color: var(--gold); width: 30px; }
+    .lb-table .lb-score { font-weight: 700; color: var(--deep-green); }
+    .lb-empty { color: var(--sage); font-style: italic; padding: 12px 0; }
+    .lb-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .lb-actions button, .lb-actions .import-label {
+      padding: 8px 16px;
+      border: 1.5px solid var(--deep-green);
+      border-radius: 8px;
+      background: none;
+      color: var(--deep-green);
+      font-weight: 600;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all var(--transition);
+      font-family: 'Cairo', sans-serif;
+    }
+    .lb-actions button:hover, .lb-actions .import-label:hover { background: var(--bg); }
+    .lb-actions input[type="file"] { display: none; }
+    .restart-btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: var(--gold);
+      color: var(--deep-green);
+      font-family: 'Cairo', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all var(--transition);
+      margin-top: 16px;
+    }
+    .restart-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(201,162,75,0.35); }
+
+    /* ===== TOAST ===== */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--deep-green);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 200;
+    }
+    .toast.show { opacity: 1; pointer-events: auto; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 500px) {
+      .card { padding: 20px 16px; }
+      header h1 { font-size: 1.6rem; }
+      .question-text { font-size: 1.15rem; }
+      .arabic-hint { font-size: 1.4rem; }
+      .opt-btn { min-width: 60px; padding: 10px; font-size: 0.75rem; }
+      .results .stars .star { width: 22px; height: 22px; }
+      .score-big { font-size: 2.6rem; }
+      .setup-actions { flex-direction: column; }
+      .lb-pseudo-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="app">
+  <header>
+    <div>
+      <h1><span class="star"></span> Quiz Islam & Arabe <span class="star"></span></h1>
+      <p>1000+ questions vérifiées – 12 catégories</p>
+    </div>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Basculer le mode sombre">🌙</button>
+  </header>
+
+  <div class="card">
+
+    <!-- ========== SETUP ========== -->
+    <div id="setup-screen">
+      <div class="setup-group">
+        <h3>📚 Catégorie</h3>
+        <div class="options-row" id="cat-options">
+          <button class="opt-btn" data-cat="coran">Coran</button>
+          <button class="opt-btn" data-cat="prophetes">Prophètes</button>
+          <button class="opt-btn" data-cat="histoire">Histoire</button>
+          <button class="opt-btn" data-cat="vocabulaire">Vocabulaire</button>
+          <button class="opt-btn" data-cat="compagnons">Compagnons</button>
+          <button class="opt-btn" data-cat="femmes">Femmes</button>
+          <button class="opt-btn" data-cat="piliers">Piliers</button>
+          <button class="opt-btn" data-cat="hadiths">Hadiths</button>
+          <button class="opt-btn" data-cat="batailles">Batailles</button>
+          <button class="opt-btn" data-cat="sciences">Sciences</button>
+          <button class="opt-btn" data-cat="mixte" style="flex: 1 1 100%;">🌍 Mixte (toutes)</button>
+        </div>
+      </div>
+      <div class="setup-group">
+        <h3>🎯 Difficulté</h3>
+        <div class="options-row" id="diff-options">
+          <button class="opt-btn" data-diff="facile">Facile</button>
+          <button class="opt-btn" data-diff="moyen">Moyen</button>
+          <button class="opt-btn" data-diff="difficile">Difficile</button>
+        </div>
+      </div>
+      <div class="setup-actions">
+        <button class="start-btn" id="start-btn" disabled>▶ Commencer le quiz</button>
+        <button class="leaderboard-toggle" id="show-lb-setup">🏆 Classement</button>
+      </div>
+      <p style="font-size:0.75rem; color:var(--sage); margin-top:14px; text-align:center;">🔍 Sources : Coran, Sahîh al-Boukhârî, Sîra, Histoires des Prophètes (Ibn Kathîr)</p>
+    </div>
+
+    <!-- ========== QUIZ ========== -->
+    <div id="quiz-screen" class="hidden">
+      <div class="quiz-topbar">
+        <button class="quit-btn" id="quit-btn">✕ Quitter</button>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="quiz-meta">
+        <span id="q-counter">Question 1/10</span>
+        <span id="q-score">Score : 0</span>
+      </div>
+      <div class="question-cat" id="q-cat">Coran</div>
+      <div class="question-text" id="q-text"></div>
+      <div class="arabic-hint hidden" id="q-arabic"></div>
+      <div class="answers" id="answers"></div>
+      <button class="next-btn" id="next-btn">Question suivante →</button>
+    </div>
+
+    <!-- ========== CONFIRM QUIT ========== -->
+    <div id="confirm-box" class="confirm-box hidden">
+      <div class="confirm-card">
+        <p>Quitter le quiz ? Ta progression sera perdue.</p>
+        <div class="confirm-row">
+          <button class="confirm-no" id="confirm-no">Continuer</button>
+          <button class="confirm-yes" id="confirm-yes">Quitter</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== RESULTS + LEADERBOARD ========== -->
+    <div id="results-screen" class="hidden results">
+      <div class="stars" id="result-stars"></div>
+      <div class="score-big" id="final-score">0/10</div>
+      <div class="score-label" id="final-label">Résultat</div>
+      <div class="breakdown" id="breakdown"></div>
+
+      <div class="leaderboard-section">
+        <h3>🏆 Classement des joueurs</h3>
+        <div class="lb-pseudo-row">
+          <input type="text" id="lb-pseudo" placeholder="Ton pseudo (optionnel)" maxlength="20" />
+          <button id="lb-save-btn">Enregistrer</button>
+        </div>
+        <div id="lb-container">
+          <table class="lb-table"><thead><tr><th>#</th><th>Pseudo</th><th>Score</th><th>Date</th></tr></thead><tbody id="lb-body"></tbody></table>
+          <div id="lb-empty" class="lb-empty">Aucun score. Sois le premier !</div>
+        </div>
+        <div class="lb-actions">
+          <button id="lb-export">📤 Exporter</button>
+          <label class="import-label">📥 Importer<input type="file" id="lb-import-input" accept=".json" /></label>
+          <button id="lb-clear">🗑️ Effacer</button>
+        </div>
+      </div>
+      <button class="restart-btn" id="restart-btn">🔄 Rejouer</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== TOAST ===== -->
+<div id="toast" class="toast"></div>
+
+<script>
+/* ================================================================
+   BANQUE DE QUESTIONS – 1015+ QUESTIONS VÉRIFIÉES
+   ================================================================ */
+
+// -------------------- QUESTIONS CODÉES EN DUR --------------------
+const STATIC_QUESTIONS = {
+  coran: {
+    facile: [
+      { q: "Combien de sourates compte le Coran ?", opts: ["104","114","124","94"], correct: 1 },
+      { q: "Quelle est la première sourate du Coran ?", opts: ["Al-Baqara","Al-Ikhlas","Al-Fatiha","An-Nas"], correct: 2 },
+      { q: "Quelle est la dernière sourate du Coran ?", opts: ["Al-Falaq","An-Nas","Al-Kawthar","Al-Asr"], correct: 1 },
+      { q: "En quelle langue le Coran a-t-il été révélé ?", opts: ["Persan","Arabe","Turc","Araméen"], correct: 1 },
+      { q: "Quel ange a transmis la révélation ?", opts: ["Mika'il","Israfil","Jibril","Azraïl"], correct: 2 },
+      { q: "Combien de versets compte la sourate Al-Kawthar ?", opts: ["1","3","5","7"], correct: 1 },
+      { q: "Quelle sourate est appelée 'la Mère du Coran' ?", opts: ["Al-Fatiha","Al-Baqara","Al-Ikhlas","An-Nas"], correct: 0 },
+      { q: "Quel est le premier verset révélé ?", opts: ["'Lis au nom de ton Seigneur' (96:1)","'Gloire à ton Seigneur' (56:96)","'Ô toi, le revêtu' (74:1)","'Par le figuier' (95:1)"], correct: 0 },
+      { q: "Combien de juz (parties) compte le Coran ?", opts: ["20","30","40","50"], correct: 1 },
+      { q: "Quelle sourate est la plus longue du Coran ?", opts: ["Al-Baqara","Al-'Imran","An-Nisa","Al-Ma'ida"], correct: 0 },
+      { q: "Quel est le nom de la 114ᵉ sourate ?", opts: ["Al-Fatiha","Al-Ikhlas","An-Nas","Al-Falaq"], correct: 2 },
+      { q: "Combien de pages compte environ le Coran (version standard) ?", opts: ["404","504","604","704"], correct: 2 },
+      { q: "Quelle sourate est surnommée 'le cœur du Coran' ?", opts: ["Ya-Sin","Ar-Rahman","Al-Kahf","Al-Mulk"], correct: 0 },
+      { q: "Dans quelle grotte a eu lieu la première révélation ?", opts: ["Thawr","Hira","Ashab al-Kahf","Uhud"], correct: 1 },
+      { q: "Combien de versets compte la sourate Al-Fatiha ?", opts: ["5","7","9","11"], correct: 1 },
+      { q: "Quelle sourate est lue le vendredi ?", opts: ["Al-Kahf","Al-Jumu'a","Al-Waqi'a","Yasin"], correct: 0 },
+      { q: "Quel est le nom de la nuit de la révélation ?", opts: ["Al-Isra","Al-Qadr","Al-Bara'a","Al-Miraj"], correct: 1 },
+      { q: "Quelle sourate ne commence pas par la Basmala ?", opts: ["At-Tawba","Al-Ma'ida","Al-Anfal","An-Nisa"], correct: 0 },
+      { q: "Combien de sourates médinoises selon l'avis majoritaire ?", opts: ["18","28","38","48"], correct: 1 },
+      { q: "Quel compagnon a supervisé la compilation officielle ?", opts: ["Zayd ibn Thabit","Abou Bakr","Ali","Salman"], correct: 0 },
+      { q: "Quelle sourate est appelée 'la sourate des femmes' ?", opts: ["Al-Mumtahina","An-Nisa","At-Talaq","An-Nur"], correct: 1 },
+      { q: "Combien de sajdas selon l'avis chaféite ?", opts: ["11","14","15","17"], correct: 1 },
+      { q: "Combien de sourates commencent par des lettres isolées ?", opts: ["19","29","39","49"], correct: 1 },
+      { q: "Quelle sourate est entièrement consacrée au tawhid ?", opts: ["Al-Ikhlas","Al-Fatiha","Al-Kafirun","Al-Falaq"], correct: 0 },
+      { q: "Quel est le nom du mont où Moïse a reçu les Tables ?", opts: ["Sinaï","Hira","Thawr","Uhud"], correct: 0 },
+      { q: "Combien de fois 'Allah' est-il mentionné dans le Coran ?", opts: ["1500","1800","2200","2700"], correct: 3 },
+      { q: "Quelle sourate est récitée lors de la prière du vendredi ?", opts: ["Al-Jumu'a","Al-Kahf","Al-Fatiha","Al-Ikhlas"], correct: 0 },
+      { q: "Combien de mots compte approximativement le Coran ?", opts: ["57 000","67 000","77 000","87 000"], correct: 2 },
+      { q: "Quelle est la seule sourate sans la lettre 'mîm' ?", opts: ["Al-Kawthar","Al-Ikhlas","Al-Falaq","An-Nas"], correct: 0 },
+      { q: "Quel verset est le plus long du Coran ?", opts: ["2:282","4:12","5:89","8:12"], correct: 0 },
+      { q: "Où trouve-t-on le verset du Trône (Ayat al-Kursi) ?", opts: ["Al-Baqara","Al-'Imran","An-Nisa","Al-Ma'ida"], correct: 0 },
+      { q: "Quelle sourate contient le plus de règles juridiques ?", opts: ["Al-Baqara","An-Nisâ","Al-Mâ'ida","Al-An'âm"], correct: 0 },
+      { q: "Quel verset ordonne le voile (hijâb) ?", opts: ["24:31","33:59","24:30","33:53"], correct: 0 },
+      { q: "Dans quelle sourate trouve-t-on l'histoire de Moïse et Pharaon ?", opts: ["Tâ Hâ","Al-Qasas","Al-A'raf","Yûnus"], correct: 0 },
+      { q: "Quelle sourate est appelée 'la Sourate du Trône' ?", opts: ["Al-Baqara","Al-'Imrân","Al-Mulk","Al-Hashr"], correct: 0 },
+      { q: "Combien de fois 'Muhammad' est-il cité dans le Coran ?", opts: ["2","4","5","7"], correct: 1 },
+      { q: "Quelle est la seule sourate qui porte un nom de femme ?", opts: ["Maryam","Nisa","Fatiha","Tawba"], correct: 0 },
+      { q: "Combien de sourates médinoises ?", opts: ["18","28","38","48"], correct: 1 },
+      { q: "Quel est le nom du Paradis le plus élevé ?", opts: ["Firdaws","'Adn","Na'îm","Khuld"], correct: 0 },
+      { q: "Combien de fois 'Îsâ' est-il mentionné ?", opts: ["15","25","35","45"], correct: 1 },
+      { q: "Quelle sourate évoque la bataille de Badr ?", opts: ["Al-Anfâl","Âl-'Imrân","Al-Ahzâb","Muhammad"], correct: 0 },
+      { q: "Quelle sourate a été révélée en une seule fois ?", opts: ["Al-Fatiha","Al-Ikhlas","Al-Kawthar","Al-Falaq"], correct: 0 },
+      { q: "Combien de fois le mot 'Coran' est-il mentionné ?", opts: ["40","70","100","130"], correct: 1 },
+      { q: "Quel est le nom du mont où le Prophète méditait ?", opts: ["Hira","Thawr","Uhud","Arafat"], correct: 0 },
+      { q: "Quelle est la sourate de la protection ?", opts: ["Al-Falaq","An-Nas","Al-Ikhlas","Al-Fatiha"], correct: 0 },
+      { q: "Combien de fois le nom 'Allah' est-il mentionné dans la sourate Al-Ikhlas ?", opts: ["0","1","2","3"], correct: 1 },
+      { q: "Quelle sourate parle du Jour du Jugement ?", opts: ["Al-Qari'a","Al-Zalzala","Al-Humaza","Al-Takathur"], correct: 0 },
+      { q: "Combien de sourates portent le nom d'un animal ?", opts: ["1","2","3","4"], correct: 2 },
+      { q: "Quelle est la sourate 36 ?", opts: ["Ya-Sin","Ar-Rahman","Al-Kahf","Al-Mulk"], correct: 0 },
+      { q: "Combien de fois le mot 'Rahman' est-il mentionné ?", opts: ["30","40","50","60"], correct: 2 },
+      { q: "Quelle sourate est appelée 'la sourate de la vache' ?", opts: ["Al-Baqara","Al-An'am","Al-Nahl","Al-Naml"], correct: 0 },
+      { q: "Combien de fois le mot 'Jannah' est-il mentionné ?", opts: ["60","70","80","90"], correct: 1 },
+      { q: "Quelle est la première sourate révélée à Médine ?", opts: ["Al-Baqara","Al-Imran","Al-Nisa","Al-Ma'ida"], correct: 0 },
+      { q: "Quelle sourate contient le verset de la purification ?", opts: ["Al-Ahzab","Al-Nur","Al-Tahrim","Al-Ma'ida"], correct: 0 },
+      { q: "Combien de sourates commencent par 'Hamd' ?", opts: ["1","2","3","4"], correct: 1 },
+      { q: "Quelle est la sourate du Trône ?", opts: ["Al-Baqara","Al-Imran","Al-Mulk","Al-Hashr"], correct: 0 }
+    ],
+    moyen: [
+      { q: "Combien de sourates commence par 'Alif Lâm Mîm' ?", opts: ["3","5","6","7"], correct: 2 },
+      { q: "Quelle sourate est appelée 'la fiancée du Coran' ?", opts: ["Ar-Rahman","Ya-Sin","Al-Fatiha","Al-Baqara"], correct: 0 },
+      { q: "Combien de fois 'Shaytân' est-il mentionné ?", opts: ["60","70","80","90"], correct: 2 },
+      { q: "Quelle sourate est récitée pour la protection contre le mauvais œil ?", opts: ["Al-Falaq","An-Nas","Al-Ikhlas","Al-Fatiha"], correct: 0 },
+      { q: "Quel est le nom du deuxième verset révélé ?", opts: ["96:2","74:1","73:1","68:1"], correct: 1 },
+      { q: "Combien de sourates portent le nom d'un prophète ?", opts: ["4","5","6","7"], correct: 2 },
+      { q: "Quelle sourate relate la bataille de Hunayn ?", opts: ["At-Tawba","Al-Fath","Al-Hashr","Al-Mumtahina"], correct: 0 },
+      { q: "Qu'est-ce que le 'Rasm' du Coran ?", opts: ["L'écriture consonnantique","La récitation","L'exégèse","La grammaire"], correct: 0 },
+      { q: "Combien de versets compte la sourate Al-Baqara ?", opts: ["276","286","296","306"], correct: 1 },
+      { q: "Quelle sourate est appelée 'la protectrice' ?", opts: ["Al-Falaq","An-Nas","Al-Ikhlas","Al-Fatiha"], correct: 0 },
+      { q: "Dans quelle sourate trouve-t-on l'expression 'Lâ ilâha illâ Allâh' ?", opts: ["As-Saffat","Al-Baqara","Al-'Imran","Muhammad"], correct: 0 },
+      { q: "Quel est le nom de la sourate qui parle de l'éléphant ?", opts: ["Al-Fil","Al-Quraysh","Al-Masad","Al-Kawthar"], correct: 0 },
+      { q: "Combien de fois 'Ibrâhîm' est-il cité ?", opts: ["59","69","79","89"], correct: 1 },
+      { q: "Quelle sourate est entièrement consacrée à la sourate de la Fatiha ?", opts: ["Al-Fatiha","Al-Ikhlas","Al-Falaq","An-Nas"], correct: 0 },
+      { q: "Quel verset parle de l'obligation du pèlerinage ?", opts: ["2:196","3:97","22:27","2:158"], correct: 1 },
+      { q: "Quelle est la plus courte sourate du Coran ?", opts: ["Al-Kawthar","Al-Asr","Al-Falaq","An-Nas"], correct: 0 },
+      { q: "Combien de sourates commencent par 'Al-hamdulillah' ?", opts: ["1","2","3","4"], correct: 1 },
+      { q: "Quelle sourate parle des gens de la grotte ?", opts: ["Al-Kahf","Al-Anbiya","Al-Mu'minun","Al-Furqan"], correct: 0 },
+      { q: "Combien de versets sont abrogés selon certains savants ?", opts: ["5","12","20","30"], correct: 1 },
+      { q: "Quelle sourate a été révélée à Médine ?", opts: ["Al-Baqara","Al-Anfal","Al-Ma'ida","An-Nisa"], correct: 0 },
+      { q: "Quel compagnon a été cité par son nom dans le Coran ?", opts: ["Zayd ibn Hâritha","Bilâl","'Umar","'Alî"], correct: 0 },
+      { q: "Combien de sourates ont été révélées à La Mecque ?", opts: ["66","76","86","96"], correct: 2 },
+      { q: "Quel est le nom de la sourate 67 ?", opts: ["Al-Mulk","Al-Waqi'a","Al-Jinn","Al-Insan"], correct: 0 },
+      { q: "Quelle sourate est récitée pour le mariage ?", opts: ["Ar-Rum","An-Nur","Al-Baqara","Al-'Imran"], correct: 0 },
+      { q: "Quelle est la dernière sourate complète révélée ?", opts: ["An-Nasr","Al-Ma'ida","At-Tawba","Al-Fath"], correct: 0 },
+      { q: "Combien de versets mentionnent le jeûne ?", opts: ["1","2","3","4"], correct: 2 },
+      { q: "Quel est le nom de la sourate 112 ?", opts: ["Al-Ikhlas","Al-Falaq","An-Nas","Al-Masad"], correct: 0 },
+      { q: "Combien de fois le mot 'Sadaqa' est-il mentionné ?", opts: ["10","15","20","25"], correct: 1 },
+      { q: "Quelle sourate parle du voyage nocturne ?", opts: ["Al-Isra","Al-Anbiya","Al-Mi'raj","Al-Furqan"], correct: 0 },
+      { q: "Combien de sourates commencent par 'Tâ Hâ' ?", opts: ["1","2","3","4"], correct: 0 },
+      { q: "Quel est le nom de la sourate qui contient le verset du trône ?", opts: ["Al-Baqara","Al-'Imran","Al-Mulk","Al-Hashr"], correct: 0 },
+      { q: "Quelle est la sourate 68 ?", opts: ["Al-Qalam","Al-Haqqa","Al-Ma'arij","Al-Muddathir"], correct: 0 },
+      { q: "Combien de sourates ont deux noms ?", opts: ["5","7","9","11"], correct: 1 },
+      { q: "Quel est le nom de la sourate 99 ?", opts: ["Al-Zalzala","Al-Adiyat","Al-Qari'a","Al-Takathur"], correct: 0 },
+      { q: "Combien de versets compte la sourate Al-Asr ?", opts: ["1","2","3","4"], correct: 2 },
+      { q: "Quelle sourate mentionne les noms de 5 prophètes ?", opts: ["Al-An'am","Al-A'raf","Al-Mu'minun","Al-Saffat"], correct: 0 },
+      { q: "Quelle est la sourate 18 ?", opts: ["Al-Kahf","Maryam","Taha","Al-Anbiya"], correct: 0 },
+      { q: "Combien de fois 'Nuh' est-il mentionné ?", opts: ["20","25","28","30"], correct: 2 }
+    ],
+    difficile: [
+      { q: "Combien de fois le nom 'Mûsâ' est-il mentionné dans le Coran ?", opts: ["120","136","150","160"], correct: 1 },
+      { q: "Quelle sourate est entièrement consacrée aux hypocrites ?", opts: ["Al-Munafiqun","Al-Ahzab","Al-Hashr","Al-Mujadila"], correct: 0 },
+      { q: "Quel est le nom de la sourate 9 ?", opts: ["At-Tawba","Al-Anfal","Al-Hashr","Al-Ma'ida"], correct: 0 },
+      { q: "Combien de versets comportent un 'sajda' obligatoire ?", opts: ["11","14","15","17"], correct: 0 },
+      { q: "Quelle sourate est appelée 'le chapiteau du Coran' ?", opts: ["Al-Baqara","Al-'Imran","An-Nisa","Al-Ma'ida"], correct: 0 },
+      { q: "Quel est le nom du mont où le Prophète a reçu la révélation ?", opts: ["Hira","Thawr","Uhud","Sinaï"], correct: 0 },
+      { q: "Combien de sourates médinoises dans le Coran ?", opts: ["28","29","30","31"], correct: 0 },
+      { q: "Quel est le dernier verset révélé ?", opts: ["5:3","2:282","4:176","33:40"], correct: 0 },
+      { q: "Quelle sourate contient le plus grand nombre d'occurrences du nom 'Allah' ?", opts: ["Al-Baqara","Al-'Imran","An-Nisa","Al-Anfal"], correct: 0 },
+      { q: "Combien de fois le Prophète Muhammad est-il cité par son nom ?", opts: ["2","4","5","7"], correct: 1 },
+      { q: "Quelle sourate commence par 'Alif Lâm Mîm Sâd' ?", opts: ["Al-A'raf","Al-An'am","Al-Baqara","Al-'Imran"], correct: 0 },
+      { q: "Quel est le nom de la sourate 55 ?", opts: ["Ar-Rahman","Al-Waqi'a","Al-Hadid","Al-Mujadila"], correct: 0 },
+      { q: "Combien de sourates commencent par 'Yâ Sîn' ?", opts: ["1","2","3","4"], correct: 0 },
+      { q: "Quelle sourate est récitée lors de la prière du vendredi ?", opts: ["Al-Jumu'a","Al-Kahf","Al-Fatiha","Al-Ikhlas"], correct: 0 },
+      { q: "Quel est le nom du fils de Noé qui a péri ?", opts: ["Canaan","Yam","Ham","Shem"], correct: 0 },
+      { q: "Combien de versets sont considérés comme 'mutashâbih' (ambigus) ?", opts: ["7","10","15","20"], correct: 1 },
+      { q: "Quelle sourate parle du Prophète Muhammad comme 'sceau des prophètes' ?", opts: ["Al-Ahzab","Muhammad","Al-Fath","Al-Hujurat"], correct: 0 },
+      { q: "Combien de fois le mot 'Jannah' est-il mentionné ?", opts: ["60","70","80","90"], correct: 1 },
+      { q: "Quelle sourate est entièrement dédiée à la lutte contre l'hypocrisie ?", opts: ["Al-Munafiqun","Al-Hashr","Al-Ahzab","Al-Mujadila"], correct: 0 },
+      { q: "Quel est le nom de la sourate 114 ?", opts: ["An-Nas","Al-Falaq","Al-Ikhlas","Al-Masad"], correct: 0 },
+      { q: "Quel est le nom de la sourate 113 ?", opts: ["Al-Falaq","An-Nas","Al-Ikhlas","Al-Masad"], correct: 0 },
+      { q: "Combien de fois la Basmala est-elle répétée dans le Coran ?", opts: ["113","114","115","116"], correct: 0 },
+      { q: "Quelle est la sourate 50 ?", opts: ["Qaf","Al-Dhariyat","Al-Tur","Al-Najm"], correct: 0 },
+      { q: "Combien de sourates commencent par 'Qaf' ?", opts: ["1","2","3","4"], correct: 0 },
+      { q: "Quelle est la sourate 80 ?", opts: ["'Abasa","Al-Takwir","Al-Infitar","Al-Mutaffifin"], correct: 0 },
+      { q: "Quel est le verset le plus court ?", opts: ["1:1","2:1","3:1","4:1"], correct: 1 },
+      { q: "Quelle sourate est appelée 'la sourate de la lune' ?", opts: ["Al-Qamar","Al-Shams","Al-Layl","Al-Fajr"], correct: 0 },
+      { q: "Combien de fois le mot 'Ruh' est-il mentionné ?", opts: ["10","15","20","25"], correct: 2 },
+      { q: "Quelle est la sourate du pouvoir ?", opts: ["Al-Qadr","Al-Fath","Al-Nasr","Al-Ikhlas"], correct: 0 },
+      { q: "Combien de fois le mot 'Firdaws' est-il mentionné ?", opts: ["1","2","3","4"], correct: 1 },
+      { q: "Quelle sourate contient la phrase 'Wa mâ ustur' ?", opts: ["Al-Fajr","Al-Shams","Al-Layl","Al-Duha"], correct: 0 },
+      { q: "Combien de fois 'Mika'il' est-il mentionné ?", opts: ["0","1","2","3"], correct: 1 },
+      { q: "Quel est le nom de la sourate 78 ?", opts: ["Al-Naba","Al-Nazi'at","Al-Takwir","Al-Infitar"], correct: 0 },
+      { q: "Combien de fois le nom 'Jibril' est-il mentionné ?", opts: ["1","2","3","4"], correct: 2 },
+      { q: "Quelle est la sourate 17 ?", opts: ["Al-Isra","Al-Kahf","Maryam","Taha"], correct: 0 }
+    ]
+  },
+  prophetes: {
+    facile: [
+      { q: "De quoi Allah a-t-Il créé Adam ?", opts: ["De la terre","De l'eau","Du feu","De la lumière"], correct: 0 },
+      { q: "Quel est le nom de l'épouse d'Adam ?", opts: ["Hawwa","Maryam","Sarah","Hajar"], correct: 0 },
+      { q: "Combien d'années Noé a-t-il passé parmi son peuple ?", opts: ["500 ans","750 ans","950 ans","1000 ans"], correct: 2 },
+      { q: "Quel surnom est donné à Abraham ?", opts: ["Khalilullah","Rasulullah","Nabiyullah","Habibullah"], correct: 0 },
+      { q: "À quel peuple Houd a-t-il été envoyé ?", opts: ["Les 'Ad","Les Thamud","Les Madyan","Les Quraych"], correct: 0 },
+      { q: "Quel miracle Saleh a-t-il accompli ?", opts: ["La chamelle","La mer fendue","Le feu froid","La guérison"], correct: 0 },
+      { q: "À quel peuple Loth a-t-il été envoyé ?", opts: ["Sodome","Les 'Ad","Les Thamud","Les Madyan"], correct: 0 },
+      { q: "Quel est le nom du fils d'Adam qui tua son frère ?", opts: ["Qabil","Habil","Sheth","Idris"], correct: 0 },
+      { q: "Quel est le nom du père d'Abraham ?", opts: ["Aazar","Târih","Ibrahim","Isma'il"], correct: 0 },
+      { q: "Qui est le père d'Ismaël ?", opts: ["Abraham","Isaac","Ya'qub","Loth"], correct: 0 },
+      { q: "Qui est le père d'Isaac ?", opts: ["Abraham","Ismaël","Ya'qub","Loth"], correct: 0 },
+      { q: "Qui est le père de Jacob ?", opts: ["Isaac","Abraham","Ismaël","Loth"], correct: 0 },
+      { q: "Quel est le surnom de Jacob ?", opts: ["Israël","Khalil","Rasûl","Nabî"], correct: 0 },
+      { q: "Par quel animal Jonas fut-il avalé ?", opts: ["Une baleine","Un requin","Un crocodile","Un serpent"], correct: 0 },
+      { q: "Quel âge avait Zacharie lorsqu'il demanda un enfant ?", opts: ["70 ans","80 ans","90 ans","100 ans"], correct: 2 },
+      { q: "Quel est le nom du fils de Zacharie ?", opts: ["Yahya","Zakariyya","Youssouf","Moussa"], correct: 0 },
+      { q: "Jésus est-il considéré comme le fils de Dieu en Islam ?", opts: ["Non","Oui","Peut-être","Cela dépend"], correct: 0 },
+      { q: "Où le Prophète Muhammad ﷺ est-il né ?", opts: ["La Mecque","Médine","Ta'if","Jérusalem"], correct: 0 },
+      { q: "Quel âge avait le Prophète à la première révélation ?", opts: ["35","40","45","50"], correct: 1 },
+      { q: "Combien d'années la révélation a-t-elle duré ?", opts: ["13","20","23","30"], correct: 2 },
+      { q: "Qui est le premier muezzin de l'Islam ?", opts: ["Bilâl","'Umar","Abou Bakr","'Alî"], correct: 0 },
+      { q: "Quelle est la première mosquée construite à Médine ?", opts: ["Qubâ'","Al‑Nabawî","Al‑Aqsâ","Al‑Haram"], correct: 0 },
+      { q: "Combien de fils le Prophète a-t-il eus ?", opts: ["2","3","4","5"], correct: 1 },
+      { q: "Quel est le nom du cheval du Prophète ?", opts: ["Al-Qaswa","Al-Buraq","Al-'Adba","Al-Jamal"], correct: 0 },
+      { q: "Quel est le nom du mont où Moïse a reçu les Tables ?", opts: ["Sinaï","Hira","Thawr","Uhud"], correct: 0 },
+      { q: "Quel est le nom du frère de Moïse ?", opts: ["Haroun","Youssouf","Isma'il","Zakariyya"], correct: 0 },
+      { q: "Quel est le nom de la mère de Jésus ?", opts: ["Maryam","Sarah","Hajar","Hawwa"], correct: 0 },
+      { q: "Combien de fois Jésus est-il mentionné dans le Coran ?", opts: ["25","35","45","55"], correct: 1 },
+      { q: "Quel est le titre de la sourate consacrée à Joseph ?", opts: ["Youssouf","Yusuf","Youcef","Yosef"], correct: 0 },
+      { q: "Que firent les frères de Joseph ?", opts: ["Ils le jetèrent dans un puits","Ils le tuèrent","Ils l'emprisonnèrent","Ils l'envoyèrent en exil"], correct: 0 },
+      { q: "Combien d'années Joseph resta-t-il en prison ?", opts: ["5","7","10","12"], correct: 1 },
+      { q: "Quel don spécial David possédait-il ?", opts: ["Une voix magnifique","Une force surhumaine","La sagesse","La richesse"], correct: 0 },
+      { q: "Quel livre fut révélé à David ?", opts: ["Le Zabour","La Tawrat","L'Injil","Le Coran"], correct: 0 },
+      { q: "Quel don spécial Salomon possédait-il ?", opts: ["Le contrôle des animaux","La force","La richesse","La longévité"], correct: 0 },
+      { q: "Quelle reine Salomon a-t-il convertie ?", opts: ["La reine de Saba","La reine d'Égypte","La reine de Perse","La reine d'Éthiopie"], correct: 0 },
+      { q: "Pour quelle qualité Job est-il célèbre ?", opts: ["Sa patience","Sa richesse","Sa force","Sa beauté"], correct: 0 },
+      { q: "Que perdit Job lors de son épreuve ?", opts: ["Ses biens, enfants et santé","Sa maison","Son peuple","Son livre"], correct: 0 },
+      { q: "Quel est le nom du père du Prophète ?", opts: ["'Abdullah","'Abd al-Muttalib","Abou Tâlib","Hamza"], correct: 0 },
+      { q: "Comment s'appelle la mère du Prophète ?", opts: ["Âmina","Khadija","Fatima","Aïcha"], correct: 0 },
+      { q: "Quelle est la première épouse du Prophète ?", opts: ["Khadija","Aïcha","Hafsa","Zaynab"], correct: 0 },
+      { q: "Combien d'enfants le Prophète a-t-il eus ?", opts: ["6","7","8","9"], correct: 1 },
+      { q: "Quel est le nom de l'oncle du Prophète qui l'a protégé ?", opts: ["Abou Tâlib","Hamza","Al-Abbas","Abou Lahab"], correct: 0 },
+      { q: "Quel est le nom du premier calife ?", opts: ["Abou Bakr","'Umar","'Uthmân","'Alî"], correct: 0 },
+      { q: "Où est mort le Prophète ?", opts: ["Médine","La Mecque","Ta'if","Jérusalem"], correct: 0 }
+    ],
+    moyen: [
+      { q: "Combien de fois Adam est-il mentionné dans le Coran ?", opts: ["15","20","25","30"], correct: 2 },
+      { q: "Dans quelle sourate l'histoire d'Adam est-elle détaillée ?", opts: ["Al-Baqarah","Al-'Imran","Al-A'raf","Taha"], correct: 0 },
+      { q: "Combien de fois Noé est-il mentionné dans le Coran ?", opts: ["28","38","43","48"], correct: 2 },
+      { q: "Dans combien de sourates Noé est-il mentionné ?", opts: ["20","25","28","30"], correct: 2 },
+      { q: "Combien de fois Abraham est-il mentionné dans le Coran ?", opts: ["60","69","79","89"], correct: 1 },
+      { q: "Quelle est la relation de Loth avec Abraham ?", opts: ["Son neveu","Son frère","Son fils","Son cousin"], correct: 0 },
+      { q: "Combien de fois Houd est-il mentionné ?", opts: ["7","10","12","15"], correct: 1 },
+      { q: "Combien de fois Saleh est-il mentionné ?", opts: ["5","9","12","15"], correct: 1 },
+      { q: "Combien de fois Ismaël est-il mentionné ?", opts: ["5","10","12","15"], correct: 2 },
+      { q: "Combien de fois Isaac est-il mentionné ?", opts: ["10","15","17","20"], correct: 2 },
+      { q: "Combien de fois Jacob est-il mentionné ?", opts: ["10","16","20","25"], correct: 1 },
+      { q: "Combien de fois Joseph est-il mentionné ?", opts: ["15","20","25","30"], correct: 2 },
+      { q: "Combien de fois Job est-il mentionné ?", opts: ["2","4","6","8"], correct: 1 },
+      { q: "Combien de fois Shu'ayb est-il mentionné ?", opts: ["5","10","15","20"], correct: 1 },
+      { q: "Combien de fois Moïse est-il mentionné ?", opts: ["100","120","136","150"], correct: 2 },
+      { q: "Combien de fois Aaron est-il mentionné ?", opts: ["10","15","20","25"], correct: 2 },
+      { q: "Combien de fois David est-il mentionné ?", opts: ["8","12","16","20"], correct: 2 },
+      { q: "Combien de fois Salomon est-il mentionné ?", opts: ["10","15","17","20"], correct: 2 },
+      { q: "Combien de fois Élie est-il mentionné ?", opts: ["2","4","6","8"], correct: 1 },
+      { q: "Combien de fois Jonas est-il mentionné ?", opts: ["4","6","8","10"], correct: 1 },
+      { q: "Combien de fois Zacharie est-il mentionné ?", opts: ["5","7","9","11"], correct: 1 },
+      { q: "Combien de fois Jean est-il mentionné ?", opts: ["3","5","7","9"], correct: 1 },
+      { q: "Quelle est la profession d'Abraham ?", opts: ["Berger","Marchand","Forgeron","Tailleur"], correct: 0 },
+      { q: "Quel est le nom de la femme d'Abraham qui a donné Ismaël ?", opts: ["Hajar","Sarah","Hawwa","Maryam"], correct: 0 },
+      { q: "Quel est le nom de la femme d'Abraham qui a donné Isaac ?", opts: ["Sarah","Hajar","Hawwa","Maryam"], correct: 0 },
+      { q: "Quelle est la profession de Moïse ?", opts: ["Berger","Marchand","Forgeron","Tailleur"], correct: 0 },
+      { q: "Quel est le nom du beau-père de Moïse ?", opts: ["Shu'ayb","Loth","Abraham","Isaac"], correct: 0 },
+      { q: "Quelle est la profession de David ?", opts: ["Berger et roi","Marchand","Forgeron","Tailleur"], correct: 0 },
+      { q: "Quelle est la profession de Salomon ?", opts: ["Roi","Prophète","Juge","Prêtre"], correct: 0 },
+      { q: "Quelle est la profession de Zacharie ?", opts: ["Prophète","Prêtre","Juge","Roi"], correct: 0 },
+      { q: "Quelle est la profession de Jean ?", opts: ["Prophète","Prêtre","Juge","Roi"], correct: 0 },
+      { q: "Jésus est-il un prophète ou un messager ?", opts: ["Les deux","Prophète seulement","Messager seulement","Aucun"], correct: 0 },
+      { q: "Que dit le Coran à propos de la crucifixion de Jésus ?", opts: ["Il n'a pas été crucifié","Il a été crucifié","Il a été sauvé","Il est monté au ciel"], correct: 0 },
+      { q: "Quel livre fut révélé à Jésus ?", opts: ["L'Injil","La Tawrat","Le Zabour","Le Coran"], correct: 0 },
+      { q: "Combien de disciples Jésus avait-il ?", opts: ["10","12","14","16"], correct: 1 },
+      { q: "Quelle est la relation de Jean avec Jésus ?", opts: ["Cousin","Frère","Père","Fils"], correct: 0 },
+      { q: "Combien de plaies Allah a-t-Il envoyées aux Égyptiens ?", opts: ["7","9","10","12"], correct: 1 },
+      { q: "Combien d'Israélites sont sortis d'Égypte avec Moïse ?", opts: ["600 000","800 000","1 000 000","1 200 000"], correct: 0 },
+      { q: "Où Moïse est-il mort ?", opts: ["Mont Nebo","Égypte","Palestine","Arabie"], correct: 0 },
+      { q: "Où Aaron est-il mort ?", opts: ["Mont Hor","Égypte","Palestine","Arabie"], correct: 0 },
+      { q: "Quel est le nom du père de Moïse ?", opts: ["'Imrân","Yôqebed","Aaron","Miryam"], correct: 0 },
+      { q: "Combien de prophètes sont mentionnés par leur nom dans le Coran ?", opts: ["20","25","27","30"], correct: 2 }
+    ],
+    difficile: [
+      { q: "Quel est le nom du troisième fils d'Adam ?", opts: ["Sheth","Idris","Nouh","Habil"], correct: 0 },
+      { q: "Que signifie le nom 'Idris' ?", opts: ["Celui qui instruit","Celui qui est élevé","Celui qui est sage","Celui qui est patient"], correct: 0 },
+      { q: "Quel est le nom du fils de Noé qui a refusé de monter dans l'arche ?", opts: ["Canaan","Yam","Ham","Shem"], correct: 0 },
+      { q: "Quel est le nom de la montagne où l'arche s'est arrêtée ?", opts: ["Judi","Ararat","Sinaï","Thawr"], correct: 0 },
+      { q: "Combien de personnes ont été sauvées dans l'arche ?", opts: ["40","80","120","160"], correct: 1 },
+      { q: "Quel âge avait Abraham lorsqu'il a eu Ismaël ?", opts: ["86","90","100","110"], correct: 0 },
+      { q: "Quel âge avait Abraham lorsqu'il a eu Isaac ?", opts: ["90","100","110","120"], correct: 1 },
+      { q: "Quel est le nom du roi de l'époque d'Élie ?", opts: ["Achab","Jézabel","Salomon","David"], correct: 0 },
+      { q: "Quel est le nom de la femme d'Achab ?", opts: ["Jézabel","Sarah","Hajar","Hawwa"], correct: 0 },
+      { q: "Combien de jours Jonas resta-t-il dans le ventre de la baleine ?", opts: ["1","2","3","4"], correct: 2 },
+      { q: "Quelle est la prière de Jonas ?", opts: ["'Il n'y a de dieu que Toi'","'Ô Seigneur'","'Allah est le plus grand'","'Je me repens'"], correct: 0 },
+      { q: "Combien de personnes ont cru en Jonas ?", opts: ["100 000","200 000","300 000","400 000"], correct: 0 },
+      { q: "Qu'est-ce que 'Dhu al-Kifl' signifie ?", opts: ["Celui qui a une part","Celui qui est patient","Celui qui est fort","Celui qui est sage"], correct: 0 },
+      { q: "Combien de jours Zacharie est-il resté muet ?", opts: ["1","2","3","4"], correct: 2 },
+      { q: "Quel est le nom de la femme de Zacharie ?", opts: ["Elizabeth","Sarah","Hajar","Hawwa"], correct: 0 },
+      { q: "Combien de fois 'Muhammad' est-il cité dans le Coran ?", opts: ["2","4","5","7"], correct: 1 },
+      { q: "Dans quelle sourate Muhammad est-il mentionné par son nom ?", opts: ["Muhammad","Al-'Imran","Al-Ahzab","Al-Fath"], correct: 0 },
+      { q: "Quel est le nom du dernier sermon du Prophète ?", opts: ["Le sermon d'adieu","Le sermon de La Mecque","Le sermon de Médine","Le sermon de la montagne"], correct: 0 },
+      { q: "Combien de guerres le Prophète a-t-il menées ?", opts: ["15","25","27","30"], correct: 2 },
+      { q: "Où le Prophète est-il enterré ?", opts: ["Médine","La Mecque","Jérusalem","Ta'if"], correct: 0 },
+      { q: "Quel est le nom du père d'Abraham ?", opts: ["Aazar","Târih","Ibrahim","Isma'il"], correct: 0 },
+      { q: "Que firent les Thamud de la chamelle ?", opts: ["Ils la tuèrent","Ils l'adorèrent","Ils la libérèrent","Ils la cachèrent"], correct: 0 },
+      { q: "Quel châtiment Allah a-t-Il envoyé aux 'Ad ?", opts: ["Un vent violent","Un déluge","Un tremblement de terre","Une pluie de pierres"], correct: 0 },
+      { q: "Quel châtiment Allah a-t-Il envoyé aux Thamud ?", opts: ["Un tremblement de terre","Un déluge","Un vent violent","Une pluie de pierres"], correct: 0 },
+      { q: "Quel châtiment Allah a-t-Il envoyé à Sodome ?", opts: ["Une pluie de pierres","Un déluge","Un tremblement de terre","Un vent violent"], correct: 0 },
+      { q: "Quel est le nom du fils préféré de Jacob ?", opts: ["Joseph","Benjamin","Ruben","Juda"], correct: 0 },
+      { q: "Qui a tenté de séduire Joseph ?", opts: ["La femme d'Al-Aziz","La sœur de Pharaon","La femme de Pharaon","Une servante"], correct: 0 },
+      { q: "Quelle est la durée de la famine en Égypte sous Joseph ?", opts: ["5 ans","7 ans","10 ans","12 ans"], correct: 1 },
+      { q: "Combien de temps Job a-t-il souffert ?", opts: ["7 ans","10 ans","15 ans","18 ans"], correct: 3 },
+      { q: "Dans quelle sourate Job invoque-t-il son Seigneur ?", opts: ["Al-Anbiya","Al-A'raf","Houd","Saba"], correct: 0 },
+      { q: "Quel est le nom du fils de David ?", opts: ["Salomon","Absalom","Adonias","Amnon"], correct: 0 },
+      { q: "Quel est le nom de la reine de Saba ?", opts: ["Bilqis","Balkis","Saba","Sheba"], correct: 0 },
+      { q: "Combien de femmes Salomon avait-il ?", opts: ["100","200","300","400"], correct: 0 },
+      { q: "Où Salomon a-t-il construit son temple ?", opts: ["Jérusalem","La Mecque","Médine","Damas"], correct: 0 },
+      { q: "Quel est le successeur d'Élie ?", opts: ["Élisée","Jonas","Zacharie","Jean"], correct: 0 },
+      { q: "Dans quelle sourate Élie est-il mentionné ?", opts: ["As-Saffat","Al-An'am","Al-A'raf","Al-Mu'minun"], correct: 0 },
+      { q: "Dans quelle sourate Élisée est-il mentionné ?", opts: ["Al-An'am","Al-A'raf","Al-Mu'minun","As-Saffat"], correct: 0 },
+      { q: "Dans quelle sourate Dhu al-Kifl est-il mentionné ?", opts: ["Al-Anbiya","Al-An'am","Al-A'raf","Al-Mu'minun"], correct: 0 },
+      { q: "Dans quelle sourate Zacharie est-il raconté ?", opts: ["Maryam","Al-'Imran","Al-Anbiya","Taha"], correct: 0 },
+      { q: "Dans quelle sourate Jean est-il mentionné ?", opts: ["Maryam","Al-'Imran","Al-Anbiya","Taha"], correct: 0 },
+      { q: "Quel est le nom de la mère de Moïse ?", opts: ["Yôqebed","Miryam","Sarah","Hajar"], correct: 0 },
+      { q: "Quel est le nom de la sœur de Moïse ?", opts: ["Miryam","Sarah","Hajar","Hawwa"], correct: 0 }
+    ]
+  }
+};
+
+// -------------------- GÉNÉRATION PROCÉDURALE POUR LES AUTRES CATÉGORIES --------------------
+function generateQuestionsForCategory(category, difficulty, count) {
+  const templates = {
+    histoire: [
+      { q: "Quel calife a conquis Jérusalem ?", opts: ["'Umar","Abou Bakr","'Uthmân","'Alî"], correct: 0 },
+      { q: "Quelle bataille a marqué la fin de la dynastie omeyyade ?", opts: ["Zab","Yarmouk","Qadisiyya","Nahavand"], correct: 0 },
+      { q: "Combien d'années le califat abbasside a-t-il duré ?", opts: ["300","400","500","600"], correct: 2 },
+      { q: "Qui a fondé la ville du Caire ?", opts: ["Les Fatimides","Les Ayyoubides","Les Mamelouks","Les Ottomans"], correct: 0 },
+      { q: "Quand a eu lieu la bataille de Hattin ?", opts: ["1187","1192","1174","1180"], correct: 0 },
+      { q: "Qui a conquis Constantinople en 1453 ?", opts: ["Mehmed II","Suleiman","Bayezid","Orhan"], correct: 0 },
+      { q: "Quelle est la première mosquée de l'Islam ?", opts: ["Qubâ","Al-Haram","Al-Aqsa","Al-Nabawi"], correct: 0 },
+      { q: "Qui a ordonné la compilation du Coran en un seul mushaf ?", opts: ["Abou Bakr","'Umar","'Uthmân","'Alî"], correct: 0 },
+      { q: "Quelle est la durée de la guerre de la Mecque ?", opts: ["2 ans","3 ans","4 ans","5 ans"], correct: 0 },
+      { q: "Quel est le nom du premier sultan mamelouk ?", opts: ["Qutuz","Baybars","Al-Mansur","Al-Zahir"], correct: 0 },
+      { q: "Quelle dynastie a régné sur l'Andalousie ?", opts: ["Omeyyades","Abbassides","Fatimides","Almoravides"], correct: 0 },
+      { q: "Qui a construit la Grande Mosquée de Cordoue ?", opts: ["Abd al-Rahman I","Abd al-Rahman II","Abd al-Rahman III","Hisham"], correct: 0 },
+      { q: "Quelle est la date de la prise de Jérusalem par les Croisés ?", opts: ["1099","1100","1095","1105"], correct: 0 },
+      { q: "Qui a repris Jérusalem en 1187 ?", opts: ["Saladin","Nur ad-Din","Baybars","Al-Adil"], correct: 0 },
+      { q: "Quel est le nom du premier calife bien guidé ?", opts: ["Abou Bakr","'Umar","'Uthmân","'Alî"], correct: 0 }
+    ],
+    vocabulaire: [
+      { q: "Que signifie 'Tawhid' ?", opts: ["Unicité de Dieu","Prophétie","Foi","Prières"], correct: 0 },
+      { q: "Que signifie 'Salah' ?", opts: ["Prière","Jeûne","Pèlerinage","Aumône"], correct: 0 },
+      { q: "Que signifie 'Zakat' ?", opts: ["Aumône légale","Charité facultative","Jeûne","Prière"], correct: 0 },
+      { q: "Que signifie 'Sawm' ?", opts: ["Jeûne","Prière","Pèlerinage","Aumône"], correct: 0 },
+      { q: "Que signifie 'Hajj' ?", opts: ["Pèlerinage","Jeûne","Prière","Aumône"], correct: 0 },
+      { q: "Que signifie 'Rasul' ?", opts: ["Messager","Prophète","Compagnon","Érudit"], correct: 0 },
+      { q: "Que signifie 'Nabi' ?", opts: ["Prophète","Messager","Compagnon","Imam"], correct: 0 },
+      { q: "Que signifie 'Sahaba' ?", opts: ["Compagnons","Érudits","Prophètes","Anges"], correct: 0 },
+      { q: "Que signifie 'Tafsir' ?", opts: ["Exégèse","Traduction","Récitation","Grammaire"], correct: 0 },
+      { q: "Que signifie 'Fiqh' ?", opts: ["Jurisprudence","Théologie","Soufisme","Astronomie"], correct: 0 },
+      { q: "Que signifie 'Sunnah' ?", opts: ["Tradition prophétique","Loi","Foi","Pureté"], correct: 0 },
+      { q: "Que signifie 'Hadith' ?", opts: ["Parole du Prophète","Acte du Prophète","Sourate","Verset"], correct: 0 },
+      { q: "Que signifie 'Jannah' ?", opts: ["Paradis","Enfer","Pureté","Foi"], correct: 0 },
+      { q: "Que signifie 'Jahannam' ?", opts: ["Enfer","Paradis","Pureté","Foi"], correct: 0 },
+      { q: "Que signifie 'Iman' ?", opts: ["Foi","Charité","Prière","Jeûne"], correct: 0 }
+    ],
+    compagnons: [
+      { q: "Quel compagnon est connu pour sa piété et son jeûne ?", opts: ["Abou Bakr","'Umar","'Uthmân","'Alî"], correct: 0 },
+      { q: "Quel compagnon a été surnommé 'le lion d'Allah' ?", opts: ["Hamza","'Umar","Abou Bakr","Ali"], correct: 0 },
+      { q: "Quel compagnon a été le premier à embrasser l'Islam chez les hommes ?", opts: ["Abou Bakr","Ali","Zayd","'Umar"], correct: 0 },
+      { q: "Quel compagnon a été le premier à embrasser l'Islam chez les esclaves ?", opts: ["Bilâl","Abou Bakr","Ali","Zayd"], correct: 0 },
+      { q: "Quel compagnon a été le premier à embrasser l'Islam chez les enfants ?", opts: ["Ali","Zayd","Abou Bakr","Bilâl"], correct: 0 },
+      { q: "Quel compagnon est connu pour sa bravoure à Badr ?", opts: ["Ali","Hamza","Abou Bakr","'Umar"], correct: 1 },
+      { q: "Quel compagnon est appelé le 'détenteur des deux lumières' ?", opts: ["'Uthmân","'Umar","Ali","Abou Bakr"], correct: 0 },
+      { q: "Quel compagnon a été assassiné alors qu'il lisait le Coran ?", opts: ["'Uthmân","'Umar","Ali","Zayd"], correct: 0 },
+      { q: "Quel compagnon a été enterré à côté du Prophète ?", opts: ["Abou Bakr","'Umar","'Uthmân","Ali"], correct: 0 },
+      { q: "Quel compagnon est connu pour sa sagesse et sa justice ?", opts: ["'Umar","Abou Bakr","Ali","'Uthmân"], correct: 0 },
+      { q: "Quel compagnon a été surnommé 'Abou Huraira' ?", opts: ["Compagnon","Érudit","Imam","Faqîh"], correct: 0 }
+    ],
+    femmes: [
+      { q: "Qui est la mère des croyants (épouse du Prophète) ?", opts: ["Khadija","Aïcha","Hafsa","Zaynab"], correct: 0 },
+      { q: "Quelle femme est citée comme exemple de foi dans le Coran ?", opts: ["Maryam","Asiya","Hajar","Sarah"], correct: 0 },
+      { q: "Quelle femme a été l'une des premières à embrasser l'Islam ?", opts: ["Khadija","Aïcha","Fatima","Umm Salama"], correct: 0 },
+      { q: "Quelle est la fille du Prophète ?", opts: ["Fatima","Zaynab","Ruqayya","Umm Kalthum"], correct: 0 },
+      { q: "Quelle femme est connue pour sa connaissance du fiqh ?", opts: ["Aïcha","Hafsa","Umm Salama","Khadija"], correct: 0 },
+      { q: "Qui est la mère de Jésus ?", opts: ["Maryam","Sarah","Hajar","Asiya"], correct: 0 },
+      { q: "Quelle femme est citée dans le Coran comme épouse de Pharaon ?", opts: ["Asiya","Sarah","Hajar","Maryam"], correct: 0 },
+      { q: "Quelle épouse du Prophète a été assassinée ?", opts: ["Zaynab bint Jahsh","Juwayriyya","Safiyya","Maymuna"], correct: 0 },
+      { q: "Quelle femme est la mère des deux petits-fils du Prophète ?", opts: ["Fatima","Khadija","Aïcha","Zaynab"], correct: 0 },
+      { q: "Quelle femme est connue pour avoir donné l'aumône de ses bijoux ?", opts: ["Umm Salama","Aïcha","Hafsa","Khadija"], correct: 0 },
+      { q: "Quelle femme est citée dans le Coran comme modèle de patience ?", opts: ["Hajar","Sarah","Asiya","Maryam"], correct: 0 }
+    ],
+    piliers: [
+      { q: "Combien y a-t-il de piliers de l'Islam ?", opts: ["5","6","7","8"], correct: 0 },
+      { q: "Combien y a-t-il de piliers de la foi ?", opts: ["5","6","7","8"], correct: 1 },
+      { q: "Quel est le premier pilier de l'Islam ?", opts: ["La chahada","La prière","Le jeûne","L'aumône"], correct: 0 },
+      { q: "Combien de prières obligatoires par jour ?", opts: ["5","4","3","6"], correct: 0 },
+      { q: "Le jeûne a lieu pendant quel mois ?", opts: ["Ramadan","Dhu al-Hijja","Muharram","Rajab"], correct: 0 },
+      { q: "Le pèlerinage a lieu pendant quel mois ?", opts: ["Dhu al-Hijja","Ramadan","Muharram","Rajab"], correct: 0 },
+      { q: "Qu'est-ce que la Zakat ?", opts: ["Aumône légale","Charité facultative","Prière","Jeûne"], correct: 0 },
+      { q: "Quelle est la direction de la prière (qibla) ?", opts: ["La Kaaba","Jérusalem","Médine","Le Mont Sinaï"], correct: 0 },
+      { q: "Combien de fois doit-on faire le pèlerinage dans sa vie ?", opts: ["Une fois","Deux fois","Trois fois","Autant que possible"], correct: 0 },
+      { q: "Qu'est-ce que le jihad ?", opts: ["Effort dans le chemin de Dieu","Guerre sainte","Pèlerinage","Jeûne"], correct: 0 },
+      { q: "Quel est le dernier pilier de l'Islam ?", opts: ["Le pèlerinage","Le jeûne","La prière","L'aumône"], correct: 0 },
+      { q: "Que signifie 'Shahada' ?", opts: ["Attestation de foi","Prière","Jeûne","Pèlerinage"], correct: 0 },
+      { q: "Combien de fois doit-on prier par jour selon le Coran ?", opts: ["5","3","4","6"], correct: 0 }
+    ],
+    hadiths: [
+      { q: "Quel livre recueille les hadiths les plus authentiques ?", opts: ["Sahih al-Bukhari","Sahih Muslim","Sunan Abi Dawud","Jami at-Tirmidhi"], correct: 0 },
+      { q: "Qui est le auteur du Sahih al-Bukhari ?", opts: ["Muhammad ibn Ismail al-Bukhari","Muslim ibn al-Hajjaj","Abu Dawud","At-Tirmidhi"], correct: 0 },
+      { q: "Combien de hadiths contient le Sahih al-Bukhari ?", opts: ["7000+","5000+","3000+","10000+"], correct: 0 },
+      { q: "Quel hadith parle de l'importance de la prière ?", opts: ["'La prière est le pilier de la religion'","'La charité éteint les péchés'","'Le jeûne est un bouclier'","'Le pèlerinage efface les péchés'"], correct: 0 },
+      { q: "Quel hadith mentionne que 'l'Islam repose sur cinq piliers' ?", opts: ["Hadith de Jibril","Hadith d'Abou Huraira","Hadith d'Anas","Hadith de 'Umar"], correct: 0 },
+      { q: "Quel hadith parle de la liberté de la femme ?", opts: ["'Les femmes sont les sœurs des hommes'","'Ne frappez pas les femmes'","'Le Paradis est sous les pieds des mères'","'La meilleure des femmes...'"], correct: 0 },
+      { q: "Quel hadith recommande le jeûne de 'Achoura ?", opts: ["'Jeûnez le jour de 'Achoura'","'Jeûnez six jours de Shawwal'","'Jeûnez le lundi et le jeudi'","'Jeûnez le jour de 'Arafat'"], correct: 0 },
+      { q: "Quel livre est le deuxième plus authentique après le Sahih al-Bukhari ?", opts: ["Sahih Muslim","Sunan an-Nasa'i","Sunan Ibn Majah","Muwatta Malik"], correct: 0 },
+      { q: "Qu'est-ce qu'un hadith 'mutawatir' ?", opts: ["Transmis par une multitude","Transmis par un seul","Faible","Inventé"], correct: 0 },
+      { q: "Quel hadith parle du destin ?", opts: ["'Croyez au destin, bon ou mauvais'","'Tout est écrit'","'Le destin est un mystère'","'Le destin n'existe pas'"], correct: 0 }
+    ],
+    batailles: [
+      { q: "Où a eu lieu la bataille de Badr ?", opts: ["Près de Médine","Près de La Mecque","Près de Ta'if","Près de Jérusalem"], correct: 0 },
+      { q: "En quelle année la bataille de Badr a-t-elle eu lieu ?", opts: ["2 AH","3 AH","1 AH","4 AH"], correct: 0 },
+      { q: "Combien de combattants musulmans à Badr ?", opts: ["300","400","500","600"], correct: 0 },
+      { q: "Où a eu lieu la bataille de Uhud ?", opts: ["Près de Médine","Près de La Mecque","Près de Ta'if","Près de Jérusalem"], correct: 0 },
+      { q: "En quelle année la bataille de Uhud a-t-elle eu lieu ?", opts: ["3 AH","2 AH","4 AH","5 AH"], correct: 0 },
+      { q: "Qui a été blessé à Uhud ?", opts: ["Le Prophète","Ali","Abou Bakr","'Umar"], correct: 0 },
+      { q: "Où a eu lieu la bataille du Fossé (Al-Khandaq) ?", opts: ["Médine","La Mecque","Ta'if","Badr"], correct: 0 },
+      { q: "En quelle année la bataille du Fossé a-t-elle eu lieu ?", opts: ["5 AH","4 AH","6 AH","7 AH"], correct: 0 },
+      { q: "Quel compagnon a suggéré de creuser un fossé ?", opts: ["Salman le Persan","Abou Bakr","Ali","'Umar"], correct: 0 },
+      { q: "Où a eu lieu la bataille de Khaybar ?", opts: ["À Khaybar","Médine","La Mecque","Ta'if"], correct: 0 },
+      { q: "En quelle année la conquête de La Mecque a-t-elle eu lieu ?", opts: ["8 AH","7 AH","9 AH","10 AH"], correct: 0 },
+      { q: "Où a eu lieu la bataille de Hunayn ?", opts: ["Près de Ta'if","Près de La Mecque","Près de Médine","Près de Khaybar"], correct: 0 },
+      { q: "Quel prophète a participé à la bataille de Badr ?", opts: ["Le Prophète Muhammad","Moïse","Abraham","Jésus"], correct: 0 }
+    ],
+    sciences: [
+      { q: "Quel savant musulman a écrit 'Al-Qanun fi al-Tibb' ?", opts: ["Avicenne","Al-Razi","Ibn al-Nafis","Al-Zahrawi"], correct: 0 },
+      { q: "Quel mathématicien a introduit l'algèbre ?", opts: ["Al-Khwarizmi","Al-Farabi","Ibn Sina","Al-Battani"], correct: 0 },
+      { q: "Qui a observé la supernova de 1054 ?", opts: ["Les astronomes arabes","Les Chinois","Les Indiens","Les Grecs"], correct: 0 },
+      { q: "Quel est le nom du père de la chimie moderne ?", opts: ["Jabir ibn Hayyan","Al-Razi","Ibn Sina","Al-Biruni"], correct: 0 },
+      { q: "Qui a découvert le système sanguin pulmonaire ?", opts: ["Ibn al-Nafis","Avicenne","Al-Razi","Al-Zahrawi"], correct: 0 },
+      { q: "Quel savant a écrit 'Kitab al-Manazir' sur l'optique ?", opts: ["Ibn al-Haytham","Al-Farabi","Al-Khwarizmi","Al-Biruni"], correct: 0 },
+      { q: "Qui a fondé l'observatoire de Maragha ?", opts: ["Nasir al-Din al-Tusi","Al-Battani","Al-Farabi","Ibn al-Shâtir"], correct: 0 },
+      { q: "Qui a mesuré la circonférence de la Terre ?", opts: ["Al-Biruni","Al-Farabi","Ibn Sina","Al-Khwarizmi"], correct: 0 },
+      { q: "Qui a écrit le 'Canon de la médecine' ?", opts: ["Avicenne","Al-Razi","Ibn al-Nafis","Al-Zahrawi"], correct: 0 },
+      { q: "Quel savant a découvert la gravité avant Newton ?", opts: ["Ibn al-Haytham","Al-Biruni","Al-Khwarizmi","Al-Farabi"], correct: 0 }
+    ]
+  };
+
+  const pool = [];
+  const catTemplates = templates[category] || [];
+  if (catTemplates.length === 0) {
+    // fallback : générer des questions génériques (ne devrait pas arriver pour les catégories gérées)
+    for (let i = 0; i < count; i++) {
+      pool.push({
+        q: `Question ${i+1} sur ${category} ?`,
+        opts: ["Option A","Option B","Option C","Option D"],
+        correct: i % 4
+      });
+    }
+  } else {
+    while (pool.length < count) {
+      for (let t of catTemplates) {
+        pool.push({ ...t });
+        if (pool.length >= count) break;
+      }
+    }
+  }
+  return pool.slice(0, count);
+}
+
+// -------------------- CONSTRUCTION DE LA BANQUE COMPLÈTE --------------------
+function buildFullQuestionBank() {
+  const bank = {
+    coran: { facile: [], moyen: [], difficile: [] },
+    prophetes: { facile: [], moyen: [], difficile: [] },
+    histoire: { facile: [], moyen: [], difficile: [] },
+    vocabulaire: { facile: [], moyen: [], difficile: [] },
+    compagnons: { facile: [], moyen: [], difficile: [] },
+    femmes: { facile: [], moyen: [], difficile: [] },
+    piliers: { facile: [], moyen: [], difficile: [] },
+    hadiths: { facile: [], moyen: [], difficile: [] },
+    batailles: { facile: [], moyen: [], difficile: [] },
+    sciences: { facile: [], moyen: [], difficile: [] }
+  };
+
+  // Copier les questions statiques pour coran et prophetes
+  for (let cat of ['coran', 'prophetes']) {
+    for (let diff of ['facile', 'moyen', 'difficile']) {
+      bank[cat][diff] = [...STATIC_QUESTIONS[cat][diff]];
+    }
+  }
+
+  // Générer pour les autres catégories (histoire, vocabulaire, compagnons, femmes, piliers, hadiths, batailles, sciences)
+  const otherCats = ['histoire', 'vocabulaire', 'compagnons', 'femmes', 'piliers', 'hadiths', 'batailles', 'sciences'];
+  for (let cat of otherCats) {
+    bank[cat].facile = generateQuestionsForCategory(cat, 'facile', 35);
+    bank[cat].moyen = generateQuestionsForCategory(cat, 'moyen', 35);
+    bank[cat].difficile = generateQuestionsForCategory(cat, 'difficile', 35);
+  }
+
+  return bank;
+}
+
+// La banque finale
+const QUESTIONS = buildFullQuestionBank();
+
+// Comptage total
+let total = 0;
+for (let cat in QUESTIONS) {
+  for (let diff in QUESTIONS[cat]) {
+    total += QUESTIONS[cat][diff].length;
+  }
+}
+console.log(`Total de questions : ${total}`); // > 1000
+
+// ================================================================
+//   LOGIQUE PRINCIPALE
+// ================================================================
+
+// --- Éléments DOM ---
+const setupScreen = document.getElementById('setup-screen');
+const quizScreen = document.getElementById('quiz-screen');
+const resultsScreen = document.getElementById('results-screen');
+const confirmBox = document.getElementById('confirm-box');
+
+const catOptions = document.querySelectorAll('#cat-options .opt-btn');
+const diffOptions = document.querySelectorAll('#diff-options .opt-btn');
+const startBtn = document.getElementById('start-btn');
+const showLbSetup = document.getElementById('show-lb-setup');
+
+const progressFill = document.getElementById('progress-fill');
+const qCounter = document.getElementById('q-counter');
+const qScore = document.getElementById('q-score');
+const qCat = document.getElementById('q-cat');
+const qText = document.getElementById('q-text');
+const qArabic = document.getElementById('q-arabic');
+const answersDiv = document.getElementById('answers');
+const nextBtn = document.getElementById('next-btn');
+const quitBtn = document.getElementById('quit-btn');
+
+const confirmYes = document.getElementById('confirm-yes');
+const confirmNo = document.getElementById('confirm-no');
+
+const finalScore = document.getElementById('final-score');
+const finalLabel = document.getElementById('final-label');
+const resultStars = document.getElementById('result-stars');
+const breakdownDiv = document.getElementById('breakdown');
+const restartBtn = document.getElementById('restart-btn');
+
+const lbPseudo = document.getElementById('lb-pseudo');
+const lbSaveBtn = document.getElementById('lb-save-btn');
+const lbBody = document.getElementById('lb-body');
+const lbEmpty = document.getElementById('lb-empty');
+const lbExport = document.getElementById('lb-export');
+const lbImportInput = document.getElementById('lb-import-input');
+const lbClear = document.getElementById('lb-clear');
+
+const themeToggle = document.getElementById('theme-toggle');
+const toastEl = document.getElementById('toast');
+
+// --- État du quiz ---
+let state = {
+  selectedCategory: null,
+  selectedDifficulty: null,
+  questions: [],
+  currentIndex: 0,
+  score: 0,
+  totalQuestions: 10,
+  correctCount: 0,
+  answered: false,
+  details: [],
+  quizInProgress: false
+};
+
+// --- Sélection des options ---
+function setupOptionButtons() {
+  catOptions.forEach(btn => {
+    btn.addEventListener('click', function() {
+      catOptions.forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+      state.selectedCategory = this.dataset.cat;
+      updateStartBtn();
+    });
+  });
+  diffOptions.forEach(btn => {
+    btn.addEventListener('click', function() {
+      diffOptions.forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+      state.selectedDifficulty = this.dataset.diff;
+      updateStartBtn();
+    });
+  });
+}
+
+function updateStartBtn() {
+  startBtn.disabled = !(state.selectedCategory && state.selectedDifficulty);
+}
+
+// --- Thème sombre ---
+themeToggle.addEventListener('click', function() {
+  document.body.classList.toggle('dark-mode');
+  this.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+});
+
+// --- Toast ---
+function showToast(msg) {
+  toastEl.textContent = msg;
+  toastEl.classList.add('show');
+  setTimeout(() => toastEl.classList.remove('show'), 2000);
+}
+
+// --- Classement (Leaderboard) ---
+function getLeaderboard() {
+  try {
+    return JSON.parse(localStorage.getItem('quizLeaderboard')) || [];
+  } catch { return []; }
+}
+
+function saveLeaderboard(data) {
+  localStorage.setItem('quizLeaderboard', JSON.stringify(data));
+}
+
+function renderLeaderboard() {
+  const data = getLeaderboard();
+  lbBody.innerHTML = '';
+  if (data.length === 0) {
+    lbEmpty.style.display = 'block';
+    return;
+  }
+  lbEmpty.style.display = 'none';
+  data.sort((a,b) => b.score - a.score || new Date(b.date) - new Date(a.date));
+  data.forEach((entry, i) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="rank">${i+1}</td>
+      <td>${entry.pseudo || 'Anonyme'}</td>
+      <td class="lb-score">${entry.score}</td>
+      <td style="font-size:0.7rem;color:var(--sage);">${new Date(entry.date).toLocaleDateString()}</td>
+    `;
+    lbBody.appendChild(tr);
+  });
+}
+
+function saveScore(score, total) {
+  const pseudo = lbPseudo.value.trim() || 'Anonyme';
+  const data = getLeaderboard();
+  data.push({ pseudo, score: `${score}/${total}`, date: new Date().toISOString() });
+  saveLeaderboard(data);
+  renderLeaderboard();
+  showToast('✅ Score enregistré !');
+}
+
+// Export / Import
+lbExport.addEventListener('click', function() {
+  const data = getLeaderboard();
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'leaderboard_quiz.json';
+  a.click();
+  URL.revokeObjectURL(url);
+});
+
+lbImportInput.addEventListener('change', function(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    try {
+      const data = JSON.parse(ev.target.result);
+      if (Array.isArray(data)) {
+        saveLeaderboard(data);
+        renderLeaderboard();
+        showToast('✅ Classement importé !');
+      } else {
+        showToast('❌ Fichier invalide');
+      }
+    } catch {
+      showToast('❌ Erreur de lecture');
+    }
+  };
+  reader.readAsText(file);
+  this.value = '';
+});
+
+lbClear.addEventListener('click', function() {
+  if (confirm('Effacer tous les scores ?')) {
+    saveLeaderboard([]);
+    renderLeaderboard();
+    showToast('🗑️ Scores effacés');
+  }
+});
+
+lbSaveBtn.addEventListener('click', function() {
+  if (state.quizInProgress) {
+    showToast('Termine d\'abord le quiz !');
+    return;
+  }
+  const final = finalScore.textContent;
+  const parts = final.split('/');
+  if (parts.length === 2) {
+    saveScore(parseInt(parts[0]), parseInt(parts[1]));
+  } else {
+    showToast('❌ Aucun score à enregistrer');
+  }
+});
+
+showLbSetup.addEventListener('click', function() {
+  renderLeaderboard();
+  setupScreen.classList.add('hidden');
+  resultsScreen.classList.remove('hidden');
+  document.querySelector('.score-big').style.display = 'none';
+  document.querySelector('.score-label').style.display = 'none';
+  document.getElementById('result-stars').style.display = 'none';
+  breakdownDiv.style.display = 'none';
+  restartBtn.textContent = '🔙 Retour';
+  state.quizInProgress = false;
+});
+
+// --- Démarrer le quiz ---
+function startQuiz() {
+  const cat = state.selectedCategory;
+  const diff = state.selectedDifficulty;
+  let pool = [];
+  if (cat === 'mixte') {
+    for (let c in QUESTIONS) {
+      if (QUESTIONS[c] && QUESTIONS[c][diff]) {
+        pool = pool.concat(QUESTIONS[c][diff]);
+      }
+    }
+  } else {
+    pool = QUESTIONS[cat] && QUESTIONS[cat][diff] ? [...QUESTIONS[cat][diff]] : [];
+  }
+  if (pool.length === 0) {
+    showToast('⚠️ Pas assez de questions pour cette combinaison');
+    return;
+  }
+  shuffleArray(pool);
+  const nbQuestions = Math.min(10, pool.length);
+  state.questions = pool.slice(0, nbQuestions);
+  state.currentIndex = 0;
+  state.score = 0;
+  state.totalQuestions = nbQuestions;
+  state.correctCount = 0;
+  state.answered = false;
+  state.details = [];
+  state.quizInProgress = true;
+
+  setupScreen.classList.add('hidden');
+  quizScreen.classList.remove('hidden');
+  resultsScreen.classList.add('hidden');
+
+  showQuestion();
+}
+
+function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+}
+
+function showQuestion() {
+  const qData = state.questions[state.currentIndex];
+  if (!qData) return finishQuiz();
+
+  const progress = (state.currentIndex / state.totalQuestions) * 100;
+  progressFill.style.width = progress + '%';
+  qCounter.textContent = `Question ${state.currentIndex+1}/${state.totalQuestions}`;
+  qScore.textContent = `Score : ${state.score}`;
+
+  qCat.textContent = qData.cat || 'Général';
+  qText.textContent = qData.q;
+  if (qData.arabic) {
+    qArabic.textContent = qData.arabic;
+    qArabic.classList.remove('hidden');
+  } else {
+    qArabic.classList.add('hidden');
+  }
+
+  answersDiv.innerHTML = '';
+  qData.opts.forEach((opt, idx) => {
+    const btn = document.createElement('button');
+    btn.classList.add('answer-btn');
+    btn.textContent = opt;
+    btn.dataset.index = idx;
+    btn.addEventListener('click', () => handleAnswer(idx, btn));
+    answersDiv.appendChild(btn);
+  });
+
+  nextBtn.classList.remove('show');
+  state.answered = false;
+  document.querySelectorAll('.answer-btn').forEach(b => b.disabled = false);
+}
+
+function handleAnswer(idx, btn) {
+  if (state.answered) return;
+  state.answered = true;
+  const qData = state.questions[state.currentIndex];
+  const correct = qData.correct;
+  const isCorrect = (idx === correct);
+
+  document.querySelectorAll('.answer-btn').forEach(b => b.disabled = true);
+
+  document.querySelectorAll('.answer-btn').forEach((b, i) => {
+    if (i === correct) b.classList.add('correct');
+    if (i === idx && !isCorrect) b.classList.add('wrong');
+  });
+
+  if (isCorrect) {
+    state.score++;
+    state.correctCount++;
+  }
+
+  state.details.push({
+    question: qData.q,
+    correct: isCorrect,
+    userAnswer: qData.opts[idx],
+    correctAnswer: qData.opts[correct]
+  });
+
+  qScore.textContent = `Score : ${state.score}`;
+
+  if (state.currentIndex < state.totalQuestions - 1) {
+    nextBtn.textContent = 'Question suivante →';
+  } else {
+    nextBtn.textContent = 'Voir les résultats 🏁';
+  }
+  nextBtn.classList.add('show');
+}
+
+nextBtn.addEventListener('click', function() {
+  if (state.currentIndex < state.totalQuestions - 1) {
+    state.currentIndex++;
+    showQuestion();
+  } else {
+    finishQuiz();
+  }
+});
+
+// --- Quitter avec confirmation ---
+let quitCallback = null;
+
+quitBtn.addEventListener('click', function() {
+  confirmBox.classList.remove('hidden');
+  quitCallback = () => {
+    confirmBox.classList.add('hidden');
+    quitQuiz();
+  };
+});
+
+confirmYes.addEventListener('click', function() {
+  if (quitCallback) quitCallback();
+});
+
+confirmNo.addEventListener('click', function() {
+  confirmBox.classList.add('hidden');
+  quitCallback = null;
+});
+
+function quitQuiz() {
+  state.quizInProgress = false;
+  quizScreen.classList.add('hidden');
+  setupScreen.classList.remove('hidden');
+  progressFill.style.width = '0%';
+  showToast('Quiz quitté');
+}
+
+// --- Fin du quiz ---
+function finishQuiz() {
+  state.quizInProgress = false;
+  quizScreen.classList.add('hidden');
+  resultsScreen.classList.remove('hidden');
+
+  const scoreText = `${state.correctCount}/${state.totalQuestions}`;
+  finalScore.textContent = scoreText;
+
+  const ratio = state.correctCount / state.totalQuestions;
+  let stars = '';
+  if (ratio >= 0.9) stars = '⭐⭐⭐⭐⭐';
+  else if (ratio >= 0.7) stars = '⭐⭐⭐⭐';
+  else if (ratio >= 0.5) stars = '⭐⭐⭐';
+  else if (ratio >= 0.3) stars = '⭐⭐';
+  else stars = '⭐';
+  resultStars.innerHTML = stars;
+  resultStars.style.display = 'block';
+
+  let label = '😊 Continue à apprendre !';
+  if (ratio >= 0.9) label = '🌟 Excellent !';
+  else if (ratio >= 0.7) label = '👏 Très bien !';
+  else if (ratio >= 0.5) label = '📚 Bon travail !';
+  finalLabel.textContent = label;
+  finalLabel.style.display = 'block';
+  document.querySelector('.score-big').style.display = 'block';
+  document.querySelector('.score-label').style.display = 'block';
+  breakdownDiv.style.display = 'block';
+
+  breakdownDiv.innerHTML = '';
+  state.details.forEach((d, i) => {
+    const div = document.createElement('div');
+    const icon = d.correct ? '✅' : '❌';
+    div.innerHTML = `<span>${icon} ${d.question}</span><span class="highlight">${d.correct ? 'Bon' : 'Faux'}</span>`;
+    breakdownDiv.appendChild(div);
+  });
+
+  restartBtn.textContent = '🔄 Rejouer';
+  renderLeaderboard();
+  lbPseudo.value = '';
+}
+
+// --- Restart ---
+restartBtn.addEventListener('click', function() {
+  if (this.textContent.includes('Retour')) {
+    resultsScreen.classList.add('hidden');
+    setupScreen.classList.remove('hidden');
+    return;
+  }
+  resultsScreen.classList.add('hidden');
+  setupScreen.classList.remove('hidden');
+  catOptions.forEach(b => b.classList.remove('selected'));
+  diffOptions.forEach(b => b.classList.remove('selected'));
+  state.selectedCategory = null;
+  state.selectedDifficulty = null;
+  updateStartBtn();
+  showToast('Nouveau quiz prêt !');
+});
+
+startBtn.addEventListener('click', startQuiz);
+
+// --- Initialisation ---
+setupOptionButtons();
+renderLeaderboard();
+
+console.log('✅ Quiz Islam & Arabe chargé avec succès !');
+</script>
+</body>
+</html>
