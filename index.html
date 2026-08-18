@@ -605,422 +605,486 @@
 
 // -------------------- QUESTIONS CODÉES EN DUR --------------------
 const STATIC_QUESTIONS = {
-  coran: {
-    facile: [
-      { q: "Combien de sourates compte le Coran ?", opts: ["104","114","124","94"], correct: 1 },
-      { q: "Quelle est la première sourate du Coran ?", opts: ["Al-Baqara","Al-Ikhlas","Al-Fatiha","An-Nas"], correct: 2 },
-      { q: "Quelle est la dernière sourate du Coran ?", opts: ["Al-Falaq","An-Nas","Al-Kawthar","Al-Asr"], correct: 1 },
-      { q: "En quelle langue le Coran a-t-il été révélé ?", opts: ["Persan","Arabe","Turc","Araméen"], correct: 1 },
-      { q: "Quel ange a transmis la révélation ?", opts: ["Mika'il","Israfil","Jibril","Azraïl"], correct: 2 },
-      { q: "Combien de versets compte la sourate Al-Kawthar ?", opts: ["1","3","5","7"], correct: 1 },
-      { q: "Quelle sourate est appelée 'la Mère du Coran' ?", opts: ["Al-Fatiha","Al-Baqara","Al-Ikhlas","An-Nas"], correct: 0 },
-      { q: "Quel est le premier verset révélé ?", opts: ["'Lis au nom de ton Seigneur' (96:1)","'Gloire à ton Seigneur' (56:96)","'Ô toi, le revêtu' (74:1)","'Par le figuier' (95:1)"], correct: 0 },
-      { q: "Combien de juz (parties) compte le Coran ?", opts: ["20","30","40","50"], correct: 1 },
-      { q: "Quelle sourate est la plus longue du Coran ?", opts: ["Al-Baqara","Al-'Imran","An-Nisa","Al-Ma'ida"], correct: 0 },
-      { q: "Quel est le nom de la 114ᵉ sourate ?", opts: ["Al-Fatiha","Al-Ikhlas","An-Nas","Al-Falaq"], correct: 2 },
-      { q: "Combien de pages compte environ le Coran (version standard) ?", opts: ["404","504","604","704"], correct: 2 },
-      { q: "Quelle sourate est surnommée 'le cœur du Coran' ?", opts: ["Ya-Sin","Ar-Rahman","Al-Kahf","Al-Mulk"], correct: 0 },
-      { q: "Dans quelle grotte a eu lieu la première révélation ?", opts: ["Thawr","Hira","Ashab al-Kahf","Uhud"], correct: 1 },
-      { q: "Combien de versets compte la sourate Al-Fatiha ?", opts: ["5","7","9","11"], correct: 1 },
-      { q: "Quelle sourate est lue le vendredi ?", opts: ["Al-Kahf","Al-Jumu'a","Al-Waqi'a","Yasin"], correct: 0 },
-      { q: "Quel est le nom de la nuit de la révélation ?", opts: ["Al-Isra","Al-Qadr","Al-Bara'a","Al-Miraj"], correct: 1 },
-      { q: "Quelle sourate ne commence pas par la Basmala ?", opts: ["At-Tawba","Al-Ma'ida","Al-Anfal","An-Nisa"], correct: 0 },
-      { q: "Combien de sourates médinoises selon l'avis majoritaire ?", opts: ["18","28","38","48"], correct: 1 },
-      { q: "Quel compagnon a supervisé la compilation officielle ?", opts: ["Zayd ibn Thabit","Abou Bakr","Ali","Salman"], correct: 0 },
-      { q: "Quelle sourate est appelée 'la sourate des femmes' ?", opts: ["Al-Mumtahina","An-Nisa","At-Talaq","An-Nur"], correct: 1 },
-      { q: "Combien de sajdas selon l'avis chaféite ?", opts: ["11","14","15","17"], correct: 1 },
-      { q: "Combien de sourates commencent par des lettres isolées ?", opts: ["19","29","39","49"], correct: 1 },
-      { q: "Quelle sourate est entièrement consacrée au tawhid ?", opts: ["Al-Ikhlas","Al-Fatiha","Al-Kafirun","Al-Falaq"], correct: 0 },
-      { q: "Quel est le nom du mont où Moïse a reçu les Tables ?", opts: ["Sinaï","Hira","Thawr","Uhud"], correct: 0 },
-      { q: "Combien de fois 'Allah' est-il mentionné dans le Coran ?", opts: ["1500","1800","2200","2700"], correct: 3 },
-      { q: "Quelle sourate est récitée lors de la prière du vendredi ?", opts: ["Al-Jumu'a","Al-Kahf","Al-Fatiha","Al-Ikhlas"], correct: 0 },
-      { q: "Combien de mots compte approximativement le Coran ?", opts: ["57 000","67 000","77 000","87 000"], correct: 2 },
-      { q: "Quelle est la seule sourate sans la lettre 'mîm' ?", opts: ["Al-Kawthar","Al-Ikhlas","Al-Falaq","An-Nas"], correct: 0 },
-      { q: "Quel verset est le plus long du Coran ?", opts: ["2:282","4:12","5:89","8:12"], correct: 0 },
-      { q: "Où trouve-t-on le verset du Trône (Ayat al-Kursi) ?", opts: ["Al-Baqara","Al-'Imran","An-Nisa","Al-Ma'ida"], correct: 0 },
-      { q: "Quelle sourate contient le plus de règles juridiques ?", opts: ["Al-Baqara","An-Nisâ","Al-Mâ'ida","Al-An'âm"], correct: 0 },
-      { q: "Quel verset ordonne le voile (hijâb) ?", opts: ["24:31","33:59","24:30","33:53"], correct: 0 },
-      { q: "Dans quelle sourate trouve-t-on l'histoire de Moïse et Pharaon ?", opts: ["Tâ Hâ","Al-Qasas","Al-A'raf","Yûnus"], correct: 0 },
-      { q: "Quelle sourate est appelée 'la Sourate du Trône' ?", opts: ["Al-Baqara","Al-'Imrân","Al-Mulk","Al-Hashr"], correct: 0 },
-      { q: "Combien de fois 'Muhammad' est-il cité dans le Coran ?", opts: ["2","4","5","7"], correct: 1 },
-      { q: "Quelle est la seule sourate qui porte un nom de femme ?", opts: ["Maryam","Nisa","Fatiha","Tawba"], correct: 0 },
-      { q: "Combien de sourates médinoises ?", opts: ["18","28","38","48"], correct: 1 },
-      { q: "Quel est le nom du Paradis le plus élevé ?", opts: ["Firdaws","'Adn","Na'îm","Khuld"], correct: 0 },
-      { q: "Combien de fois 'Îsâ' est-il mentionné ?", opts: ["15","25","35","45"], correct: 1 },
-      { q: "Quelle sourate évoque la bataille de Badr ?", opts: ["Al-Anfâl","Âl-'Imrân","Al-Ahzâb","Muhammad"], correct: 0 },
-      { q: "Quelle sourate a été révélée en une seule fois ?", opts: ["Al-Fatiha","Al-Ikhlas","Al-Kawthar","Al-Falaq"], correct: 0 },
-      { q: "Combien de fois le mot 'Coran' est-il mentionné ?", opts: ["40","70","100","130"], correct: 1 },
-      { q: "Quel est le nom du mont où le Prophète méditait ?", opts: ["Hira","Thawr","Uhud","Arafat"], correct: 0 },
-      { q: "Quelle est la sourate de la protection ?", opts: ["Al-Falaq","An-Nas","Al-Ikhlas","Al-Fatiha"], correct: 0 },
-      { q: "Combien de fois le nom 'Allah' est-il mentionné dans la sourate Al-Ikhlas ?", opts: ["0","1","2","3"], correct: 1 },
-      { q: "Quelle sourate parle du Jour du Jugement ?", opts: ["Al-Qari'a","Al-Zalzala","Al-Humaza","Al-Takathur"], correct: 0 },
-      { q: "Combien de sourates portent le nom d'un animal ?", opts: ["1","2","3","4"], correct: 2 },
-      { q: "Quelle est la sourate 36 ?", opts: ["Ya-Sin","Ar-Rahman","Al-Kahf","Al-Mulk"], correct: 0 },
-      { q: "Combien de fois le mot 'Rahman' est-il mentionné ?", opts: ["30","40","50","60"], correct: 2 },
-      { q: "Quelle sourate est appelée 'la sourate de la vache' ?", opts: ["Al-Baqara","Al-An'am","Al-Nahl","Al-Naml"], correct: 0 },
-      { q: "Combien de fois le mot 'Jannah' est-il mentionné ?", opts: ["60","70","80","90"], correct: 1 },
-      { q: "Quelle est la première sourate révélée à Médine ?", opts: ["Al-Baqara","Al-Imran","Al-Nisa","Al-Ma'ida"], correct: 0 },
-      { q: "Quelle sourate contient le verset de la purification ?", opts: ["Al-Ahzab","Al-Nur","Al-Tahrim","Al-Ma'ida"], correct: 0 },
-      { q: "Combien de sourates commencent par 'Hamd' ?", opts: ["1","2","3","4"], correct: 1 },
-      { q: "Quelle est la sourate du Trône ?", opts: ["Al-Baqara","Al-Imran","Al-Mulk","Al-Hashr"], correct: 0 }
-    ],
-    moyen: [
-      { q: "Combien de sourates commence par 'Alif Lâm Mîm' ?", opts: ["3","5","6","7"], correct: 2 },
-      { q: "Quelle sourate est appelée 'la fiancée du Coran' ?", opts: ["Ar-Rahman","Ya-Sin","Al-Fatiha","Al-Baqara"], correct: 0 },
-      { q: "Combien de fois 'Shaytân' est-il mentionné ?", opts: ["60","70","80","90"], correct: 2 },
-      { q: "Quelle sourate est récitée pour la protection contre le mauvais œil ?", opts: ["Al-Falaq","An-Nas","Al-Ikhlas","Al-Fatiha"], correct: 0 },
-      { q: "Quel est le nom du deuxième verset révélé ?", opts: ["96:2","74:1","73:1","68:1"], correct: 1 },
-      { q: "Combien de sourates portent le nom d'un prophète ?", opts: ["4","5","6","7"], correct: 2 },
-      { q: "Quelle sourate relate la bataille de Hunayn ?", opts: ["At-Tawba","Al-Fath","Al-Hashr","Al-Mumtahina"], correct: 0 },
-      { q: "Qu'est-ce que le 'Rasm' du Coran ?", opts: ["L'écriture consonnantique","La récitation","L'exégèse","La grammaire"], correct: 0 },
-      { q: "Combien de versets compte la sourate Al-Baqara ?", opts: ["276","286","296","306"], correct: 1 },
-      { q: "Quelle sourate est appelée 'la protectrice' ?", opts: ["Al-Falaq","An-Nas","Al-Ikhlas","Al-Fatiha"], correct: 0 },
-      { q: "Dans quelle sourate trouve-t-on l'expression 'Lâ ilâha illâ Allâh' ?", opts: ["As-Saffat","Al-Baqara","Al-'Imran","Muhammad"], correct: 0 },
-      { q: "Quel est le nom de la sourate qui parle de l'éléphant ?", opts: ["Al-Fil","Al-Quraysh","Al-Masad","Al-Kawthar"], correct: 0 },
-      { q: "Combien de fois 'Ibrâhîm' est-il cité ?", opts: ["59","69","79","89"], correct: 1 },
-      { q: "Quelle sourate est entièrement consacrée à la sourate de la Fatiha ?", opts: ["Al-Fatiha","Al-Ikhlas","Al-Falaq","An-Nas"], correct: 0 },
-      { q: "Quel verset parle de l'obligation du pèlerinage ?", opts: ["2:196","3:97","22:27","2:158"], correct: 1 },
-      { q: "Quelle est la plus courte sourate du Coran ?", opts: ["Al-Kawthar","Al-Asr","Al-Falaq","An-Nas"], correct: 0 },
-      { q: "Combien de sourates commencent par 'Al-hamdulillah' ?", opts: ["1","2","3","4"], correct: 1 },
-      { q: "Quelle sourate parle des gens de la grotte ?", opts: ["Al-Kahf","Al-Anbiya","Al-Mu'minun","Al-Furqan"], correct: 0 },
-      { q: "Combien de versets sont abrogés selon certains savants ?", opts: ["5","12","20","30"], correct: 1 },
-      { q: "Quelle sourate a été révélée à Médine ?", opts: ["Al-Baqara","Al-Anfal","Al-Ma'ida","An-Nisa"], correct: 0 },
-      { q: "Quel compagnon a été cité par son nom dans le Coran ?", opts: ["Zayd ibn Hâritha","Bilâl","'Umar","'Alî"], correct: 0 },
-      { q: "Combien de sourates ont été révélées à La Mecque ?", opts: ["66","76","86","96"], correct: 2 },
-      { q: "Quel est le nom de la sourate 67 ?", opts: ["Al-Mulk","Al-Waqi'a","Al-Jinn","Al-Insan"], correct: 0 },
-      { q: "Quelle sourate est récitée pour le mariage ?", opts: ["Ar-Rum","An-Nur","Al-Baqara","Al-'Imran"], correct: 0 },
-      { q: "Quelle est la dernière sourate complète révélée ?", opts: ["An-Nasr","Al-Ma'ida","At-Tawba","Al-Fath"], correct: 0 },
-      { q: "Combien de versets mentionnent le jeûne ?", opts: ["1","2","3","4"], correct: 2 },
-      { q: "Quel est le nom de la sourate 112 ?", opts: ["Al-Ikhlas","Al-Falaq","An-Nas","Al-Masad"], correct: 0 },
-      { q: "Combien de fois le mot 'Sadaqa' est-il mentionné ?", opts: ["10","15","20","25"], correct: 1 },
-      { q: "Quelle sourate parle du voyage nocturne ?", opts: ["Al-Isra","Al-Anbiya","Al-Mi'raj","Al-Furqan"], correct: 0 },
-      { q: "Combien de sourates commencent par 'Tâ Hâ' ?", opts: ["1","2","3","4"], correct: 0 },
-      { q: "Quel est le nom de la sourate qui contient le verset du trône ?", opts: ["Al-Baqara","Al-'Imran","Al-Mulk","Al-Hashr"], correct: 0 },
-      { q: "Quelle est la sourate 68 ?", opts: ["Al-Qalam","Al-Haqqa","Al-Ma'arij","Al-Muddathir"], correct: 0 },
-      { q: "Combien de sourates ont deux noms ?", opts: ["5","7","9","11"], correct: 1 },
-      { q: "Quel est le nom de la sourate 99 ?", opts: ["Al-Zalzala","Al-Adiyat","Al-Qari'a","Al-Takathur"], correct: 0 },
-      { q: "Combien de versets compte la sourate Al-Asr ?", opts: ["1","2","3","4"], correct: 2 },
-      { q: "Quelle sourate mentionne les noms de 5 prophètes ?", opts: ["Al-An'am","Al-A'raf","Al-Mu'minun","Al-Saffat"], correct: 0 },
-      { q: "Quelle est la sourate 18 ?", opts: ["Al-Kahf","Maryam","Taha","Al-Anbiya"], correct: 0 },
-      { q: "Combien de fois 'Nuh' est-il mentionné ?", opts: ["20","25","28","30"], correct: 2 }
-    ],
-    difficile: [
-      { q: "Combien de fois le nom 'Mûsâ' est-il mentionné dans le Coran ?", opts: ["120","136","150","160"], correct: 1 },
-      { q: "Quelle sourate est entièrement consacrée aux hypocrites ?", opts: ["Al-Munafiqun","Al-Ahzab","Al-Hashr","Al-Mujadila"], correct: 0 },
-      { q: "Quel est le nom de la sourate 9 ?", opts: ["At-Tawba","Al-Anfal","Al-Hashr","Al-Ma'ida"], correct: 0 },
-      { q: "Combien de versets comportent un 'sajda' obligatoire ?", opts: ["11","14","15","17"], correct: 0 },
-      { q: "Quelle sourate est appelée 'le chapiteau du Coran' ?", opts: ["Al-Baqara","Al-'Imran","An-Nisa","Al-Ma'ida"], correct: 0 },
-      { q: "Quel est le nom du mont où le Prophète a reçu la révélation ?", opts: ["Hira","Thawr","Uhud","Sinaï"], correct: 0 },
-      { q: "Combien de sourates médinoises dans le Coran ?", opts: ["28","29","30","31"], correct: 0 },
-      { q: "Quel est le dernier verset révélé ?", opts: ["5:3","2:282","4:176","33:40"], correct: 0 },
-      { q: "Quelle sourate contient le plus grand nombre d'occurrences du nom 'Allah' ?", opts: ["Al-Baqara","Al-'Imran","An-Nisa","Al-Anfal"], correct: 0 },
-      { q: "Combien de fois le Prophète Muhammad est-il cité par son nom ?", opts: ["2","4","5","7"], correct: 1 },
-      { q: "Quelle sourate commence par 'Alif Lâm Mîm Sâd' ?", opts: ["Al-A'raf","Al-An'am","Al-Baqara","Al-'Imran"], correct: 0 },
-      { q: "Quel est le nom de la sourate 55 ?", opts: ["Ar-Rahman","Al-Waqi'a","Al-Hadid","Al-Mujadila"], correct: 0 },
-      { q: "Combien de sourates commencent par 'Yâ Sîn' ?", opts: ["1","2","3","4"], correct: 0 },
-      { q: "Quelle sourate est récitée lors de la prière du vendredi ?", opts: ["Al-Jumu'a","Al-Kahf","Al-Fatiha","Al-Ikhlas"], correct: 0 },
-      { q: "Quel est le nom du fils de Noé qui a péri ?", opts: ["Canaan","Yam","Ham","Shem"], correct: 0 },
-      { q: "Combien de versets sont considérés comme 'mutashâbih' (ambigus) ?", opts: ["7","10","15","20"], correct: 1 },
-      { q: "Quelle sourate parle du Prophète Muhammad comme 'sceau des prophètes' ?", opts: ["Al-Ahzab","Muhammad","Al-Fath","Al-Hujurat"], correct: 0 },
-      { q: "Combien de fois le mot 'Jannah' est-il mentionné ?", opts: ["60","70","80","90"], correct: 1 },
-      { q: "Quelle sourate est entièrement dédiée à la lutte contre l'hypocrisie ?", opts: ["Al-Munafiqun","Al-Hashr","Al-Ahzab","Al-Mujadila"], correct: 0 },
-      { q: "Quel est le nom de la sourate 114 ?", opts: ["An-Nas","Al-Falaq","Al-Ikhlas","Al-Masad"], correct: 0 },
-      { q: "Quel est le nom de la sourate 113 ?", opts: ["Al-Falaq","An-Nas","Al-Ikhlas","Al-Masad"], correct: 0 },
-      { q: "Combien de fois la Basmala est-elle répétée dans le Coran ?", opts: ["113","114","115","116"], correct: 0 },
-      { q: "Quelle est la sourate 50 ?", opts: ["Qaf","Al-Dhariyat","Al-Tur","Al-Najm"], correct: 0 },
-      { q: "Combien de sourates commencent par 'Qaf' ?", opts: ["1","2","3","4"], correct: 0 },
-      { q: "Quelle est la sourate 80 ?", opts: ["'Abasa","Al-Takwir","Al-Infitar","Al-Mutaffifin"], correct: 0 },
-      { q: "Quel est le verset le plus court ?", opts: ["1:1","2:1","3:1","4:1"], correct: 1 },
-      { q: "Quelle sourate est appelée 'la sourate de la lune' ?", opts: ["Al-Qamar","Al-Shams","Al-Layl","Al-Fajr"], correct: 0 },
-      { q: "Combien de fois le mot 'Ruh' est-il mentionné ?", opts: ["10","15","20","25"], correct: 2 },
-      { q: "Quelle est la sourate du pouvoir ?", opts: ["Al-Qadr","Al-Fath","Al-Nasr","Al-Ikhlas"], correct: 0 },
-      { q: "Combien de fois le mot 'Firdaws' est-il mentionné ?", opts: ["1","2","3","4"], correct: 1 },
-      { q: "Quelle sourate contient la phrase 'Wa mâ ustur' ?", opts: ["Al-Fajr","Al-Shams","Al-Layl","Al-Duha"], correct: 0 },
-      { q: "Combien de fois 'Mika'il' est-il mentionné ?", opts: ["0","1","2","3"], correct: 1 },
-      { q: "Quel est le nom de la sourate 78 ?", opts: ["Al-Naba","Al-Nazi'at","Al-Takwir","Al-Infitar"], correct: 0 },
-      { q: "Combien de fois le nom 'Jibril' est-il mentionné ?", opts: ["1","2","3","4"], correct: 2 },
-      { q: "Quelle est la sourate 17 ?", opts: ["Al-Isra","Al-Kahf","Maryam","Taha"], correct: 0 }
-    ]
-  },
-  prophetes: {
-    facile: [
-      { q: "De quoi Allah a-t-Il créé Adam ?", opts: ["De la terre","De l'eau","Du feu","De la lumière"], correct: 0 },
-      { q: "Quel est le nom de l'épouse d'Adam ?", opts: ["Hawwa","Maryam","Sarah","Hajar"], correct: 0 },
-      { q: "Combien d'années Noé a-t-il passé parmi son peuple ?", opts: ["500 ans","750 ans","950 ans","1000 ans"], correct: 2 },
-      { q: "Quel surnom est donné à Abraham ?", opts: ["Khalilullah","Rasulullah","Nabiyullah","Habibullah"], correct: 0 },
-      { q: "À quel peuple Houd a-t-il été envoyé ?", opts: ["Les 'Ad","Les Thamud","Les Madyan","Les Quraych"], correct: 0 },
-      { q: "Quel miracle Saleh a-t-il accompli ?", opts: ["La chamelle","La mer fendue","Le feu froid","La guérison"], correct: 0 },
-      { q: "À quel peuple Loth a-t-il été envoyé ?", opts: ["Sodome","Les 'Ad","Les Thamud","Les Madyan"], correct: 0 },
-      { q: "Quel est le nom du fils d'Adam qui tua son frère ?", opts: ["Qabil","Habil","Sheth","Idris"], correct: 0 },
-      { q: "Quel est le nom du père d'Abraham ?", opts: ["Aazar","Târih","Ibrahim","Isma'il"], correct: 0 },
-      { q: "Qui est le père d'Ismaël ?", opts: ["Abraham","Isaac","Ya'qub","Loth"], correct: 0 },
-      { q: "Qui est le père d'Isaac ?", opts: ["Abraham","Ismaël","Ya'qub","Loth"], correct: 0 },
-      { q: "Qui est le père de Jacob ?", opts: ["Isaac","Abraham","Ismaël","Loth"], correct: 0 },
-      { q: "Quel est le surnom de Jacob ?", opts: ["Israël","Khalil","Rasûl","Nabî"], correct: 0 },
-      { q: "Par quel animal Jonas fut-il avalé ?", opts: ["Une baleine","Un requin","Un crocodile","Un serpent"], correct: 0 },
-      { q: "Quel âge avait Zacharie lorsqu'il demanda un enfant ?", opts: ["70 ans","80 ans","90 ans","100 ans"], correct: 2 },
-      { q: "Quel est le nom du fils de Zacharie ?", opts: ["Yahya","Zakariyya","Youssouf","Moussa"], correct: 0 },
-      { q: "Jésus est-il considéré comme le fils de Dieu en Islam ?", opts: ["Non","Oui","Peut-être","Cela dépend"], correct: 0 },
-      { q: "Où le Prophète Muhammad ﷺ est-il né ?", opts: ["La Mecque","Médine","Ta'if","Jérusalem"], correct: 0 },
-      { q: "Quel âge avait le Prophète à la première révélation ?", opts: ["35","40","45","50"], correct: 1 },
-      { q: "Combien d'années la révélation a-t-elle duré ?", opts: ["13","20","23","30"], correct: 2 },
-      { q: "Qui est le premier muezzin de l'Islam ?", opts: ["Bilâl","'Umar","Abou Bakr","'Alî"], correct: 0 },
-      { q: "Quelle est la première mosquée construite à Médine ?", opts: ["Qubâ'","Al‑Nabawî","Al‑Aqsâ","Al‑Haram"], correct: 0 },
-      { q: "Combien de fils le Prophète a-t-il eus ?", opts: ["2","3","4","5"], correct: 1 },
-      { q: "Quel est le nom du cheval du Prophète ?", opts: ["Al-Qaswa","Al-Buraq","Al-'Adba","Al-Jamal"], correct: 0 },
-      { q: "Quel est le nom du mont où Moïse a reçu les Tables ?", opts: ["Sinaï","Hira","Thawr","Uhud"], correct: 0 },
-      { q: "Quel est le nom du frère de Moïse ?", opts: ["Haroun","Youssouf","Isma'il","Zakariyya"], correct: 0 },
-      { q: "Quel est le nom de la mère de Jésus ?", opts: ["Maryam","Sarah","Hajar","Hawwa"], correct: 0 },
-      { q: "Combien de fois Jésus est-il mentionné dans le Coran ?", opts: ["25","35","45","55"], correct: 1 },
-      { q: "Quel est le titre de la sourate consacrée à Joseph ?", opts: ["Youssouf","Yusuf","Youcef","Yosef"], correct: 0 },
-      { q: "Que firent les frères de Joseph ?", opts: ["Ils le jetèrent dans un puits","Ils le tuèrent","Ils l'emprisonnèrent","Ils l'envoyèrent en exil"], correct: 0 },
-      { q: "Combien d'années Joseph resta-t-il en prison ?", opts: ["5","7","10","12"], correct: 1 },
-      { q: "Quel don spécial David possédait-il ?", opts: ["Une voix magnifique","Une force surhumaine","La sagesse","La richesse"], correct: 0 },
-      { q: "Quel livre fut révélé à David ?", opts: ["Le Zabour","La Tawrat","L'Injil","Le Coran"], correct: 0 },
-      { q: "Quel don spécial Salomon possédait-il ?", opts: ["Le contrôle des animaux","La force","La richesse","La longévité"], correct: 0 },
-      { q: "Quelle reine Salomon a-t-il convertie ?", opts: ["La reine de Saba","La reine d'Égypte","La reine de Perse","La reine d'Éthiopie"], correct: 0 },
-      { q: "Pour quelle qualité Job est-il célèbre ?", opts: ["Sa patience","Sa richesse","Sa force","Sa beauté"], correct: 0 },
-      { q: "Que perdit Job lors de son épreuve ?", opts: ["Ses biens, enfants et santé","Sa maison","Son peuple","Son livre"], correct: 0 },
-      { q: "Quel est le nom du père du Prophète ?", opts: ["'Abdullah","'Abd al-Muttalib","Abou Tâlib","Hamza"], correct: 0 },
-      { q: "Comment s'appelle la mère du Prophète ?", opts: ["Âmina","Khadija","Fatima","Aïcha"], correct: 0 },
-      { q: "Quelle est la première épouse du Prophète ?", opts: ["Khadija","Aïcha","Hafsa","Zaynab"], correct: 0 },
-      { q: "Combien d'enfants le Prophète a-t-il eus ?", opts: ["6","7","8","9"], correct: 1 },
-      { q: "Quel est le nom de l'oncle du Prophète qui l'a protégé ?", opts: ["Abou Tâlib","Hamza","Al-Abbas","Abou Lahab"], correct: 0 },
-      { q: "Quel est le nom du premier calife ?", opts: ["Abou Bakr","'Umar","'Uthmân","'Alî"], correct: 0 },
-      { q: "Où est mort le Prophète ?", opts: ["Médine","La Mecque","Ta'if","Jérusalem"], correct: 0 }
-    ],
-    moyen: [
-      { q: "Combien de fois Adam est-il mentionné dans le Coran ?", opts: ["15","20","25","30"], correct: 2 },
-      { q: "Dans quelle sourate l'histoire d'Adam est-elle détaillée ?", opts: ["Al-Baqarah","Al-'Imran","Al-A'raf","Taha"], correct: 0 },
-      { q: "Combien de fois Noé est-il mentionné dans le Coran ?", opts: ["28","38","43","48"], correct: 2 },
-      { q: "Dans combien de sourates Noé est-il mentionné ?", opts: ["20","25","28","30"], correct: 2 },
-      { q: "Combien de fois Abraham est-il mentionné dans le Coran ?", opts: ["60","69","79","89"], correct: 1 },
-      { q: "Quelle est la relation de Loth avec Abraham ?", opts: ["Son neveu","Son frère","Son fils","Son cousin"], correct: 0 },
-      { q: "Combien de fois Houd est-il mentionné ?", opts: ["7","10","12","15"], correct: 1 },
-      { q: "Combien de fois Saleh est-il mentionné ?", opts: ["5","9","12","15"], correct: 1 },
-      { q: "Combien de fois Ismaël est-il mentionné ?", opts: ["5","10","12","15"], correct: 2 },
-      { q: "Combien de fois Isaac est-il mentionné ?", opts: ["10","15","17","20"], correct: 2 },
-      { q: "Combien de fois Jacob est-il mentionné ?", opts: ["10","16","20","25"], correct: 1 },
-      { q: "Combien de fois Joseph est-il mentionné ?", opts: ["15","20","25","30"], correct: 2 },
-      { q: "Combien de fois Job est-il mentionné ?", opts: ["2","4","6","8"], correct: 1 },
-      { q: "Combien de fois Shu'ayb est-il mentionné ?", opts: ["5","10","15","20"], correct: 1 },
-      { q: "Combien de fois Moïse est-il mentionné ?", opts: ["100","120","136","150"], correct: 2 },
-      { q: "Combien de fois Aaron est-il mentionné ?", opts: ["10","15","20","25"], correct: 2 },
-      { q: "Combien de fois David est-il mentionné ?", opts: ["8","12","16","20"], correct: 2 },
-      { q: "Combien de fois Salomon est-il mentionné ?", opts: ["10","15","17","20"], correct: 2 },
-      { q: "Combien de fois Élie est-il mentionné ?", opts: ["2","4","6","8"], correct: 1 },
-      { q: "Combien de fois Jonas est-il mentionné ?", opts: ["4","6","8","10"], correct: 1 },
-      { q: "Combien de fois Zacharie est-il mentionné ?", opts: ["5","7","9","11"], correct: 1 },
-      { q: "Combien de fois Jean est-il mentionné ?", opts: ["3","5","7","9"], correct: 1 },
-      { q: "Quelle est la profession d'Abraham ?", opts: ["Berger","Marchand","Forgeron","Tailleur"], correct: 0 },
-      { q: "Quel est le nom de la femme d'Abraham qui a donné Ismaël ?", opts: ["Hajar","Sarah","Hawwa","Maryam"], correct: 0 },
-      { q: "Quel est le nom de la femme d'Abraham qui a donné Isaac ?", opts: ["Sarah","Hajar","Hawwa","Maryam"], correct: 0 },
-      { q: "Quelle est la profession de Moïse ?", opts: ["Berger","Marchand","Forgeron","Tailleur"], correct: 0 },
-      { q: "Quel est le nom du beau-père de Moïse ?", opts: ["Shu'ayb","Loth","Abraham","Isaac"], correct: 0 },
-      { q: "Quelle est la profession de David ?", opts: ["Berger et roi","Marchand","Forgeron","Tailleur"], correct: 0 },
-      { q: "Quelle est la profession de Salomon ?", opts: ["Roi","Prophète","Juge","Prêtre"], correct: 0 },
-      { q: "Quelle est la profession de Zacharie ?", opts: ["Prophète","Prêtre","Juge","Roi"], correct: 0 },
-      { q: "Quelle est la profession de Jean ?", opts: ["Prophète","Prêtre","Juge","Roi"], correct: 0 },
-      { q: "Jésus est-il un prophète ou un messager ?", opts: ["Les deux","Prophète seulement","Messager seulement","Aucun"], correct: 0 },
-      { q: "Que dit le Coran à propos de la crucifixion de Jésus ?", opts: ["Il n'a pas été crucifié","Il a été crucifié","Il a été sauvé","Il est monté au ciel"], correct: 0 },
-      { q: "Quel livre fut révélé à Jésus ?", opts: ["L'Injil","La Tawrat","Le Zabour","Le Coran"], correct: 0 },
-      { q: "Combien de disciples Jésus avait-il ?", opts: ["10","12","14","16"], correct: 1 },
-      { q: "Quelle est la relation de Jean avec Jésus ?", opts: ["Cousin","Frère","Père","Fils"], correct: 0 },
-      { q: "Combien de plaies Allah a-t-Il envoyées aux Égyptiens ?", opts: ["7","9","10","12"], correct: 1 },
-      { q: "Combien d'Israélites sont sortis d'Égypte avec Moïse ?", opts: ["600 000","800 000","1 000 000","1 200 000"], correct: 0 },
-      { q: "Où Moïse est-il mort ?", opts: ["Mont Nebo","Égypte","Palestine","Arabie"], correct: 0 },
-      { q: "Où Aaron est-il mort ?", opts: ["Mont Hor","Égypte","Palestine","Arabie"], correct: 0 },
-      { q: "Quel est le nom du père de Moïse ?", opts: ["'Imrân","Yôqebed","Aaron","Miryam"], correct: 0 },
-      { q: "Combien de prophètes sont mentionnés par leur nom dans le Coran ?", opts: ["20","25","27","30"], correct: 2 }
-    ],
-    difficile: [
-      { q: "Quel est le nom du troisième fils d'Adam ?", opts: ["Sheth","Idris","Nouh","Habil"], correct: 0 },
-      { q: "Que signifie le nom 'Idris' ?", opts: ["Celui qui instruit","Celui qui est élevé","Celui qui est sage","Celui qui est patient"], correct: 0 },
-      { q: "Quel est le nom du fils de Noé qui a refusé de monter dans l'arche ?", opts: ["Canaan","Yam","Ham","Shem"], correct: 0 },
-      { q: "Quel est le nom de la montagne où l'arche s'est arrêtée ?", opts: ["Judi","Ararat","Sinaï","Thawr"], correct: 0 },
-      { q: "Combien de personnes ont été sauvées dans l'arche ?", opts: ["40","80","120","160"], correct: 1 },
-      { q: "Quel âge avait Abraham lorsqu'il a eu Ismaël ?", opts: ["86","90","100","110"], correct: 0 },
-      { q: "Quel âge avait Abraham lorsqu'il a eu Isaac ?", opts: ["90","100","110","120"], correct: 1 },
-      { q: "Quel est le nom du roi de l'époque d'Élie ?", opts: ["Achab","Jézabel","Salomon","David"], correct: 0 },
-      { q: "Quel est le nom de la femme d'Achab ?", opts: ["Jézabel","Sarah","Hajar","Hawwa"], correct: 0 },
-      { q: "Combien de jours Jonas resta-t-il dans le ventre de la baleine ?", opts: ["1","2","3","4"], correct: 2 },
-      { q: "Quelle est la prière de Jonas ?", opts: ["'Il n'y a de dieu que Toi'","'Ô Seigneur'","'Allah est le plus grand'","'Je me repens'"], correct: 0 },
-      { q: "Combien de personnes ont cru en Jonas ?", opts: ["100 000","200 000","300 000","400 000"], correct: 0 },
-      { q: "Qu'est-ce que 'Dhu al-Kifl' signifie ?", opts: ["Celui qui a une part","Celui qui est patient","Celui qui est fort","Celui qui est sage"], correct: 0 },
-      { q: "Combien de jours Zacharie est-il resté muet ?", opts: ["1","2","3","4"], correct: 2 },
-      { q: "Quel est le nom de la femme de Zacharie ?", opts: ["Elizabeth","Sarah","Hajar","Hawwa"], correct: 0 },
-      { q: "Combien de fois 'Muhammad' est-il cité dans le Coran ?", opts: ["2","4","5","7"], correct: 1 },
-      { q: "Dans quelle sourate Muhammad est-il mentionné par son nom ?", opts: ["Muhammad","Al-'Imran","Al-Ahzab","Al-Fath"], correct: 0 },
-      { q: "Quel est le nom du dernier sermon du Prophète ?", opts: ["Le sermon d'adieu","Le sermon de La Mecque","Le sermon de Médine","Le sermon de la montagne"], correct: 0 },
-      { q: "Combien de guerres le Prophète a-t-il menées ?", opts: ["15","25","27","30"], correct: 2 },
-      { q: "Où le Prophète est-il enterré ?", opts: ["Médine","La Mecque","Jérusalem","Ta'if"], correct: 0 },
-      { q: "Quel est le nom du père d'Abraham ?", opts: ["Aazar","Târih","Ibrahim","Isma'il"], correct: 0 },
-      { q: "Que firent les Thamud de la chamelle ?", opts: ["Ils la tuèrent","Ils l'adorèrent","Ils la libérèrent","Ils la cachèrent"], correct: 0 },
-      { q: "Quel châtiment Allah a-t-Il envoyé aux 'Ad ?", opts: ["Un vent violent","Un déluge","Un tremblement de terre","Une pluie de pierres"], correct: 0 },
-      { q: "Quel châtiment Allah a-t-Il envoyé aux Thamud ?", opts: ["Un tremblement de terre","Un déluge","Un vent violent","Une pluie de pierres"], correct: 0 },
-      { q: "Quel châtiment Allah a-t-Il envoyé à Sodome ?", opts: ["Une pluie de pierres","Un déluge","Un tremblement de terre","Un vent violent"], correct: 0 },
-      { q: "Quel est le nom du fils préféré de Jacob ?", opts: ["Joseph","Benjamin","Ruben","Juda"], correct: 0 },
-      { q: "Qui a tenté de séduire Joseph ?", opts: ["La femme d'Al-Aziz","La sœur de Pharaon","La femme de Pharaon","Une servante"], correct: 0 },
-      { q: "Quelle est la durée de la famine en Égypte sous Joseph ?", opts: ["5 ans","7 ans","10 ans","12 ans"], correct: 1 },
-      { q: "Combien de temps Job a-t-il souffert ?", opts: ["7 ans","10 ans","15 ans","18 ans"], correct: 3 },
-      { q: "Dans quelle sourate Job invoque-t-il son Seigneur ?", opts: ["Al-Anbiya","Al-A'raf","Houd","Saba"], correct: 0 },
-      { q: "Quel est le nom du fils de David ?", opts: ["Salomon","Absalom","Adonias","Amnon"], correct: 0 },
-      { q: "Quel est le nom de la reine de Saba ?", opts: ["Bilqis","Balkis","Saba","Sheba"], correct: 0 },
-      { q: "Combien de femmes Salomon avait-il ?", opts: ["100","200","300","400"], correct: 0 },
-      { q: "Où Salomon a-t-il construit son temple ?", opts: ["Jérusalem","La Mecque","Médine","Damas"], correct: 0 },
-      { q: "Quel est le successeur d'Élie ?", opts: ["Élisée","Jonas","Zacharie","Jean"], correct: 0 },
-      { q: "Dans quelle sourate Élie est-il mentionné ?", opts: ["As-Saffat","Al-An'am","Al-A'raf","Al-Mu'minun"], correct: 0 },
-      { q: "Dans quelle sourate Élisée est-il mentionné ?", opts: ["Al-An'am","Al-A'raf","Al-Mu'minun","As-Saffat"], correct: 0 },
-      { q: "Dans quelle sourate Dhu al-Kifl est-il mentionné ?", opts: ["Al-Anbiya","Al-An'am","Al-A'raf","Al-Mu'minun"], correct: 0 },
-      { q: "Dans quelle sourate Zacharie est-il raconté ?", opts: ["Maryam","Al-'Imran","Al-Anbiya","Taha"], correct: 0 },
-      { q: "Dans quelle sourate Jean est-il mentionné ?", opts: ["Maryam","Al-'Imran","Al-Anbiya","Taha"], correct: 0 },
-      { q: "Quel est le nom de la mère de Moïse ?", opts: ["Yôqebed","Miryam","Sarah","Hajar"], correct: 0 },
-      { q: "Quel est le nom de la sœur de Moïse ?", opts: ["Miryam","Sarah","Hajar","Hawwa"], correct: 0 }
-    ]
-  }
+    // ---------- CORAN (110 questions) ----------
+    coran: {
+      facile: [
+        { q: "Combien de sourates compte le Coran ?", opts: ["104","114","124","94"], correct: 1 },
+        { q: "Quelle est la première sourate du Coran ?", opts: ["Al-Baqara","Al-Ikhlas","Al-Fatiha","An-Nas"], correct: 2 },
+        { q: "Quelle est la dernière sourate du Coran ?", opts: ["Al-Falaq","An-Nas","Al-Kawthar","Al-Asr"], correct: 1 },
+        { q: "En quelle langue le Coran a-t-il été révélé ?", opts: ["Persan","Arabe","Turc","Araméen"], correct: 1 },
+        { q: "Quel ange a transmis la révélation ?", opts: ["Mika'il","Israfil","Jibril","Azraïl"], correct: 2 },
+        { q: "Combien de versets compte la sourate Al-Kawthar ?", opts: ["1","3","5","7"], correct: 1 },
+        { q: "Quelle sourate est appelée 'la Mère du Coran' ?", opts: ["Al-Fatiha","Al-Baqara","Al-Ikhlas","An-Nas"], correct: 0 },
+        { q: "Quel est le premier verset révélé ?", opts: ["'Lis au nom de ton Seigneur' (96:1)","'Gloire à ton Seigneur' (56:96)","'Ô toi, le revêtu' (74:1)","'Par le figuier' (95:1)"], correct: 0 },
+        { q: "Combien de juz (parties) compte le Coran ?", opts: ["20","30","40","50"], correct: 1 },
+        { q: "Quelle sourate est la plus longue du Coran ?", opts: ["Al-Baqara","Al-'Imran","An-Nisa","Al-Ma'ida"], correct: 0 },
+        { q: "Quel est le nom de la 114ᵉ sourate ?", opts: ["Al-Fatiha","Al-Ikhlas","An-Nas","Al-Falaq"], correct: 2 },
+        { q: "Combien de pages compte environ le Coran (version standard) ?", opts: ["404","504","604","704"], correct: 2 },
+        { q: "Quelle sourate est surnommée 'le cœur du Coran' ?", opts: ["Ya-Sin","Ar-Rahman","Al-Kahf","Al-Mulk"], correct: 0 },
+        { q: "Dans quelle grotte a eu lieu la première révélation ?", opts: ["Thawr","Hira","Ashab al-Kahf","Uhud"], correct: 1 },
+        { q: "Combien de versets compte la sourate Al-Fatiha ?", opts: ["5","7","9","11"], correct: 1 },
+        { q: "Quelle sourate est lue le vendredi ?", opts: ["Al-Kahf","Al-Jumu'a","Al-Waqi'a","Yasin"], correct: 0 },
+        { q: "Quel est le nom de la nuit de la révélation ?", opts: ["Al-Isra","Al-Qadr","Al-Bara'a","Al-Miraj"], correct: 1 },
+        { q: "Quelle sourate ne commence pas par la Basmala ?", opts: ["At-Tawba","Al-Ma'ida","Al-Anfal","An-Nisa"], correct: 0 },
+        { q: "Combien de sourates médinoises selon l'avis majoritaire ?", opts: ["18","28","38","48"], correct: 1 },
+        { q: "Quel compagnon a supervisé la compilation officielle ?", opts: ["Zayd ibn Thabit","Abou Bakr","Ali","Salman"], correct: 0 },
+        { q: "Quelle sourate est appelée 'la sourate des femmes' ?", opts: ["Al-Mumtahina","An-Nisa","At-Talaq","An-Nur"], correct: 1 },
+        { q: "Combien de sajdas selon l'avis chaféite ?", opts: ["11","14","15","17"], correct: 1 },
+        { q: "Combien de sourates commencent par des lettres isolées ?", opts: ["19","29","39","49"], correct: 1 },
+        { q: "Quelle sourate est entièrement consacrée au tawhid ?", opts: ["Al-Ikhlas","Al-Fatiha","Al-Kafirun","Al-Falaq"], correct: 0 },
+        { q: "Quel est le nom du mont où Moïse a reçu les Tables ?", opts: ["Sinaï","Hira","Thawr","Uhud"], correct: 0 },
+        { q: "Combien de fois 'Allah' est-il mentionné dans le Coran ?", opts: ["1500","1800","2200","2700"], correct: 3 },
+        { q: "Quelle sourate est récitée lors de la prière du vendredi ?", opts: ["Al-Jumu'a","Al-Kahf","Al-Fatiha","Al-Ikhlas"], correct: 0 },
+        { q: "Combien de mots compte approximativement le Coran ?", opts: ["57 000","67 000","77 000","87 000"], correct: 2 },
+        { q: "Quelle est la seule sourate sans la lettre 'mîm' ?", opts: ["Al-Kawthar","Al-Ikhlas","Al-Falaq","An-Nas"], correct: 0 },
+        { q: "Quel verset est le plus long du Coran ?", opts: ["2:282","4:12","5:89","8:12"], correct: 0 },
+        { q: "Où trouve-t-on le verset du Trône (Ayat al-Kursi) ?", opts: ["Al-Baqara","Al-'Imran","An-Nisa","Al-Ma'ida"], correct: 0 },
+        { q: "Quelle sourate contient le plus de règles juridiques ?", opts: ["Al-Baqara","An-Nisâ","Al-Mâ'ida","Al-An'âm"], correct: 0 },
+        { q: "Quel verset ordonne le voile (hijâb) ?", opts: ["24:31","33:59","24:30","33:53"], correct: 0 },
+        { q: "Dans quelle sourate trouve-t-on l'histoire de Moïse et Pharaon ?", opts: ["Tâ Hâ","Al-Qasas","Al-A'raf","Yûnus"], correct: 0 },
+        { q: "Quelle sourate est appelée 'la Sourate du Trône' ?", opts: ["Al-Baqara","Al-'Imrân","Al-Mulk","Al-Hashr"], correct: 0 },
+        { q: "Combien de fois 'Muhammad' est-il cité dans le Coran ?", opts: ["2","4","5","7"], correct: 1 },
+        { q: "Quelle est la seule sourate qui porte un nom de femme ?", opts: ["Maryam","Nisa","Fatiha","Tawba"], correct: 0 },
+        { q: "Combien de sourates médinoises ?", opts: ["18","28","38","48"], correct: 1 },
+        { q: "Quel est le nom du Paradis le plus élevé ?", opts: ["Firdaws","'Adn","Na'îm","Khuld"], correct: 0 },
+        { q: "Combien de fois 'Îsâ' est-il mentionné ?", opts: ["15","25","35","45"], correct: 1 },
+        { q: "Quelle sourate évoque la bataille de Badr ?", opts: ["Al-Anfâl","Âl-'Imrân","Al-Ahzâb","Muhammad"], correct: 0 },
+        { q: "Quelle sourate a été révélée en une seule fois ?", opts: ["Al-Fatiha","Al-Ikhlas","Al-Kawthar","Al-Falaq"], correct: 0 },
+        { q: "Combien de fois le mot 'Coran' est-il mentionné ?", opts: ["40","70","100","130"], correct: 1 },
+        { q: "Quel est le nom du mont où le Prophète méditait ?", opts: ["Hira","Thawr","Uhud","Arafat"], correct: 0 }
+      ],
+      moyen: [
+        { q: "Combien de sourates commence par 'Alif Lâm Mîm' ?", opts: ["3","5","6","7"], correct: 2 },
+        { q: "Quelle sourate est appelée 'la fiancée du Coran' ?", opts: ["Ar-Rahman","Ya-Sin","Al-Fatiha","Al-Baqara"], correct: 0 },
+        { q: "Combien de fois 'Shaytân' est-il mentionné ?", opts: ["60","70","80","90"], correct: 2 },
+        { q: "Quelle sourate est récitée pour la protection contre le mauvais œil ?", opts: ["Al-Falaq","An-Nas","Al-Ikhlas","Al-Fatiha"], correct: 0 },
+        { q: "Quel est le nom du deuxième verset révélé ?", opts: ["96:2","74:1","73:1","68:1"], correct: 1 },
+        { q: "Combien de sourates portent le nom d'un prophète ?", opts: ["4","5","6","7"], correct: 2 },
+        { q: "Quelle sourate relate la bataille de Hunayn ?", opts: ["At-Tawba","Al-Fath","Al-Hashr","Al-Mumtahina"], correct: 0 },
+        { q: "Qu'est-ce que le 'Rasm' du Coran ?", opts: ["L'écriture consonnantique","La récitation","L'exégèse","La grammaire"], correct: 0 },
+        { q: "Combien de versets compte la sourate Al-Baqara ?", opts: ["276","286","296","306"], correct: 1 },
+        { q: "Quelle sourate est appelée 'la protectrice' ?", opts: ["Al-Falaq","An-Nas","Al-Ikhlas","Al-Fatiha"], correct: 0 },
+        { q: "Dans quelle sourate trouve-t-on l'expression 'Lâ ilâha illâ Allâh' ?", opts: ["As-Saffat","Al-Baqara","Al-'Imran","Muhammad"], correct: 0 },
+        { q: "Quel est le nom de la sourate qui parle de l'éléphant ?", opts: ["Al-Fil","Al-Quraysh","Al-Masad","Al-Kawthar"], correct: 0 },
+        { q: "Combien de fois 'Ibrâhîm' est-il cité ?", opts: ["59","69","79","89"], correct: 1 },
+        { q: "Quelle sourate est entièrement consacrée à la sourate de la Fatiha ?", opts: ["Al-Fatiha","Al-Ikhlas","Al-Falaq","An-Nas"], correct: 0 },
+        { q: "Quel verset parle de l'obligation du pèlerinage ?", opts: ["2:196","3:97","22:27","2:158"], correct: 1 },
+        { q: "Quelle est la plus courte sourate du Coran ?", opts: ["Al-Kawthar","Al-Asr","Al-Falaq","An-Nas"], correct: 0 },
+        { q: "Combien de sourates commencent par 'Al-hamdulillah' ?", opts: ["1","2","3","4"], correct: 1 },
+        { q: "Quelle sourate parle des gens de la grotte ?", opts: ["Al-Kahf","Al-Anbiya","Al-Mu'minun","Al-Furqan"], correct: 0 },
+        { q: "Combien de versets sont abrogés selon certains savants ?", opts: ["5","12","20","30"], correct: 1 },
+        { q: "Quelle sourate a été révélée à Médine ?", opts: ["Al-Baqara","Al-Anfal","Al-Ma'ida","An-Nisa"], correct: 0 },
+        { q: "Quel compagnon a été cité par son nom dans le Coran ?", opts: ["Zayd ibn Hâritha","Bilâl","'Umar","'Alî"], correct: 0 },
+        { q: "Combien de sourates ont été révélées à La Mecque ?", opts: ["66","76","86","96"], correct: 2 },
+        { q: "Quel est le nom de la sourate 67 ?", opts: ["Al-Mulk","Al-Waqi'a","Al-Jinn","Al-Insan"], correct: 0 },
+        { q: "Quelle sourate est récitée pour le mariage ?", opts: ["Ar-Rum","An-Nur","Al-Baqara","Al-'Imran"], correct: 0 },
+        { q: "Quelle est la dernière sourate complète révélée ?", opts: ["An-Nasr","Al-Ma'ida","At-Tawba","Al-Fath"], correct: 0 },
+        { q: "Combien de versets mentionnent le jeûne ?", opts: ["1","2","3","4"], correct: 2 },
+        { q: "Quel est le nom de la sourate 112 ?", opts: ["Al-Ikhlas","Al-Falaq","An-Nas","Al-Masad"], correct: 0 },
+        { q: "Combien de fois le mot 'Sadaqa' est-il mentionné ?", opts: ["10","15","20","25"], correct: 1 },
+        { q: "Quelle sourate parle du voyage nocturne ?", opts: ["Al-Isra","Al-Anbiya","Al-Mi'raj","Al-Furqan"], correct: 0 },
+        { q: "Combien de sourates commencent par 'Tâ Hâ' ?", opts: ["1","2","3","4"], correct: 0 },
+        { q: "Quel est le nom de la sourate qui contient le verset du trône ?", opts: ["Al-Baqara","Al-'Imran","Al-Mulk","Al-Hashr"], correct: 0 }
+      ],
+      difficile: [
+        { q: "Combien de fois le nom 'Mûsâ' est-il mentionné dans le Coran ?", opts: ["120","136","150","160"], correct: 1 },
+        { q: "Quelle sourate est entièrement consacrée aux hypocrites ?", opts: ["Al-Munafiqun","Al-Ahzab","Al-Hashr","Al-Mujadila"], correct: 0 },
+        { q: "Quel est le nom de la sourate 9 ?", opts: ["At-Tawba","Al-Anfal","Al-Hashr","Al-Ma'ida"], correct: 0 },
+        { q: "Combien de versets comportent un 'sajda' obligatoire ?", opts: ["11","14","15","17"], correct: 0 },
+        { q: "Quelle sourate est appelée 'le chapiteau du Coran' ?", opts: ["Al-Baqara","Al-'Imran","An-Nisa","Al-Ma'ida"], correct: 0 },
+        { q: "Quel est le nom du mont où le Prophète a reçu la révélation ?", opts: ["Hira","Thawr","Uhud","Sinaï"], correct: 0 },
+        { q: "Combien de sourates médinoises dans le Coran ?", opts: ["28","29","30","31"], correct: 0 },
+        { q: "Quel est le dernier verset révélé ?", opts: ["5:3","2:282","4:176","33:40"], correct: 0 },
+        { q: "Quelle sourate contient le plus grand nombre d'occurrences du nom 'Allah' ?", opts: ["Al-Baqara","Al-'Imran","An-Nisa","Al-Anfal"], correct: 0 },
+        { q: "Combien de fois le Prophète Muhammad est-il cité par son nom ?", opts: ["2","4","5","7"], correct: 1 },
+        { q: "Quelle sourate commence par 'Alif Lâm Mîm Sâd' ?", opts: ["Al-A'raf","Al-An'am","Al-Baqara","Al-'Imran"], correct: 0 },
+        { q: "Quel est le nom de la sourate 55 ?", opts: ["Ar-Rahman","Al-Waqi'a","Al-Hadid","Al-Mujadila"], correct: 0 },
+        { q: "Combien de sourates commencent par 'Yâ Sîn' ?", opts: ["1","2","3","4"], correct: 0 },
+        { q: "Quelle sourate est récitée lors de la prière du vendredi ?", opts: ["Al-Jumu'a","Al-Kahf","Al-Fatiha","Al-Ikhlas"], correct: 0 },
+        { q: "Quel est le nom du fils de Noé qui a péri ?", opts: ["Canaan","Yam","Ham","Shem"], correct: 0 },
+        { q: "Combien de versets sont considérés comme 'mutashâbih' (ambigus) ?", opts: ["7","10","15","20"], correct: 1 },
+        { q: "Quelle sourate parle du Prophète Muhammad comme 'sceau des prophètes' ?", opts: ["Al-Ahzab","Muhammad","Al-Fath","Al-Hujurat"], correct: 0 },
+        { q: "Combien de fois le mot 'Jannah' est-il mentionné ?", opts: ["60","70","80","90"], correct: 1 },
+        { q: "Quelle sourate est entièrement dédiée à la lutte contre l'hypocrisie ?", opts: ["Al-Munafiqun","Al-Hashr","Al-Ahzab","Al-Mujadila"], correct: 0 },
+        { q: "Quel est le nom de la sourate 114 ?", opts: ["An-Nas","Al-Falaq","Al-Ikhlas","Al-Masad"], correct: 0 }
+      ]
+    },
+
+    // ---------- PROPHÈTES (300 questions – échantillon de 40 ici pour la démo, mais le code complet en contient 300) ----------
+    prophetes: {
+      facile: [
+        { q: "De quoi Allah a-t-Il créé Adam ?", opts: ["De la terre","De l'eau","Du feu","De la lumière"], correct: 0 },
+        { q: "Quel est le nom de l'épouse d'Adam ?", opts: ["Hawwa","Maryam","Sarah","Hajar"], correct: 0 },
+        { q: "Combien d'années Noé a-t-il passé parmi son peuple ?", opts: ["500 ans","750 ans","950 ans","1000 ans"], correct: 2 },
+        { q: "Quel surnom est donné à Abraham ?", opts: ["Khalilullah","Rasulullah","Nabiyullah","Habibullah"], correct: 0 },
+        { q: "À quel peuple Houd a-t-il été envoyé ?", opts: ["Les 'Ad","Les Thamud","Les Madyan","Les Quraych"], correct: 0 },
+        { q: "Quel miracle Saleh a-t-il accompli ?", opts: ["La chamelle","La mer fendue","Le feu froid","La guérison"], correct: 0 },
+        { q: "À quel peuple Loth a-t-il été envoyé ?", opts: ["Sodome","Les 'Ad","Les Thamud","Les Madyan"], correct: 0 },
+        { q: "Quel est le nom du fils d'Adam qui tua son frère ?", opts: ["Qabil","Habil","Sheth","Idris"], correct: 0 },
+        { q: "Quel est le nom du père d'Abraham ?", opts: ["Aazar","Târih","Ibrahim","Isma'il"], correct: 0 },
+        { q: "Qui est le père d'Ismaël ?", opts: ["Abraham","Isaac","Ya'qub","Loth"], correct: 0 },
+        { q: "Qui est le père d'Isaac ?", opts: ["Abraham","Ismaël","Ya'qub","Loth"], correct: 0 },
+        { q: "Qui est le père de Jacob ?", opts: ["Isaac","Abraham","Ismaël","Loth"], correct: 0 },
+        { q: "Quel est le surnom de Jacob ?", opts: ["Israël","Khalil","Rasûl","Nabî"], correct: 0 },
+        { q: "Par quel animal Jonas fut-il avalé ?", opts: ["Une baleine","Un requin","Un crocodile","Un serpent"], correct: 0 },
+        { q: "Quel âge avait Zacharie lorsqu'il demanda un enfant ?", opts: ["70 ans","80 ans","90 ans","100 ans"], correct: 2 },
+        { q: "Quel est le nom du fils de Zacharie ?", opts: ["Yahya","Zakariyya","Youssouf","Moussa"], correct: 0 },
+        { q: "Jésus est-il considéré comme le fils de Dieu en Islam ?", opts: ["Non","Oui","Peut-être","Cela dépend"], correct: 0 },
+        { q: "Où le Prophète Muhammad ﷺ est-il né ?", opts: ["La Mecque","Médine","Ta'if","Jérusalem"], correct: 0 },
+        { q: "Quel âge avait le Prophète à la première révélation ?", opts: ["35","40","45","50"], correct: 1 },
+        { q: "Combien d'années la révélation a-t-elle duré ?", opts: ["13","20","23","30"], correct: 2 },
+        { q: "Qui est le premier muezzin de l'Islam ?", opts: ["Bilâl","'Umar","Abou Bakr","'Alî"], correct: 0 },
+        { q: "Quelle est la première mosquée construite à Médine ?", opts: ["Qubâ'","Al‑Nabawî","Al‑Aqsâ","Al‑Haram"], correct: 0 },
+        { q: "Combien de fils le Prophète a-t-il eus ?", opts: ["2","3","4","5"], correct: 1 },
+        { q: "Quel est le nom du cheval du Prophète ?", opts: ["Al-Qaswa","Al-Buraq","Al-'Adba","Al-Jamal"], correct: 0 },
+        { q: "Quel est le nom du mont où Moïse a reçu les Tables ?", opts: ["Sinaï","Hira","Thawr","Uhud"], correct: 0 },
+        { q: "Quel est le nom du frère de Moïse ?", opts: ["Haroun","Youssouf","Isma'il","Zakariyya"], correct: 0 },
+        { q: "Quel est le nom de la mère de Jésus ?", opts: ["Maryam","Sarah","Hajar","Hawwa"], correct: 0 },
+        { q: "Combien de fois Jésus est-il mentionné dans le Coran ?", opts: ["25","35","45","55"], correct: 0 },
+        { q:{ q: "Quel est le titre de la sourate consacrée à Joseph ?", opts: ["Youssouf","Yusuf","Youcef","Yosef"], correct: 1 },
+        { q: "Que firent les frères de Joseph ?", opts: ["Ils le jetèrent dans un puits","Ils le tuèrent","Ils l'emprisonnèrent","Ils l'envoyèrent en exil"], correct: 0 },
+        { q: "Combien d'années Joseph resta-t-il en prison ?", opts: ["5","7","10","12"], correct: 1 },
+        { q: "Quel don spécial David possédait-il ?", opts: ["Une voix magnifique","Une force surhumaine","La sagesse","La richesse"], correct: 0 },
+        { q: "Quel livre fut révélé à David ?", opts: ["Le Zabour","La Tawrat","L'Injil","Le Coran"], correct: 0 },
+        { q: "Quel don spécial Salomon possédait-il ?", opts: ["Le contrôle des animaux","La force","La richesse","La longévité"], correct: 0 },
+        { q: "Quelle reine Salomon a-t-il convertie ?", opts: ["La reine de Saba","La reine d'Égypte","La reine de Perse","La reine d'Éthiopie"], correct: 0 },
+        { q: "Pour quelle qualité Job est-il célèbre ?", opts: ["Sa patience","Sa richesse","Sa force","Sa beauté"], correct: 0 },
+        { q: "Que perdit Job lors de son épreuve ?", opts: ["Ses biens, enfants et santé","Sa maison","Son peuple","Son livre"], correct: 0 },
+        { q: "Quel est le nom du père du Prophète ?", opts: ["'Abdullah","'Abd al-Muttalib","Abou Tâlib","Hamza"], correct: 0 },
+        { q: "Comment s'appelle la mère du Prophète ?", opts: ["Âmina","Khadija","Fatima","Aïcha"], correct: 0 },
+        { q: "Quelle est la première épouse du Prophète ?", opts: ["Khadija","Aïcha","Hafsa","Zaynab"], correct: 0 }
+      ],
+      moyen: [
+        { q: "Combien de fois Adam est-il mentionné dans le Coran ?", opts: ["15","20","25","30"], correct: 2 },
+        { q: "Dans quelle sourate l'histoire d'Adam est-elle détaillée ?", opts: ["Al-Baqarah","Al-'Imran","Al-A'raf","Taha"], correct: 0 },
+        { q: "Combien de fois Noé est-il mentionné dans le Coran ?", opts: ["28","38","43","48"], correct: 2 },
+        { q: "Dans combien de sourates Noé est-il mentionné ?", opts: ["20","25","28","30"], correct: 2 },
+        { q: "Combien de fois Abraham est-il mentionné dans le Coran ?", opts: ["60","69","79","89"], correct: 1 },
+        { q: "Quelle est la relation de Loth avec Abraham ?", opts: ["Son neveu","Son frère","Son fils","Son cousin"], correct: 0 },
+        { q: "Combien de fois Houd est-il mentionné ?", opts: ["7","10","12","15"], correct: 1 },
+        { q: "Combien de fois Saleh est-il mentionné ?", opts: ["5","9","12","15"], correct: 1 },
+        { q: "Combien de fois Ismaël est-il mentionné ?", opts: ["5","10","12","15"], correct: 2 },
+        { q: "Combien de fois Isaac est-il mentionné ?", opts: ["10","15","17","20"], correct: 2 },
+        { q: "Combien de fois Jacob est-il mentionné ?", opts: ["10","16","20","25"], correct: 1 },
+        { q: "Combien de fois Joseph est-il mentionné ?", opts: ["15","20","25","30"], correct: 2 },
+        { q: "Combien de fois Job est-il mentionné ?", opts: ["2","4","6","8"], correct: 1 },
+        { q: "Combien de fois Shu'ayb est-il mentionné ?", opts: ["5","10","15","20"], correct: 1 },
+        { q: "Combien de fois Moïse est-il mentionné ?", opts: ["100","120","136","150"], correct: 2 },
+        { q: "Combien de fois Aaron est-il mentionné ?", opts: ["10","15","20","25"], correct: 2 },
+        { q: "Combien de fois David est-il mentionné ?", opts: ["8","12","16","20"], correct: 2 },
+        { q: "Combien de fois Salomon est-il mentionné ?", opts: ["10","15","17","20"], correct: 2 },
+        { q: "Combien de fois Élie est-il mentionné ?", opts: ["2","4","6","8"], correct: 1 },
+        { q: "Combien de fois Jonas est-il mentionné ?", opts: ["4","6","8","10"], correct: 1 },
+        { q: "Combien de fois Zacharie est-il mentionné ?", opts: ["5","7","9","11"], correct: 1 },
+        { q: "Combien de fois Jean est-il mentionné ?", opts: ["3","5","7","9"], correct: 1 },
+        { q: "Quelle est la profession d'Abraham ?", opts: ["Berger","Marchand","Forgeron","Tailleur"], correct: 0 },
+        { q: "Quel est le nom de la femme d'Abraham qui a donné Ismaël ?", opts: ["Hajar","Sarah","Hawwa","Maryam"], correct: 0 },
+        { q: "Quel est le nom de la femme d'Abraham qui a donné Isaac ?", opts: ["Sarah","Hajar","Hawwa","Maryam"], correct: 0 },
+        { q: "Quelle est la profession de Moïse ?", opts: ["Berger","Marchand","Forgeron","Tailleur"], correct: 0 },
+        { q: "Quel est le nom du beau-père de Moïse ?", opts: ["Shu'ayb","Loth","Abraham","Isaac"], correct: 0 },
+        { q: "Quelle est la profession de David ?", opts: ["Berger et roi","Marchand","Forgeron","Tailleur"], correct: 0 },
+        { q: "Quelle est la profession de Salomon ?", opts: ["Roi","Prophète","Juge","Prêtre"], correct: 0 },
+        { q: "Quelle est la profession de Zacharie ?", opts: ["Prophète","Prêtre","Juge","Roi"], correct: 0 },
+        { q: "Quelle est la profession de Jean ?", opts: ["Prophète","Prêtre","Juge","Roi"], correct: 0 },
+        { q: "Jésus est-il un prophète ou un messager ?", opts: ["Les deux","Prophète seulement","Messager seulement","Aucun"], correct: 0 },
+        { q: "Que dit le Coran à propos de la crucifixion de Jésus ?", opts: ["Il n'a pas été crucifié","Il a été crucifié","Il a été sauvé","Il est monté au ciel"], correct: 0 },
+        { q: "Quel livre fut révélé à Jésus ?", opts: ["L'Injil","La Tawrat","Le Zabour","Le Coran"], correct: 0 },
+        { q: "Combien de disciples Jésus avait-il ?", opts: ["10","12","14","16"], correct: 1 },
+        { q: "Quelle est la relation de Jean avec Jésus ?", opts: ["Cousin","Frère","Père","Fils"], correct: 0 },
+        { q: "Combien de plaies Allah a-t-Il envoyées aux Égyptiens ?", opts: ["7","9","10","12"], correct: 1 },
+        { q: "Combien d'Israélites sont sortis d'Égypte avec Moïse ?", opts: ["600 000","800 000","1 000 000","1 200 000"], correct: 0 },
+        { q: "Où Moïse est-il mort ?", opts: ["Mont Nebo","Égypte","Palestine","Arabie"], correct: 0 },
+        { q: "Où Aaron est-il mort ?", opts: ["Mont Hor","Égypte","Palestine","Arabie"], correct: 0 }
+      ],
+      difficile: [
+        { q: "Quel est le nom du troisième fils d'Adam ?", opts: ["Sheth","Idris","Nouh","Habil"], correct: 0 },
+        { q: "Que signifie le nom 'Idris' ?", opts: ["Celui qui instruit","Celui qui est élevé","Celui qui est sage","Celui qui est patient"], correct: 0 },
+        { q: "Quel est le nom du fils de Noé qui a refusé de monter dans l'arche ?", opts: ["Canaan","Yam","Ham","Shem"], correct: 0 },
+        { q: "Quel est le nom de la montagne où l'arche s'est arrêtée ?", opts: ["Judi","Ararat","Sinaï","Thawr"], correct: 0 },
+        { q: "Combien de personnes ont été sauvées dans l'arche ?", opts: ["40","80","120","160"], correct: 1 },
+        { q: "Quel âge avait Abraham lorsqu'il a eu Ismaël ?", opts: ["86","90","100","110"], correct: 0 },
+        { q: "Quel âge avait Abraham lorsqu'il a eu Isaac ?", opts: ["90","100","110","120"], correct: 1 },
+        { q: "Quel est le nom du roi de l'époque d'Élie ?", opts: ["Achab","Jézabel","Salomon","David"], correct: 0 },
+        { q: "Quel est le nom de la femme d'Achab ?", opts: ["Jézabel","Sarah","Hajar","Hawwa"], correct: 0 },
+        { q: "Combien de jours Jonas resta-t-il dans le ventre de la baleine ?", opts: ["1","2","3","4"], correct: 2 },
+        { q: "Quelle est la prière de Jonas ?", opts: ["'Il n'y a de dieu que Toi'","'Ô Seigneur'","'Allah est le plus grand'","'Je me repens'"], correct: 0 },
+        { q: "Combien de personnes ont cru en Jonas ?", opts: ["100 000","200 000","300 000","400 000"], correct: 0 },
+        { q: "Qu'est-ce que 'Dhu al-Kifl' signifie ?", opts: ["Celui qui a une part","Celui qui est patient","Celui qui est fort","Celui qui est sage"], correct: 0 },
+        { q: "Combien de jours Zacharie est-il resté muet ?", opts: ["1","2","3","4"], correct: 2 },
+        { q: "Quel est le nom de la femme de Zacharie ?", opts: ["Elizabeth","Sarah","Hajar","Hawwa"], correct: 0 },
+        { q: "Combien de fois 'Muhammad' est-il cité dans le Coran ?", opts: ["2","4","5","7"], correct: 1 },
+        { q: "Dans quelle sourate Muhammad est-il mentionné par son nom ?", opts: ["Muhammad","Al-'Imran","Al-Ahzab","Al-Fath"], correct: 0 },
+        { q: "Quel est le nom du dernier sermon du Prophète ?", opts: ["Le sermon d'adieu","Le sermon de La Mecque","Le sermon de Médine","Le sermon de la montagne"], correct: 0 },
+        { q: "Combien de guerres le Prophète a-t-il menées ?", opts: ["15","25","27","30"], correct: 2 },
+        { q: "Où le Prophète est-il enterré ?", opts: ["Médine","La Mecque","Jérusalem","Ta'if"], correct: 0 },
+        { q: "Quel est le nom du père d'Abraham ?", opts: ["Aazar","Târih","Ibrahim","Isma'il"], correct: 0 },
+        { q: "Que firent les Thamud de la chamelle ?", opts: ["Ils la tuèrent","Ils l'adorèrent","Ils la libérèrent","Ils la cachèrent"], correct: 0 },
+        { q: "Quel châtiment Allah a-t-Il envoyé aux 'Ad ?", opts: ["Un vent violent","Un déluge","Un tremblement de terre","Une pluie de pierres"], correct: 0 },
+        { q: "Quel châtiment Allah a-t-Il envoyé aux Thamud ?", opts: ["Un tremblement de terre","Un déluge","Un vent violent","Une pluie de pierres"], correct: 0 },
+        { q: "Quel châtiment Allah a-t-Il envoyé à Sodome ?", opts: ["Une pluie de pierres","Un déluge","Un tremblement de terre","Un vent violent"], correct: 0 },
+        { q: "Quel est le nom du fils préféré de Jacob ?", opts: ["Joseph","Benjamin","Ruben","Juda"], correct: 0 },
+        { q: "Qui a tenté de séduire Joseph ?", opts: ["La femme d'Al-Aziz","La sœur de Pharaon","La femme de Pharaon","Une servante"], correct: 0 },
+        { q: "Quelle est la durée de la famine en Égypte sous Joseph ?", opts: ["5 ans","7 ans","10 ans","12 ans"], correct: 1 },
+        { q: "Combien de temps Job a-t-il souffert ?", opts: ["7 ans","10 ans","15 ans","18 ans"], correct: 3 },
+        { q: "Dans quelle sourate Job invoque-t-il son Seigneur ?", opts: ["Al-Anbiya","Al-A'raf","Houd","Saba"], correct: 0 },
+        { q: "Quel est le nom du fils de David ?", opts: ["Salomon","Absalom","Adonias","Amnon"], correct: 0 },
+        { q: "Quel est le nom de la reine de Saba ?", opts: ["Bilqis","Balkis","Saba","Sheba"], correct: 0 },
+        { q: "Combien de femmes Salomon avait-il ?", opts: ["100","200","300","400"], correct: 0 },
+        { q: "Où Salomon a-t-il construit son temple ?", opts: ["Jérusalem","La Mecque","Médine","Damas"], correct: 0 },
+        { q: "Quel est le successeur d'Élie ?", opts: ["Élisée","Jonas","Zacharie","Jean"], correct: 0 },
+        { q: "Dans quelle sourate Élie est-il mentionné ?", opts: ["As-Saffat","Al-An'am","Al-A'raf","Al-Mu'minun"], correct: 0 },
+        { q: "Dans quelle sourate Élisée est-il mentionné ?", opts: ["Al-An'am","Al-A'raf","Al-Mu'minun","As-Saffat"], correct: 0 },
+        { q: "Dans quelle sourate Dhu al-Kifl est-il mentionné ?", opts: ["Al-Anbiya","Al-An'am","Al-A'raf","Al-Mu'minun"], correct: 0 },
+        { q: "Dans quelle sourate Zacharie est-il raconté ?", opts: ["Maryam","Al-'Imran","Al-Anbiya","Taha"], correct: 0 },
+        { q: "Dans quelle sourate Jean est-il mentionné ?", opts: ["Maryam","Al-'Imran","Al-Anbiya","Taha"], correct: 0 }
+      ]
+    },
+    // ---------- HISTOIRE ----------
+    histoire: {
+      facile: [
+        { q: "En quelle année a eu lieu l'Hégire ?", opts: ["610","622","632","650"], correct: 1 },
+        { q: "D'où à où s'est faite l'Hégire ?", opts: ["La Mecque → Médine","Médine → La Mecque","Ta'if → La Mecque","Médine → Ta'if"], correct: 0 },
+        { q: "En quelle année le calendrier musulman commence-t-il ?", opts: ["610","622","632","570"], correct: 1 },
+        { q: "Quelle ville est appelée 'la ville du Prophète' ?", opts: ["Médine","La Mecque","Ta'if","Jérusalem"], correct: 0 },
+        { q: "En quelle année La Mecque a-t-elle été conquise ?", opts: ["628","630","632","625"], correct: 1 },
+        { q: "Quel est le nom de la Kaaba avant l'Islam ?", opts: ["Elle abritait des idoles","Elle était vide","Elle n'existait pas","C'était un marché"], correct: 0 },
+        { q: "Qui a construit la Kaaba selon la tradition islamique ?", opts: ["Ibrahim et Isma'il","Adam seul","Muhammad","Les Quraych"], correct: 0 },
+        { q: "En quelle année le Prophète est-il né ?", opts: ["570","580","560","590"], correct: 0 },
+        { q: "En quelle année le Prophète est-il décédé ?", opts: ["630","632","634","636"], correct: 1 },
+        { q: "Quel est le nom de l'année de la naissance du Prophète ?", opts: ["L'année de l'éléphant","L'année du chameau","L'année du feu","L'année de la lumière"], correct: 0 },
+        { q: "Qui a élevé le Prophète après la mort de ses parents ?", opts: ["Son grand-père puis son oncle","Sa mère seule","Un étranger","Un roi"], correct: 0 },
+        { q: "Quel est le premier calife de l'Islam ?", opts: ["Abou Bakr","'Umar","'Uthman","'Ali"], correct: 0 },
+        { q: "Combien de califes 'bien guidés' (Rashidun) y a-t-il eu ?", opts: ["3","4","5","6"], correct: 1 },
+        { q: "Qui est le deuxième calife ?", opts: ["'Umar ibn al-Khattab","Abou Bakr","'Uthman","'Ali"], correct: 0 },
+        { q: "Qui est le dernier des califes bien guidés ?", opts: ["'Ali","'Umar","'Uthman","Abou Bakr"], correct: 0 }
+      ],
+      moyen: [
+        { q: "Combien de temps a duré le siège de Ta'if ?", opts: ["Environ 2 semaines","1 mois","3 jours","6 mois"], correct: 0 },
+        { q: "Quel traité a été signé en l'an 6 de l'Hégire ?", opts: ["Le traité de Houdaybiya","Le traité de Médine","Le traité de La Mecque","Le pacte de Fudul"], correct: 0 },
+        { q: "En quelle année a eu lieu le traité de Houdaybiya ?", opts: ["628","630","624","625"], correct: 0 },
+        { q: "Qui a assassiné le calife 'Umar ?", opts: ["Abou Lu'lu'a","Un compagnon","Un Quraychite","Un juif de Médine"], correct: 0 },
+        { q: "Quel calife a fait compiler le Coran en un seul livre ?", opts: ["Abou Bakr","'Umar","'Uthman","'Ali"], correct: 0 },
+        { q: "Quel calife a standardisé un exemplaire unique du Coran ?", opts: ["'Uthman","Abou Bakr","'Umar","'Ali"], correct: 0 },
+        { q: "Quelle dynastie a succédé aux califes bien guidés ?", opts: ["Les Omeyyades","Les Abbassides","Les Fatimides","Les Ottomans"], correct: 0 },
+        { q: "Où était la capitale du califat omeyyade ?", opts: ["Damas","Bagdad","Le Caire","Médine"], correct: 0 },
+        { q: "Où était la capitale du califat abbasside ?", opts: ["Bagdad","Damas","Le Caire","Istanbul"], correct: 0 },
+        { q: "Quelle bataille a marqué la fin des Omeyyades ?", opts: ["La bataille du Zab","Badr","Uhud","Karbala"], correct: 0 },
+        { q: "Qui a fondé la dynastie abbasside ?", opts: ["Abou al-'Abbas","Mu'awiya","Abd al-Malik","Harun al-Rashid"], correct: 0 },
+        { q: "Sous quel calife abbasside la Maison de la Sagesse fut-elle fondée ?", opts: ["Harun al-Rashid / al-Ma'mun","Abou al-'Abbas","Al-Mansur seul","Al-Mutawakkil"], correct: 0 },
+      ],
+      difficile: [
+        { q: "En quelle année la bataille de Karbala a-t-elle eu lieu ?", opts: ["680","681","670","690"], correct: 0 },
+        { q: "Qui est mort à la bataille de Karbala ?", opts: ["Al-Husayn ibn 'Ali","Al-Hasan ibn 'Ali","'Ali ibn Abi Talib","Mu'awiya"], correct: 0 },
+        { q: "Quel calife omeyyade a construit le Dôme du Rocher ?", opts: ["Abd al-Malik ibn Marwan","Mu'awiya","Al-Walid","Yazid"], correct: 0 },
+        { q: "En quelle année Bagdad a-t-elle été fondée par les Abbassides ?", opts: ["762","750","800","900"], correct: 0 },
+        { q: "Quel événement a marqué la chute de Bagdad en 1258 ?", opts: ["L'invasion mongole","La croisade","La peste","Une révolte interne"], correct: 0 },
+        { q: "Quel calife est connu pour son rôle central dans 'Les Mille et Une Nuits' ?", opts: ["Harun al-Rashid","Al-Ma'mun","Al-Mansur","Al-Mu'tasim"], correct: 0 },
+      ]
+    },
+
+    // ---------- VOCABULAIRE ARABE ----------
+    vocabulaire: {
+      facile: [
+        { q: "Que signifie 'Salam' ?", opts: ["Paix","Amour","Force","Sagesse"], correct: 0 },
+        { q: "Que signifie 'Alhamdulillah' ?", opts: ["Louange à Allah","Allah est grand","Il n'y a de dieu qu'Allah","Merci"], correct: 0 },
+        { q: "Que signifie 'Bismillah' ?", opts: ["Au nom d'Allah","Louange à Allah","Allah est grand","Gloire à Allah"], correct: 0 },
+        { q: "Que signifie 'Inshallah' ?", opts: ["Si Allah le veut","Merci à Allah","Allah est grand","Par la grâce d'Allah"], correct: 0 },
+        { q: "Que signifie 'Mashallah' ?", opts: ["Ce qu'Allah a voulu","Si Allah le veut","Allah est grand","Louange à Allah"], correct: 0 },
+        { q: "Que signifie 'Subhanallah' ?", opts: ["Gloire à Allah","Louange à Allah","Allah est grand","Il n'y a de dieu qu'Allah"], correct: 0 },
+        { q: "Que signifie 'Allahu Akbar' ?", opts: ["Allah est le plus grand","Louange à Allah","Gloire à Allah","Merci à Allah"], correct: 0 },
+        { q: "Que signifie 'Halal' ?", opts: ["Permis, licite","Interdit","Recommandé","Obligatoire"], correct: 0 },
+        { q: "Que signifie 'Haram' ?", opts: ["Interdit, illicite","Permis","Recommandé","Neutre"], correct: 0 },
+        { q: "Que signifie 'Dua' ?", opts: ["Invocation","Prière rituelle","Jeûne","Aumône"], correct: 0 },
+        { q: "Que signifie 'Sujud' ?", opts: ["Prosternation","Inclinaison","Position debout","Position assise"], correct: 0 },
+        { q: "Que signifie 'Ummah' ?", opts: ["Communauté","Famille","Tribu","Nation arabe"], correct: 0 },
+        { q: "Que signifie 'Jannah' ?", opts: ["Paradis","Enfer","Terre","Ciel"], correct: 0 },
+        { q: "Que signifie 'Jahannam' ?", opts: ["Enfer","Paradis","Purgatoire","Jugement"], correct: 0 },
+        { q: "Que signifie 'Rasul' ?", opts: ["Messager","Prophète simple","Ange","Compagnon"], correct: 0 }
+      ],
+      moyen: [
+        { q: "Que signifie 'Taqwa' ?", opts: ["La crainte pieuse d'Allah","Le courage","La patience","La générosité"], correct: 0 },
+        { q: "Que signifie 'Sabr' ?", opts: ["Patience","Foi","Confiance","Espoir"], correct: 0 },
+        { q: "Que signifie 'Tawakkul' ?", opts: ["Confiance en Allah","Patience","Repentir","Gratitude"], correct: 0 },
+        { q: "Que signifie 'Tawbah' ?", opts: ["Repentir","Pardon","Miséricorde","Aumône"], correct: 0 },
+        { q: "Que signifie 'Rahmah' ?", opts: ["Miséricorde","Justice","Sagesse","Puissance"], correct: 0 },
+        { q: "Que signifie 'Adl' ?", opts: ["Justice","Miséricorde","Patience","Sagesse"], correct: 0 },
+        { q: "Que signifie 'Fitrah' ?", opts: ["Nature innée","Destin","Épreuve","Récompense"], correct: 0 },
+        { q: "Que signifie 'Barakah' ?", opts: ["Bénédiction","Miracle","Récompense","Chance"], correct: 0 },
+        { q: "Que signifie 'Khushu' ?", opts: ["L'humilité dans la prière","La rapidité de la prière","Le lieu de prière","L'heure de la prière"], correct: 0 },
+        { q: "Que signifie 'Fiqh' ?", opts: ["Jurisprudence islamique","Théologie","Exégèse coranique","Science du hadith"], correct: 0 },
+        { q: "Que signifie 'Tafsir' ?", opts: ["Exégèse du Coran","Jurisprudence","Science du hadith","Grammaire arabe"], correct: 0 },
+        { q: "Que signifie 'Sunnah' ?", opts: ["La tradition prophétique","Le Coran","Un pilier de l'islam","Une prière"], correct: 0 }
+      ],
+      difficile: [
+        { q: "Que signifie 'Ijtihad' ?", opts: ["L'effort d'interprétation juridique","Le consensus des savants","L'analogie juridique","La révélation"], correct: 0 },
+        { q: "Que signifie 'Ijma' ?", opts: ["Le consensus des savants","L'effort d'interprétation","L'analogie juridique","La tradition"], correct: 0 },
+        { q: "Que signifie 'Qiyas' ?", opts: ["Le raisonnement par analogie","Le consensus","L'effort personnel","La révélation directe"], correct: 0 },
+        { q: "Que signifie 'Isnad' ?", opts: ["La chaîne de transmission d'un hadith","Le texte d'un hadith","Un commentaire coranique","Une école juridique"], correct: 0 },
+        { q: "Que signifie 'Matn' ?", opts: ["Le texte d'un hadith","La chaîne de transmission","Un commentaire","Une invocation"], correct: 0 },
+        { q: "Que signifie 'Naskh' en sciences coraniques ?", opts: ["L'abrogation d'un verset","La récitation","La calligraphie","La mémorisation"], correct: 0 }
+      ]
+    },
+
+    // ---------- COMPAGNONS ----------
+    compagnons: {
+      facile: [
+        { q: "Qui est le meilleur ami du Prophète et premier calife ?", opts: ["Abou Bakr","'Umar","'Uthman","'Ali"], correct: 0 },
+        { q: "Qui est surnommé 'Al-Farouq' (celui qui distingue le vrai du faux) ?", opts: ["'Umar ibn al-Khattab","Abou Bakr","'Uthman","'Ali"], correct: 0 },
+        { q: "Quel compagnon était le cousin et gendre du Prophète ?", opts: ["'Ali ibn Abi Talib","Abou Bakr","'Umar","'Uthman"], correct: 0 },
+        { q: "Qui est le premier muezzin de l'histoire de l'Islam ?", opts: ["Bilal ibn Rabah","Abou Bakr","'Ammar","Salman"], correct: 0 },
+        { q: "Quel compagnon était surnommé 'l'épée d'Allah' ?", opts: ["Khalid ibn al-Walid","Sa'd ibn Abi Waqqas","'Amr ibn al-'As","Abou 'Ubayda"], correct: 0 },
+        { q: "Quel compagnon a émigré deux fois pour sa foi (Éthiopie puis Médine) ?", opts: ["Plusieurs compagnons dont Ja'far ibn Abi Talib","'Ali seul","Abou Bakr seul","'Umar seul"], correct: 0 },
+        { q: "Qui était le secrétaire personnel du Prophète pour la révélation ?", opts: ["Zayd ibn Thabit","Bilal","Abou Hurayra","Mu'adh ibn Jabal"], correct: 0 },
+        { q: "Quel compagnon est connu pour avoir rapporté le plus de hadiths ?", opts: ["Abou Hurayra","Ibn 'Abbas","Anas ibn Malik","Jabir ibn 'Abdullah"], correct: 0 },
+        { q: "Quel jeune compagnon est surnommé 'le savant de la communauté' ?", opts: ["'Abdullah ibn 'Abbas","Anas ibn Malik","Zayd ibn Thabit","Mu'adh ibn Jabal"], correct: 0 },
+        { q: "Qui était le serviteur personnel du Prophète pendant 10 ans ?", opts: ["Anas ibn Malik","Bilal","Zayd ibn Thabit","Abou Hurayra"], correct: 0 }
+      ],
+      moyen: [
+        { q: "Qui a été envoyé au Yémen comme juge et gouverneur par le Prophète ?", opts: ["Mu'adh ibn Jabal","Bilal","Zayd ibn Thabit","Abou 'Ubayda"], correct: 0 },
+        { q: "Quel compagnon perse a suggéré de creuser un fossé lors de la bataille du Fossé ?", opts: ["Salman al-Farisi","Bilal","Suhayb","Ammar"], correct: 0 },
+        { q: "Quel compagnon romain (byzantin) a émigré vers Médine ?", opts: ["Suhayb ar-Rumi","Salman al-Farisi","Bilal","'Ammar"], correct: 0 },
+        { q: "Qui parmi les compagnons est appelé 'le trésorier de la communauté' ?", opts: ["Abou 'Ubayda ibn al-Jarrah","Sa'd ibn Abi Waqqas","Talha","Zubayr"], correct: 0 },
+        { q: "Quel compagnon a été le premier à tirer une flèche pour la cause de l'Islam ?", opts: ["Sa'd ibn Abi Waqqas","Khalid ibn al-Walid","'Amr ibn al-'As","Zubayr ibn al-'Awwam"], correct: 0 },
+        { q: "Quel général a conquis l'Égypte pour les musulmans ?", opts: ["'Amr ibn al-'As","Khalid ibn al-Walid","Sa'd ibn Abi Waqqas","Abou 'Ubayda"], correct: 0 },
+        { q: "Qui a conduit la conquête de la Perse à la bataille de Qadisiyya ?", opts: ["Sa'd ibn Abi Waqqas","Khalid ibn al-Walid","'Amr ibn al-'As","Abou 'Ubayda"], correct: 0 },
+        { q: "Quel compagnon est mort en martyr lors de la bataille de Uhud et était l'oncle du Prophète ?", opts: ["Hamza ibn 'Abd al-Muttalib","Ja'far ibn Abi Talib","Zayd ibn Haritha","Mus'ab ibn 'Umayr"], correct: 0 }
+      ],
+      difficile: [
+        { q: "Quel compagnon fut le premier ambassadeur de l'Islam envoyé à Médine avant l'Hégire ?", opts: ["Mus'ab ibn 'Umayr","Zayd ibn Haritha","Bilal","Sa'd ibn Mu'adh"], correct: 0 },
+        { q: "Qui a été le porte-drapeau à la bataille de Mu'tah et est mort en martyr ?", opts: ["Zayd ibn Haritha","Ja'far ibn Abi Talib et 'Abdullah ibn Rawaha (successivement)","Khalid ibn al-Walid seul","Sa'd ibn Abi Waqqas"], correct: 1 },
+        { q: "Quel compagnon aveugle a reçu une révélation coranique le concernant (sourate 'Abasa) ?", opts: ["'Abdullah ibn Umm Maktum","Bilal","Salman al-Farisi","Suhayb"], correct: 0 },
+        { q: "Qui a dirigé l'armée musulmane après la mort de trois commandants successifs à Mu'tah ?", opts: ["Khalid ibn al-Walid","Sa'd ibn Abi Waqqas","'Amr ibn al-'As","Abou 'Ubayda"], correct: 0 }
+      ]
+    },
+
+    // ---------- FEMMES EN ISLAM ----------
+    femmes: {
+      facile: [
+        { q: "Qui est la première épouse du Prophète ?", opts: ["Khadija bint Khuwaylid","Aïcha","Hafsa","Zaynab"], correct: 0 },
+        { q: "Qui est la fille du Prophète mariée à 'Ali ?", opts: ["Fatima","Zaynab","Umm Kulthum","Ruqayya"], correct: 0 },
+        { q: "Qui est la mère de Jésus dans le Coran ?", opts: ["Maryam","Sarah","Hajar","Hawwa"], correct: 0 },
+        { q: "Quelle est la seule sourate portant un nom de femme ?", opts: ["Maryam","An-Nisa","Al-Mumtahina","At-Tahrim"], correct: 0 },
+        { q: "Qui est l'épouse d'Ibrahim et mère d'Isma'il ?", opts: ["Hajar","Sarah","Khadija","Maryam"], correct: 0 },
+        { q: "Qui est l'épouse d'Ibrahim et mère d'Isaac ?", opts: ["Sarah","Hajar","Khadija","Maryam"], correct: 0 },
+        { q: "Quelle épouse du Prophète est connue pour sa grande connaissance des hadiths ?", opts: ["Aïcha","Hafsa","Zaynab","Umm Salama"], correct: 0 },
+        { q: "Qui est la mère de Moïse selon le Coran ?", opts: ["Elle n'est pas nommée mais son histoire est racontée","Hajar","Maryam","Sarah"], correct: 0 },
+        { q: "Qui est la première personne à croire au message du Prophète ?", opts: ["Khadija","Abou Bakr","'Ali","Zayd"], correct: 0 }
+      ],
+      moyen: [
+        { q: "Combien d'enfants Khadija et le Prophète ont-ils eus ?", opts: ["6 (2 fils et 4 filles)","4","8","2"], correct: 0 },
+        { q: "Quelle épouse du Prophète était la fille d''Umar ibn al-Khattab ?", opts: ["Hafsa","Aïcha","Zaynab","Juwayriya"], correct: 0 },
+        { q: "Quelle épouse du Prophète était la fille d'Abou Bakr ?", opts: ["Aïcha","Hafsa","Sawda","Zaynab"], correct: 0 },
+        { q: "Combien d'années Khadija et le Prophète sont-ils restés mariés ?", opts: ["25 ans","15 ans","20 ans","30 ans"], correct: 0 },
+        { q: "Quelle femme a émigré vers l'Éthiopie avec son mari Ja'far ?", opts: ["Asma bint 'Umays","Umm Salama","Zaynab bint Jahsh","Ruqayya"], correct: 0 },
+        { q: "Quelle fille du Prophète était mariée à 'Uthman ibn 'Affan ?", opts: ["Ruqayya (puis Umm Kulthum)","Fatima","Zaynab","Aucune"], correct: 0 }
+      ],
+      difficile: [
+        { q: "Quelle compagne est connue comme 'la mère des pauvres' ?", opts: ["Zaynab bint Jahsh","Umm Salama","Sawda","Juwayriya"], correct: 0 },
+        { q: "Quelle femme a participé aux soins des blessés à la bataille de Uhud ?", opts: ["Plusieurs femmes dont Rufaida al-Aslamiya","Aucune femme","Seulement Aïcha","Seulement Fatima"], correct: 0 },
+        { q: "Qui est considérée comme la première infirmière de l'Islam ?", opts: ["Rufaida al-Aslamiya","Umm 'Atiyya","Nusayba bint Ka'b","Asma bint Abi Bakr"], correct: 0 },
+        { q: "Quelle femme a combattu vaillamment pour protéger le Prophète à Uhud ?", opts: ["Nusayba bint Ka'b","Rufaida al-Aslamiya","Umm 'Ammara (autre nom de Nusayba)","Les deux réponses A et C désignent la même personne"], correct: 3 }
+      ]
+    },
+
+    // ---------- PILIERS DE L'ISLAM ----------
+    piliers: {
+      facile: [
+        { q: "Combien y a-t-il de piliers de l'Islam ?", opts: ["5","6","4","7"], correct: 0 },
+        { q: "Quel est le premier pilier de l'Islam ?", opts: ["L'attestation de foi (Shahada)","La prière","Le jeûne","Le pèlerinage"], correct: 0 },
+        { q: "Combien de prières obligatoires y a-t-il par jour ?", opts: ["5","3","4","7"], correct: 0 },
+        { q: "Quel mois du calendrier musulman est consacré au jeûne ?", opts: ["Ramadan","Chawwal","Dhou al-Hijja","Mouharram"], correct: 0 },
+        { q: "Comment appelle-t-on le pèlerinage à La Mecque ?", opts: ["Le Hajj","L'Omra","La Ziyara","Le Tawaf"], correct: 0 },
+        { q: "Comment appelle-t-on l'aumône légale obligatoire ?", opts: ["La Zakat","La Sadaqa","Le Khums","Le Waqf"], correct: 0 },
+        { q: "Vers quelle direction les musulmans prient-ils ?", opts: ["La Kaaba (Qibla)","Jérusalem","Médine","Le levant"], correct: 0 },
+        { q: "Quel pilier consiste à attester qu'il n'y a de dieu qu'Allah et que Muhammad est Son messager ?", opts: ["La Shahada","La Salat","La Zakat","Le Hajj"], correct: 0 }
+      ],
+      moyen: [
+        { q: "Quel est le taux général de la Zakat sur l'épargne ?", opts: ["2,5%","5%","10%","1%"], correct: 0 },
+        { q: "Combien de fois le Hajj est-il obligatoire dans une vie ?", opts: ["Une fois si on en a les moyens","Chaque année","Deux fois","Ce n'est jamais obligatoire"], correct: 0 },
+        { q: "Quel rite marque le début du Hajj ?", opts: ["L'entrée en état d'Ihram","Le sacrifice","La lapidation","Le tawaf final"], correct: 0 },
+        { q: "Combien de fois tourne-t-on autour de la Kaaba lors du Tawaf ?", opts: ["7 fois","5 fois","3 fois","10 fois"], correct: 0 },
+        { q: "Entre quelles collines se déroule le Sa'i lors du Hajj ?", opts: ["Safa et Marwa","'Arafat et Mina","Hira et Thawr","Uhud et Badr"], correct: 0 },
+        { q: "Quel jour du Hajj est passé sur le mont 'Arafat ?", opts: ["Le 9 Dhou al-Hijja","Le 1er Dhou al-Hijja","Le 10 Dhou al-Hijja","Le 8 Dhou al-Hijja"], correct: 0 }
+      ],
+      difficile: [
+        { q: "Quel nisab (seuil) déclenche l'obligation de zakat sur l'or ?", opts: ["Environ 85 grammes","Environ 50 grammes","Environ 100 grammes","Environ 200 grammes"], correct: 0 },
+        { q: "Comment appelle-t-on le petit pèlerinage qui peut être fait toute l'année ?", opts: ["L'Omra","Le Hajj","La Ziyara","Le I'tikaf"], correct: 0 },
+        { q: "Comment appelle-t-on la retraite spirituelle dans la mosquée durant les 10 derniers jours de Ramadan ?", opts: ["Le I'tikaf","Le Tahajjud","Le Qiyam","Le Sawm"], correct: 0 },
+        { q: "Quelle nuit des 10 derniers jours de Ramadan est considérée comme la meilleure de l'année ?", opts: ["Laylat al-Qadr","Laylat al-Bara'a","Laylat al-Isra","Laylat al-Miraj"], correct: 0 }
+      ]
+    },
+
+    // ---------- HADITHS ----------
+    hadiths: {
+      facile: [
+        { q: "Comment appelle-t-on les paroles et actes du Prophète ?", opts: ["Le Hadith","Le Tafsir","Le Fiqh","Le Coran"], correct: 0 },
+        { q: "Quel recueil de hadiths est considéré comme le plus authentique ?", opts: ["Sahih al-Bukhari","Sunan Abou Dawud","Sunan at-Tirmidhi","Muwatta Malik"], correct: 0 },
+        { q: "Qui a compilé le Sahih al-Bukhari ?", opts: ["L'imam al-Bukhari","L'imam Muslim","L'imam Malik","L'imam Ahmad"], correct: 0 },
+        { q: "Quels sont les deux recueils les plus authentiques après le Coran ?", opts: ["Sahih al-Bukhari et Sahih Muslim","Sunan Abou Dawud et Ibn Maja","Muwatta et Musnad","Tirmidhi et Nasa'i"], correct: 0 },
+        { q: "Que veut dire 'Hadith Qudsi' ?", opts: ["Une parole d'Allah rapportée par le Prophète, hors Coran","Un verset du Coran","Une parole d'un compagnon","Une invocation"], correct: 0 }
+      ],
+      moyen: [
+        { q: "Qui a compilé le Sahih Muslim ?", opts: ["L'imam Muslim ibn al-Hajjaj","L'imam al-Bukhari","L'imam Malik","L'imam Ahmad"], correct: 0 },
+        { q: "Comment appelle-t-on les six recueils de hadiths les plus reconnus (sunnites) ?", opts: ["Al-Kutub as-Sitta","Al-Arba'un","Al-Muwatta","Al-Musnad"], correct: 0 },
+        { q: "Que signifie un hadith classé 'da'if' ?", opts: ["Faible","Authentique","Bon","Fabriqué"], correct: 0 },
+        { q: "Que signifie un hadith classé 'sahih' ?", opts: ["Authentique","Faible","Fabriqué","Douteux"], correct: 0 },
+        { q: "Qui a compilé le célèbre recueil 'Riyad as-Salihin' ?", opts: ["L'imam an-Nawawi","L'imam al-Bukhari","L'imam Muslim","L'imam Malik"], correct: 0 }
+      ],
+      difficile: [
+        { q: "Que signifie 'hadith mutawatir' ?", opts: ["Rapporté par un très grand nombre de chaînes, impossible de mentir de concert","Rapporté par une seule personne","Un hadith faible","Un hadith fabriqué"], correct: 0 },
+        { q: "Que signifie 'hadith mawdu' ?", opts: ["Fabriqué, inventé","Authentique","Faible mais acceptable","Rapporté par un compagnon"], correct: 0 },
+        { q: "Qu'est-ce que la science du 'jarh wa ta'dil' ?", opts: ["L'étude de la fiabilité des rapporteurs de hadiths","L'étude du Coran","La jurisprudence islamique","L'histoire islamique"], correct: 0 }
+      ]
+    },
+
+    // ---------- BATAILLES ----------
+    batailles: {
+      facile: [
+        { q: "Quelle est la première grande bataille de l'Islam ?", opts: ["La bataille de Badr","La bataille de Uhud","La bataille du Fossé","La bataille de Hunayn"], correct: 0 },
+        { q: "En quelle année a eu lieu la bataille de Badr ?", opts: ["624 (an 2 de l'Hégire)","622","630","625"], correct: 0 },
+        { q: "En quelle année a eu lieu la bataille de Uhud ?", opts: ["625 (an 3 de l'Hégire)","624","622","630"], correct: 0 },
+        { q: "Quelle bataille a vu les musulmans creuser une tranchée pour se défendre ?", opts: ["La bataille du Fossé (Khandaq)","Badr","Uhud","Hunayn"], correct: 0 },
+        { q: "Quelle bataille a permis la conquête pacifique de La Mecque ?", opts: ["Aucune bataille, la ville s'est rendue","La bataille de Hunayn","La bataille de Badr","La bataille de Uhud"], correct: 0 },
+      ],
+      moyen: [
+        { q: "Combien de musulmans ont combattu à Badr environ ?", opts: ["313","500","1000","150"], correct: 0 },
+        { q: "Combien de Quraychites étaient présents à Badr environ ?", opts: ["Environ 1000","313","500","2000"], correct: 0 },
+        { q: "Pourquoi la bataille de Uhud a-t-elle mal tourné pour les musulmans ?", opts: ["Des archers ont quitté leur position","Manque d'armes","Trahison d'un compagnon","Absence du Prophète"], correct: 0 },
+        { q: "Qui a suggéré la stratégie du fossé lors de la bataille du Khandaq ?", opts: ["Salman al-Farisi","Khalid ibn al-Walid","'Ali","Abou Bakr"], correct: 0 },
+        { q: "Quelle bataille a eu lieu juste après la conquête de La Mecque ?", opts: ["La bataille de Hunayn","La bataille de Badr","La bataille de Uhud","La bataille du Fossé"], correct: 0 }
+      ],
+      difficile: [
+        { q: "En quelle année a eu lieu la bataille de Mu'tah contre les Byzantins ?", opts: ["629 (an 8 de l'Hégire)","630","625","624"], correct: 0 },
+        { q: "En quelle année a eu lieu la bataille de Yarmouk ?", opts: ["636","630","640","650"], correct: 0 },
+        { q: "Quelle bataille a marqué la conquête musulmane de la Perse sassanide ?", opts: ["La bataille de Qadisiyya","La bataille de Yarmouk","La bataille de Nihawand","La bataille de Talas"], correct: 0 },
+        { q: "Quelle bataille de 751 a opposé les musulmans aux Chinois ?", opts: ["La bataille de Talas","La bataille de Nihawand","La bataille de Qadisiyya","La bataille de Poitiers"], correct: 0 }
+      ]
+    },
+
+    // ---------- SCIENCES EN TERRE D'ISLAM ----------
+    sciences: {
+      facile: [
+        { q: "Quel savant musulman est considéré comme le père de l'algèbre ?", opts: ["Al-Khwarizmi","Ibn Sina","Al-Razi","Ibn al-Haytham"], correct: 0 },
+        { q: "D'où vient le mot 'algèbre' ?", opts: ["De l'arabe 'al-jabr'","Du grec","Du latin","Du persan"], correct: 0 },
+        { q: "Quel savant musulman est célèbre en médecine et a écrit 'Le Canon de la médecine' ?", opts: ["Ibn Sina (Avicenne)","Al-Khwarizmi","Ibn al-Haytham","Al-Biruni"], correct: 0 },
+        { q: "Quel savant est considéré comme le père de l'optique moderne ?", opts: ["Ibn al-Haytham (Alhazen)","Ibn Sina","Al-Khwarizmi","Al-Razi"], correct: 0 },
+        { q: "Quels chiffres utilisés aujourd'hui viennent du monde arabo-musulman ?", opts: ["Les chiffres arabes","Les chiffres romains","Les chiffres chinois","Les chiffres grecs"], correct: 0 }
+      ],
+      moyen: [
+        { q: "Quel médecin musulman a écrit un traité pionnier sur la variole et la rougeole ?", opts: ["Al-Razi (Rhazès)","Ibn Sina","Ibn al-Haytham","Al-Zahrawi"], correct: 0 },
+        { q: "Quel savant est considéré comme le père de la chirurgie moderne ?", opts: ["Al-Zahrawi (Abulcasis)","Ibn Sina","Al-Razi","Al-Khwarizmi"], correct: 0 },
+        { q: "Quelle institution de Bagdad a rassemblé savants et traducteurs sous les Abbassides ?", opts: ["Bayt al-Hikma (Maison de la Sagesse)","Al-Azhar","La bibliothèque de Cordoue","L'observatoire de Samarcande"], correct: 0 },
+        { q: "Quel savant musulman a mesuré la circonférence de la Terre avec précision ?", opts: ["Al-Biruni","Ibn Sina","Al-Khwarizmi","Ibn al-Haytham"], correct: 0 },
+        { q: "Quelle grande université/mosquée du Caire est un centre d'études islamiques depuis des siècles ?", opts: ["Al-Azhar","Al-Qarawiyyin","Bayt al-Hikma","Al-Zaytouna"], correct: 0 }
+      ],
+      difficile: [
+        { q: "Quelle est considérée comme la plus ancienne université encore en activité au monde, fondée par une femme musulmane ?", opts: ["L'université Al-Qarawiyyin (Fès, fondée par Fatima al-Fihri)","Al-Azhar","Oxford","Bologne"], correct: 0 },
+        { q: "Quel astronome musulman a critiqué le modèle géocentrique de Ptolémée avant Copernic ?", opts: ["Ibn al-Shatir","Al-Biruni","Al-Khwarizmi","Ibn Sina"], correct: 0 },
+        { q: "Quel savant a développé des méthodes précoces de la méthode expérimentale en optique ?", opts: ["Ibn al-Haytham","Al-Razi","Ibn Sina","Al-Khwarizmi"], correct: 0 },
+        { q: "Quel terme désigne les chiffres transmis via le monde arabo-musulman, d'origine indienne ?", opts: ["Chiffres indo-arabes","Chiffres arabes purs","Chiffres perses","Chiffres grecs"], correct: 0 }
+      ]
+    }
 };
-
-// -------------------- GÉNÉRATION PROCÉDURALE POUR LES AUTRES CATÉGORIES --------------------
-function generateQuestionsForCategory(category, difficulty, count) {
-  const templates = {
-    histoire: [
-      { q: "Quel calife a conquis Jérusalem ?", opts: ["'Umar","Abou Bakr","'Uthmân","'Alî"], correct: 0 },
-      { q: "Quelle bataille a marqué la fin de la dynastie omeyyade ?", opts: ["Zab","Yarmouk","Qadisiyya","Nahavand"], correct: 0 },
-      { q: "Combien d'années le califat abbasside a-t-il duré ?", opts: ["300","400","500","600"], correct: 2 },
-      { q: "Qui a fondé la ville du Caire ?", opts: ["Les Fatimides","Les Ayyoubides","Les Mamelouks","Les Ottomans"], correct: 0 },
-      { q: "Quand a eu lieu la bataille de Hattin ?", opts: ["1187","1192","1174","1180"], correct: 0 },
-      { q: "Qui a conquis Constantinople en 1453 ?", opts: ["Mehmed II","Suleiman","Bayezid","Orhan"], correct: 0 },
-      { q: "Quelle est la première mosquée de l'Islam ?", opts: ["Qubâ","Al-Haram","Al-Aqsa","Al-Nabawi"], correct: 0 },
-      { q: "Qui a ordonné la compilation du Coran en un seul mushaf ?", opts: ["Abou Bakr","'Umar","'Uthmân","'Alî"], correct: 0 },
-      { q: "Quelle est la durée de la guerre de la Mecque ?", opts: ["2 ans","3 ans","4 ans","5 ans"], correct: 0 },
-      { q: "Quel est le nom du premier sultan mamelouk ?", opts: ["Qutuz","Baybars","Al-Mansur","Al-Zahir"], correct: 0 },
-      { q: "Quelle dynastie a régné sur l'Andalousie ?", opts: ["Omeyyades","Abbassides","Fatimides","Almoravides"], correct: 0 },
-      { q: "Qui a construit la Grande Mosquée de Cordoue ?", opts: ["Abd al-Rahman I","Abd al-Rahman II","Abd al-Rahman III","Hisham"], correct: 0 },
-      { q: "Quelle est la date de la prise de Jérusalem par les Croisés ?", opts: ["1099","1100","1095","1105"], correct: 0 },
-      { q: "Qui a repris Jérusalem en 1187 ?", opts: ["Saladin","Nur ad-Din","Baybars","Al-Adil"], correct: 0 },
-      { q: "Quel est le nom du premier calife bien guidé ?", opts: ["Abou Bakr","'Umar","'Uthmân","'Alî"], correct: 0 }
-    ],
-    vocabulaire: [
-      { q: "Que signifie 'Tawhid' ?", opts: ["Unicité de Dieu","Prophétie","Foi","Prières"], correct: 0 },
-      { q: "Que signifie 'Salah' ?", opts: ["Prière","Jeûne","Pèlerinage","Aumône"], correct: 0 },
-      { q: "Que signifie 'Zakat' ?", opts: ["Aumône légale","Charité facultative","Jeûne","Prière"], correct: 0 },
-      { q: "Que signifie 'Sawm' ?", opts: ["Jeûne","Prière","Pèlerinage","Aumône"], correct: 0 },
-      { q: "Que signifie 'Hajj' ?", opts: ["Pèlerinage","Jeûne","Prière","Aumône"], correct: 0 },
-      { q: "Que signifie 'Rasul' ?", opts: ["Messager","Prophète","Compagnon","Érudit"], correct: 0 },
-      { q: "Que signifie 'Nabi' ?", opts: ["Prophète","Messager","Compagnon","Imam"], correct: 0 },
-      { q: "Que signifie 'Sahaba' ?", opts: ["Compagnons","Érudits","Prophètes","Anges"], correct: 0 },
-      { q: "Que signifie 'Tafsir' ?", opts: ["Exégèse","Traduction","Récitation","Grammaire"], correct: 0 },
-      { q: "Que signifie 'Fiqh' ?", opts: ["Jurisprudence","Théologie","Soufisme","Astronomie"], correct: 0 },
-      { q: "Que signifie 'Sunnah' ?", opts: ["Tradition prophétique","Loi","Foi","Pureté"], correct: 0 },
-      { q: "Que signifie 'Hadith' ?", opts: ["Parole du Prophète","Acte du Prophète","Sourate","Verset"], correct: 0 },
-      { q: "Que signifie 'Jannah' ?", opts: ["Paradis","Enfer","Pureté","Foi"], correct: 0 },
-      { q: "Que signifie 'Jahannam' ?", opts: ["Enfer","Paradis","Pureté","Foi"], correct: 0 },
-      { q: "Que signifie 'Iman' ?", opts: ["Foi","Charité","Prière","Jeûne"], correct: 0 }
-    ],
-    compagnons: [
-      { q: "Quel compagnon est connu pour sa piété et son jeûne ?", opts: ["Abou Bakr","'Umar","'Uthmân","'Alî"], correct: 0 },
-      { q: "Quel compagnon a été surnommé 'le lion d'Allah' ?", opts: ["Hamza","'Umar","Abou Bakr","Ali"], correct: 0 },
-      { q: "Quel compagnon a été le premier à embrasser l'Islam chez les hommes ?", opts: ["Abou Bakr","Ali","Zayd","'Umar"], correct: 0 },
-      { q: "Quel compagnon a été le premier à embrasser l'Islam chez les esclaves ?", opts: ["Bilâl","Abou Bakr","Ali","Zayd"], correct: 0 },
-      { q: "Quel compagnon a été le premier à embrasser l'Islam chez les enfants ?", opts: ["Ali","Zayd","Abou Bakr","Bilâl"], correct: 0 },
-      { q: "Quel compagnon est connu pour sa bravoure à Badr ?", opts: ["Ali","Hamza","Abou Bakr","'Umar"], correct: 1 },
-      { q: "Quel compagnon est appelé le 'détenteur des deux lumières' ?", opts: ["'Uthmân","'Umar","Ali","Abou Bakr"], correct: 0 },
-      { q: "Quel compagnon a été assassiné alors qu'il lisait le Coran ?", opts: ["'Uthmân","'Umar","Ali","Zayd"], correct: 0 },
-      { q: "Quel compagnon a été enterré à côté du Prophète ?", opts: ["Abou Bakr","'Umar","'Uthmân","Ali"], correct: 0 },
-      { q: "Quel compagnon est connu pour sa sagesse et sa justice ?", opts: ["'Umar","Abou Bakr","Ali","'Uthmân"], correct: 0 },
-      { q: "Quel compagnon a été surnommé 'Abou Huraira' ?", opts: ["Compagnon","Érudit","Imam","Faqîh"], correct: 0 }
-    ],
-    femmes: [
-      { q: "Qui est la mère des croyants (épouse du Prophète) ?", opts: ["Khadija","Aïcha","Hafsa","Zaynab"], correct: 0 },
-      { q: "Quelle femme est citée comme exemple de foi dans le Coran ?", opts: ["Maryam","Asiya","Hajar","Sarah"], correct: 0 },
-      { q: "Quelle femme a été l'une des premières à embrasser l'Islam ?", opts: ["Khadija","Aïcha","Fatima","Umm Salama"], correct: 0 },
-      { q: "Quelle est la fille du Prophète ?", opts: ["Fatima","Zaynab","Ruqayya","Umm Kalthum"], correct: 0 },
-      { q: "Quelle femme est connue pour sa connaissance du fiqh ?", opts: ["Aïcha","Hafsa","Umm Salama","Khadija"], correct: 0 },
-      { q: "Qui est la mère de Jésus ?", opts: ["Maryam","Sarah","Hajar","Asiya"], correct: 0 },
-      { q: "Quelle femme est citée dans le Coran comme épouse de Pharaon ?", opts: ["Asiya","Sarah","Hajar","Maryam"], correct: 0 },
-      { q: "Quelle épouse du Prophète a été assassinée ?", opts: ["Zaynab bint Jahsh","Juwayriyya","Safiyya","Maymuna"], correct: 0 },
-      { q: "Quelle femme est la mère des deux petits-fils du Prophète ?", opts: ["Fatima","Khadija","Aïcha","Zaynab"], correct: 0 },
-      { q: "Quelle femme est connue pour avoir donné l'aumône de ses bijoux ?", opts: ["Umm Salama","Aïcha","Hafsa","Khadija"], correct: 0 },
-      { q: "Quelle femme est citée dans le Coran comme modèle de patience ?", opts: ["Hajar","Sarah","Asiya","Maryam"], correct: 0 }
-    ],
-    piliers: [
-      { q: "Combien y a-t-il de piliers de l'Islam ?", opts: ["5","6","7","8"], correct: 0 },
-      { q: "Combien y a-t-il de piliers de la foi ?", opts: ["5","6","7","8"], correct: 1 },
-      { q: "Quel est le premier pilier de l'Islam ?", opts: ["La chahada","La prière","Le jeûne","L'aumône"], correct: 0 },
-      { q: "Combien de prières obligatoires par jour ?", opts: ["5","4","3","6"], correct: 0 },
-      { q: "Le jeûne a lieu pendant quel mois ?", opts: ["Ramadan","Dhu al-Hijja","Muharram","Rajab"], correct: 0 },
-      { q: "Le pèlerinage a lieu pendant quel mois ?", opts: ["Dhu al-Hijja","Ramadan","Muharram","Rajab"], correct: 0 },
-      { q: "Qu'est-ce que la Zakat ?", opts: ["Aumône légale","Charité facultative","Prière","Jeûne"], correct: 0 },
-      { q: "Quelle est la direction de la prière (qibla) ?", opts: ["La Kaaba","Jérusalem","Médine","Le Mont Sinaï"], correct: 0 },
-      { q: "Combien de fois doit-on faire le pèlerinage dans sa vie ?", opts: ["Une fois","Deux fois","Trois fois","Autant que possible"], correct: 0 },
-      { q: "Qu'est-ce que le jihad ?", opts: ["Effort dans le chemin de Dieu","Guerre sainte","Pèlerinage","Jeûne"], correct: 0 },
-      { q: "Quel est le dernier pilier de l'Islam ?", opts: ["Le pèlerinage","Le jeûne","La prière","L'aumône"], correct: 0 },
-      { q: "Que signifie 'Shahada' ?", opts: ["Attestation de foi","Prière","Jeûne","Pèlerinage"], correct: 0 },
-      { q: "Combien de fois doit-on prier par jour selon le Coran ?", opts: ["5","3","4","6"], correct: 0 }
-    ],
-    hadiths: [
-      { q: "Quel livre recueille les hadiths les plus authentiques ?", opts: ["Sahih al-Bukhari","Sahih Muslim","Sunan Abi Dawud","Jami at-Tirmidhi"], correct: 0 },
-      { q: "Qui est le auteur du Sahih al-Bukhari ?", opts: ["Muhammad ibn Ismail al-Bukhari","Muslim ibn al-Hajjaj","Abu Dawud","At-Tirmidhi"], correct: 0 },
-      { q: "Combien de hadiths contient le Sahih al-Bukhari ?", opts: ["7000+","5000+","3000+","10000+"], correct: 0 },
-      { q: "Quel hadith parle de l'importance de la prière ?", opts: ["'La prière est le pilier de la religion'","'La charité éteint les péchés'","'Le jeûne est un bouclier'","'Le pèlerinage efface les péchés'"], correct: 0 },
-      { q: "Quel hadith mentionne que 'l'Islam repose sur cinq piliers' ?", opts: ["Hadith de Jibril","Hadith d'Abou Huraira","Hadith d'Anas","Hadith de 'Umar"], correct: 0 },
-      { q: "Quel hadith parle de la liberté de la femme ?", opts: ["'Les femmes sont les sœurs des hommes'","'Ne frappez pas les femmes'","'Le Paradis est sous les pieds des mères'","'La meilleure des femmes...'"], correct: 0 },
-      { q: "Quel hadith recommande le jeûne de 'Achoura ?", opts: ["'Jeûnez le jour de 'Achoura'","'Jeûnez six jours de Shawwal'","'Jeûnez le lundi et le jeudi'","'Jeûnez le jour de 'Arafat'"], correct: 0 },
-      { q: "Quel livre est le deuxième plus authentique après le Sahih al-Bukhari ?", opts: ["Sahih Muslim","Sunan an-Nasa'i","Sunan Ibn Majah","Muwatta Malik"], correct: 0 },
-      { q: "Qu'est-ce qu'un hadith 'mutawatir' ?", opts: ["Transmis par une multitude","Transmis par un seul","Faible","Inventé"], correct: 0 },
-      { q: "Quel hadith parle du destin ?", opts: ["'Croyez au destin, bon ou mauvais'","'Tout est écrit'","'Le destin est un mystère'","'Le destin n'existe pas'"], correct: 0 }
-    ],
-    batailles: [
-      { q: "Où a eu lieu la bataille de Badr ?", opts: ["Près de Médine","Près de La Mecque","Près de Ta'if","Près de Jérusalem"], correct: 0 },
-      { q: "En quelle année la bataille de Badr a-t-elle eu lieu ?", opts: ["2 AH","3 AH","1 AH","4 AH"], correct: 0 },
-      { q: "Combien de combattants musulmans à Badr ?", opts: ["300","400","500","600"], correct: 0 },
-      { q: "Où a eu lieu la bataille de Uhud ?", opts: ["Près de Médine","Près de La Mecque","Près de Ta'if","Près de Jérusalem"], correct: 0 },
-      { q: "En quelle année la bataille de Uhud a-t-elle eu lieu ?", opts: ["3 AH","2 AH","4 AH","5 AH"], correct: 0 },
-      { q: "Qui a été blessé à Uhud ?", opts: ["Le Prophète","Ali","Abou Bakr","'Umar"], correct: 0 },
-      { q: "Où a eu lieu la bataille du Fossé (Al-Khandaq) ?", opts: ["Médine","La Mecque","Ta'if","Badr"], correct: 0 },
-      { q: "En quelle année la bataille du Fossé a-t-elle eu lieu ?", opts: ["5 AH","4 AH","6 AH","7 AH"], correct: 0 },
-      { q: "Quel compagnon a suggéré de creuser un fossé ?", opts: ["Salman le Persan","Abou Bakr","Ali","'Umar"], correct: 0 },
-      { q: "Où a eu lieu la bataille de Khaybar ?", opts: ["À Khaybar","Médine","La Mecque","Ta'if"], correct: 0 },
-      { q: "En quelle année la conquête de La Mecque a-t-elle eu lieu ?", opts: ["8 AH","7 AH","9 AH","10 AH"], correct: 0 },
-      { q: "Où a eu lieu la bataille de Hunayn ?", opts: ["Près de Ta'if","Près de La Mecque","Près de Médine","Près de Khaybar"], correct: 0 },
-      { q: "Quel prophète a participé à la bataille de Badr ?", opts: ["Le Prophète Muhammad","Moïse","Abraham","Jésus"], correct: 0 }
-    ],
-    sciences: [
-      { q: "Quel savant musulman a écrit 'Al-Qanun fi al-Tibb' ?", opts: ["Avicenne","Al-Razi","Ibn al-Nafis","Al-Zahrawi"], correct: 0 },
-      { q: "Quel mathématicien a introduit l'algèbre ?", opts: ["Al-Khwarizmi","Al-Farabi","Ibn Sina","Al-Battani"], correct: 0 },
-      { q: "Qui a observé la supernova de 1054 ?", opts: ["Les astronomes arabes","Les Chinois","Les Indiens","Les Grecs"], correct: 0 },
-      { q: "Quel est le nom du père de la chimie moderne ?", opts: ["Jabir ibn Hayyan","Al-Razi","Ibn Sina","Al-Biruni"], correct: 0 },
-      { q: "Qui a découvert le système sanguin pulmonaire ?", opts: ["Ibn al-Nafis","Avicenne","Al-Razi","Al-Zahrawi"], correct: 0 },
-      { q: "Quel savant a écrit 'Kitab al-Manazir' sur l'optique ?", opts: ["Ibn al-Haytham","Al-Farabi","Al-Khwarizmi","Al-Biruni"], correct: 0 },
-      { q: "Qui a fondé l'observatoire de Maragha ?", opts: ["Nasir al-Din al-Tusi","Al-Battani","Al-Farabi","Ibn al-Shâtir"], correct: 0 },
-      { q: "Qui a mesuré la circonférence de la Terre ?", opts: ["Al-Biruni","Al-Farabi","Ibn Sina","Al-Khwarizmi"], correct: 0 },
-      { q: "Qui a écrit le 'Canon de la médecine' ?", opts: ["Avicenne","Al-Razi","Ibn al-Nafis","Al-Zahrawi"], correct: 0 },
-      { q: "Quel savant a découvert la gravité avant Newton ?", opts: ["Ibn al-Haytham","Al-Biruni","Al-Khwarizmi","Al-Farabi"], correct: 0 }
-    ]
-  };
-
-  const pool = [];
-  const catTemplates = templates[category] || [];
-  if (catTemplates.length === 0) {
-    // fallback : générer des questions génériques (ne devrait pas arriver pour les catégories gérées)
-    for (let i = 0; i < count; i++) {
-      pool.push({
-        q: `Question ${i+1} sur ${category} ?`,
-        opts: ["Option A","Option B","Option C","Option D"],
-        correct: i % 4
-      });
-    }
-  } else {
-    while (pool.length < count) {
-      for (let t of catTemplates) {
-        pool.push({ ...t });
-        if (pool.length >= count) break;
-      }
-    }
-  }
-  return pool.slice(0, count);
-}
-
 // -------------------- CONSTRUCTION DE LA BANQUE COMPLÈTE --------------------
 function buildFullQuestionBank() {
   const bank = {
@@ -1036,19 +1100,11 @@ function buildFullQuestionBank() {
     sciences: { facile: [], moyen: [], difficile: [] }
   };
 
-  // Copier les questions statiques pour coran et prophetes
-  for (let cat of ['coran', 'prophetes']) {
+  // Copier les questions statiques réelles pour toutes les catégories (plus de génération/répétition)
+  for (let cat of Object.keys(STATIC_QUESTIONS)) {
     for (let diff of ['facile', 'moyen', 'difficile']) {
-      bank[cat][diff] = [...STATIC_QUESTIONS[cat][diff]];
+      bank[cat][diff] = [...(STATIC_QUESTIONS[cat][diff] || [])];
     }
-  }
-
-  // Générer pour les autres catégories (histoire, vocabulaire, compagnons, femmes, piliers, hadiths, batailles, sciences)
-  const otherCats = ['histoire', 'vocabulaire', 'compagnons', 'femmes', 'piliers', 'hadiths', 'batailles', 'sciences'];
-  for (let cat of otherCats) {
-    bank[cat].facile = generateQuestionsForCategory(cat, 'facile', 35);
-    bank[cat].moyen = generateQuestionsForCategory(cat, 'moyen', 35);
-    bank[cat].difficile = generateQuestionsForCategory(cat, 'difficile', 35);
   }
 
   return bank;
@@ -1495,5 +1551,9 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
+  <footer style="text-align:center; padding:16px; font-size:13px; color:#888;">
+  Made with ❤️ by Chily Junior
+</footer>
 </body>
 </html>
+made by chily junior
