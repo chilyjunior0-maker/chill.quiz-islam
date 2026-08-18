@@ -6,6 +6,10 @@
   <title>Quiz Islam & Arabe – 1000+ questions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="manifest" href="./manifest.json" />
+  <meta name="theme-color" content="#0F3D2E" />
+  <link rel="icon" href="./icon-192.png" />
+  <link rel="apple-touch-icon" href="./icon-192.png" />
   <style>
     /* ===== RESET & VARIABLES ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -1482,6 +1486,14 @@ setupOptionButtons();
 renderLeaderboard();
 
 console.log('✅ Quiz Islam & Arabe chargé avec succès !');
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('./sw.js')
+      .then(function() { console.log('✅ Service worker enregistré – mode hors ligne actif'); })
+      .catch(function(err) { console.log('❌ Erreur service worker :', err); });
+  });
+}
 </script>
 </body>
 </html>
