@@ -1,4 +1,4 @@
-const CACHE_NAME = 'quiz-islam-arabe-v4';
+const CACHE_NAME = 'quiz-islam-arabe-v5';
 
 // Liste des fichiers essentiels à mettre en cache pour le fonctionnement hors ligne
 const ASSETS_TO_CACHE = [
